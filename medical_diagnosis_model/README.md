@@ -134,3 +134,87 @@ See `training_architecture_diagram.md` for a visual representation of how the sy
 
 - **V1**: Basic medical diagnosis with 10 diseases
 - **V2**: Enhanced with clinical reasoning, syndrome-level diagnosis, and 15 diseases
+
+---
+
+## Legal, Safety, and Responsible Use
+
+### Intended Use
+
+- This software is provided for educational and research purposes only.
+- It is not a medical device and must not be used for diagnosis, triage, or treatment decisions.
+- The included data generation and demos use synthetic patterns; no real patient data are provided or required.
+
+### Regulatory Status
+
+- Not FDA/EMA/MDR approved; not validated as SaMD (Software as a Medical Device).
+- Any clinical use would require a compliant quality system and regulatory pathway (e.g., IEC 62304, ISO 14971, ISO 13485, FDA 510(k)/De Novo as applicable).
+
+### Medical Disclaimer
+
+- Not a substitute for professional medical advice, diagnosis, or treatment.
+- Always consult licensed healthcare professionals. In emergencies, call local emergency services.
+
+### Data Privacy and PHI
+
+- Do not use real patient data with this repository.
+- If adapted for PHI: de-identify data, define retention policies, encrypt at rest and in transit, enforce access controls and audit logging, and ensure HIPAA/other regional compliance.
+- Generated files and outputs are written to:
+  - `models/` (saved model artifacts)
+  - `data/` (generated datasets/examples)
+  - `exports/` (PDF/text reports)
+  - `diagnosis_history/` (session logs)
+- Avoid committing any sensitive data to version control.
+
+### Security
+
+- No external network calls by default. Use a virtual environment and keep dependencies updated.
+- Do not store secrets in the repository. Review and restrict file permissions as needed.
+
+### Bias, Limitations, and Validation
+
+- Training uses synthetic data with heuristic medical patterns for demonstration; results are illustrative.
+- No prospective/clinical validation; accuracy metrics (if any) would reflect synthetic evaluation.
+- Coverage of ICD-10 codes is partial; logic is syndrome-first and does not include labs/imaging unless added by you.
+
+### Responsible AI Usage
+
+- Human-in-the-loop is required; outputs are suggestions, not decisions.
+- Red flags are heuristic and do not replace clinical judgment; never delay emergency care.
+- Avoid deployment in high-risk settings without formal validation and oversight.
+
+### Testing and Versioning
+
+- Model versions: v1.x (baseline), v2.x (clinical reasoning and syndrome-first diagnosis).
+- Maintain a changelog for medically relevant changes.
+- To reproduce training: set a fixed random seed and record generator parameters.
+
+### Third-Party Licenses
+
+- This project uses `reportlab` for PDF export; see its license.
+- The repository is licensed under MIT (see root `LICENSE`).
+
+### Contact and Issues
+
+- Report bugs and safety concerns via issues in the repository.
+- For requests to remove mistakenly uploaded data, open an issue or contact the maintainer.
+
+### Purging History/Outputs Safely
+
+Run these commands from the `medical_diagnosis_model/` folder.
+
+```bash
+# Preview what will be deleted
+ls -la exports diagnosis_history data models || true
+
+# Purge ALL generated artifacts (irreversible)
+rm -rf exports/* diagnosis_history/* data/* models/*
+
+# Alternatively, remove only PDFs from exports
+find exports -type f -name "*.pdf" -delete
+
+# Recreate placeholder files if you want git to keep empty folders
+for d in exports diagnosis_history data models; do
+  [ -d "$d" ] || mkdir -p "$d"; touch "$d/.gitkeep";
+done
+```
