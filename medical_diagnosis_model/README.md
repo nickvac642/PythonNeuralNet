@@ -19,31 +19,25 @@ medical_diagnosis_model/
 ├── Core Neural Network
 │   └── NeuralNet.py                    # Foundational neural network
 │
-├── Medical Knowledge Base
+├── Shared Modules
 │   ├── medical_symptom_schema.py       # 30 symptoms with medical terminology
-│   ├── medical_disease_schema.py       # Original 10 diseases
-│   └── medical_disease_schema_v2.py    # Enhanced with syndrome-level diagnoses
+│   ├── medical_training_generator.py   # Generates realistic patient cases
+│   ├── diagnosis_history.py            # Patient history tracking
+│   ├── pdf_exporter.py                 # PDF report generation
+│   ├── models/  data/  exports/  diagnosis_history/
 │
-├── Neural Network Implementation
-│   ├── medical_neural_network.py       # Basic medical NN
-│   └── medical_neural_network_v2.py    # Clinical reasoning NN
-│
-├── Training & Data Generation
-│   └── medical_training_generator.py   # Generates realistic patient cases
-│
-├── User Interfaces
-│   ├── enhanced_medical_system.py      # Full-featured system
-│   ├── interactive_medical_diagnosis.py # User-friendly interface
-│   └── quick_medical_demo.py          # Quick demonstration
-│
-├── Additional Features
-│   ├── diagnosis_history.py           # Patient history tracking
-│   └── pdf_exporter.py               # PDF report generation
-│
-├── Demonstrations
-│   ├── demo_all_features.py          # Shows all features
-│   ├── demo_clinical_reasoning.py    # Clinical reasoning demo
-│   └── demo_interface_example.py     # Interface examples
+├── versions/
+│   ├── v1/
+│   │   ├── medical_disease_schema.py
+│   │   ├── medical_neural_network.py
+│   │   ├── interactive_medical_diagnosis.py
+│   │   ├── quick_medical_demo.py
+│   │   ├── demo_all_features.py  demo_interface_example.py  medical_diagnosis_example.py
+│   └── v2/
+│       ├── medical_disease_schema_v2.py
+│       ├── medical_neural_network_v2.py
+│       ├── enhanced_medical_system.py
+│       └── demo_clinical_reasoning.py
 │
 └── Documentation
     ├── README.md                      # This file
@@ -82,15 +76,18 @@ medical_diagnosis_model/
 
 ## Quick Start
 
-```python
-# Basic usage
-python enhanced_medical_system.py
+```bash
+# v2 (current): full interactive system with clinical reasoning
+python versions/v2/enhanced_medical_system.py
 
-# Quick demo
-python quick_medical_demo.py
+# v2 demo (non-interactive scenario run)
+python versions/v2/demo_clinical_reasoning.py
 
-# Clinical reasoning demo
-python demo_clinical_reasoning.py
+# v1 quick demo (7 common symptoms)
+python versions/v1/quick_medical_demo.py
+
+# v1 full interactive flow
+python versions/v1/interactive_medical_diagnosis.py
 ```
 
 ## Installation
@@ -102,6 +99,9 @@ source venv/bin/activate
 
 # Install dependencies
 pip install reportlab  # For PDF export
+
+# Models are saved/loaded here by default
+# medical_diagnosis_model/models/enhanced_medical_model.json
 ```
 
 ## Medical Disclaimer

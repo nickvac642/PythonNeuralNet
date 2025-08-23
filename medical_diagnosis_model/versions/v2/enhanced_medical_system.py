@@ -8,6 +8,7 @@ from datetime import datetime
 from medical_neural_network_v2 import ClinicalReasoningNetwork
 from medical_symptom_schema import SYMPTOMS, SYMPTOM_CATEGORIES, get_symptom_by_name
 from medical_disease_schema import DISEASES
+from medical_disease_schema_v2 import DISEASES_V2
 from diagnosis_history import DiagnosisHistory
 from pdf_exporter import PDFExporter
 
@@ -207,15 +208,26 @@ class EnhancedMedicalSystem:
         
         print(f"\nDescription: {primary['description']}")
         
-        # Disease information
-        disease_id = None
-        for did, disease in DISEASES.items():
+        # Disease information (try v2 schema first, then fallback to v1 if present)
+        printed_meta = False
+        for did, disease in DISEASES_V2.items():
             if disease['name'] == primary['name']:
-                disease_id = did
-                print(f"Category: {disease['category']}")
-                print(f"Typical Duration: {disease['typical_duration']}")
-                print(f"Etymology: {disease['etymology']}")
+                print(f"Category: {disease.get('category','N/A')}")
+                if 'typical_duration' in disease:
+                    print(f"Typical Duration: {disease['typical_duration']}")
+                if 'etymology' in disease:
+                    print(f"Etymology: {disease['etymology']}")
+                printed_meta = True
                 break
+        if not printed_meta:
+            for did, disease in DISEASES.items():
+                if disease['name'] == primary['name']:
+                    print(f"Category: {disease.get('category','N/A')}")
+                    if 'typical_duration' in disease:
+                        print(f"Typical Duration: {disease['typical_duration']}")
+                    if 'etymology' in disease:
+                        print(f"Etymology: {disease['etymology']}")
+                    break
         
         # Differential diagnosis table
         print("\n" + "─" * 80)
@@ -224,9 +236,22 @@ class EnhancedMedicalSystem:
         print(f"{'Rank':<6} {'Disease':<30} {'Probability':<15} {'ICD-10':<10}")
         print("─" * 60)
         
-        for i, prob in enumerate(results['all_probabilities'][:5], 1):
-            prob_bar = "▪" * int(prob['probability'] * 10)
-            print(f"{i:<6} {prob['disease']:<30} {prob['probability']*100:>6.1f}% {prob_bar:<10} {prob.get('icd_10', 'N/A')}")
+        # v2 results store differential under 'differential_diagnosis'
+        diffs = results.get('differential_diagnosis') or []
+        # Fallback to older 'all_probabilities' if present
+        if not diffs and 'all_probabilities' in results:
+            diffs = [
+                {
+                    'disease': p.get('disease',''),
+                    'probability': p.get('probability',0.0),
+                    'icd_10': p.get('icd_10','N/A')
+                }
+                for p in results['all_probabilities']
+            ]
+        for i, prob in enumerate(diffs[:5], 1):
+            p = float(prob.get('probability', 0.0))
+            prob_bar = "▪" * int(p * 10)
+            print(f"{i:<6} {prob.get('disease',''):<30} {p*100:>6.1f}% {prob_bar:<10} {prob.get('icd_10', 'N/A')}")
         
         # Symptom analysis
         print("\n" + "─" * 80)
