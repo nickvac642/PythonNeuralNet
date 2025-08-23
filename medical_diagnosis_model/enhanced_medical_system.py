@@ -5,7 +5,7 @@ Integrates all features: categories, history, PDF export, and more diseases
 
 import os
 from datetime import datetime
-from medical_neural_network import MedicalDiagnosisNetwork
+from medical_neural_network_v2 import ClinicalReasoningNetwork
 from medical_symptom_schema import SYMPTOMS, SYMPTOM_CATEGORIES, get_symptom_by_name
 from medical_disease_schema import DISEASES
 from diagnosis_history import DiagnosisHistory
@@ -14,7 +14,7 @@ from pdf_exporter import PDFExporter
 class EnhancedMedicalSystem:
     def __init__(self):
         """Initialize the enhanced medical system with all features"""
-        self.network = MedicalDiagnosisNetwork(hidden_neurons=20, learning_rate=0.3, epochs=8000)
+        self.network = ClinicalReasoningNetwork(hidden_neurons=25, learning_rate=0.3, epochs=1000)
         self.history_manager = DiagnosisHistory()
         self.pdf_exporter = PDFExporter()
         self.current_session = None
@@ -418,11 +418,11 @@ class EnhancedMedicalSystem:
         # Load or train model
         try:
             print("Loading medical AI model...")
-            self.network.load_model("enhanced_medical_model.json")
+            self.network.load_model("models/enhanced_medical_model.json")
         except:
             print("Training new enhanced model... This may take a few minutes...")
             self.network.train(cases_per_disease=100, verbose=True)
-            self.network.save_model("enhanced_medical_model.json")
+            self.network.save_model("models/enhanced_medical_model.json")
         
         while True:
             choice = self.display_main_menu()
@@ -441,7 +441,7 @@ class EnhancedMedicalSystem:
                     continue
                 
                 # Get diagnosis
-                results = self.network.diagnose(symptom_responses)
+                results = self.network.diagnose_with_reasoning(symptom_responses)
                 
                 # Display results
                 self.display_diagnosis_results(results, symptom_responses)

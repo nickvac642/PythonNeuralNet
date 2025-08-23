@@ -3,7 +3,7 @@ Enhanced Medical Neural Network V2
 Implements clinical reasoning, syndrome-level diagnosis, and medical decision rules
 """
 
-from NeuralNet import initialize_network, train_network, forward_user_input, predict
+from NeuralNet import initialize_network, predict
 from medical_symptom_schema import SYMPTOMS, get_symptom_by_name
 from medical_disease_schema_v2 import (
     DISEASES_V2, CLINICAL_RULES, DIAGNOSTIC_CERTAINTY,
@@ -26,6 +26,7 @@ class ClinicalReasoningNetwork:
         self.epochs = epochs
         self.network = None
         self.clinical_network = None  # Secondary network for syndrome classification
+        self.temperature = 1.0  # for probability calibration
         
     def train(self, cases_per_disease=100, verbose=True):
         """Train both specific and syndrome-level networks"""
@@ -41,22 +42,25 @@ class ClinicalReasoningNetwork:
             print(f"Features: {self.num_features}")
             print(f"Disease categories: {self.num_diseases}")
         
-        # Train primary network
+        # Split into train/validation
+        split = int(0.8 * len(training_data))
+        train_set = training_data[:split]
+        val_set = training_data[split:]
+
+        # Initialize primary network
         self.network = initialize_network(self.num_features, self.hidden_neurons, self.num_diseases)
-        
+
         start_time = time.time()
-        error_history = train_network(
-            self.network, training_data, 
-            self.learning_rate, self.epochs, 
-            self.num_diseases, verbose
-        )
+        history = self._train_softmax_cross_entropy(self.network, train_set, val_set, verbose=verbose)
         training_time = time.time() - start_time
-        
+
+        # Probability calibration (temperature scaling) on validation set
+        self.temperature = self._calibrate_temperature(val_set)
         if verbose:
-            print(f"\nTraining completed in {training_time:.2f} seconds")
-            print(f"Final error: {error_history[-1]:.4f}")
+            print(f"\nCalibration: selected temperature T={self.temperature:.2f}")
+            print(f"Training completed in {training_time:.2f} seconds")
         
-        return error_history
+        return history
     
     def _generate_clinical_training_data(self, cases_per_disease):
         """Generate training data with clinical reasoning patterns"""
@@ -160,9 +164,9 @@ class ClinicalReasoningNetwork:
         # Determine syndrome
         syndrome = get_syndrome_from_symptoms(symptom_ids)
         
-        # Get neural network predictions
+        # Get neural network predictions (calibrated)
         features = symptom_vector + severity_vector
-        nn_outputs = forward_user_input(self.network, features)
+        nn_outputs = self._predict_proba(features)
         
         # Apply clinical reasoning
         adjusted_outputs = self._apply_clinical_rules(
@@ -216,6 +220,242 @@ class ClinicalReasoningNetwork:
         }
         
         return results
+
+    # ===== Optimization/Math helpers (softmax + cross-entropy) =====
+
+    def _sigmoid(self, x: float) -> float:
+        return 1.0 / (1.0 + (2.718281828459045 ** (-x)))
+
+    def _softmax(self, logits):
+        # Numerical stability: subtract max
+        m = max(logits)
+        exps = [pow(2.718281828459045, z - m) for z in logits]
+        s = sum(exps)
+        return [e / s for e in exps]
+
+    def _cross_entropy(self, probs, expected_onehot):
+        eps = 1e-12
+        loss = 0.0
+        for i in range(len(probs)):
+            p = max(min(probs[i], 1.0 - eps), eps)
+            loss += - expected_onehot[i] * (0 if p == 0 else (self._ln(p)))
+        return loss
+
+    def _ln(self, x: float) -> float:
+        # Natural log via math if available; fallback to simple approximation
+        import math
+        return math.log(x)
+
+    def _forward_logits_probs(self, network, inputs):
+        # Forward through hidden (sigmoid)
+        layer_inputs = inputs
+        hidden_outputs = []
+        for neuron in network[0]:
+            # activation = w·x + b
+            w = neuron['weights']
+            activation = w[-1]
+            for j in range(len(layer_inputs)):
+                activation += w[j] * layer_inputs[j]
+            out = self._sigmoid(activation)
+            neuron['output'] = out
+            hidden_outputs.append(out)
+
+        # Output layer logits (linear)
+        logits = []
+        out_layer = network[1]
+        for neuron in out_layer:
+            w = neuron['weights']
+            activation = w[-1]
+            for j in range(len(hidden_outputs)):
+                activation += w[j] * hidden_outputs[j]
+            logits.append(activation)
+        probs = self._softmax([z / self.temperature for z in logits])
+        # store for potential reuse
+        for idx, neuron in enumerate(out_layer):
+            neuron['output'] = probs[idx]
+        return hidden_outputs, logits, probs
+
+    def _backward_softmax_ce(self, network, inputs, hidden_outputs, probs, expected_onehot):
+        # Output layer delta: y_hat - y (for softmax + cross-entropy)
+        output_layer = network[1]
+        output_deltas = []
+        for i in range(len(output_layer)):
+            delta = probs[i] - expected_onehot[i]
+            output_layer[i]['delta'] = delta
+            output_deltas.append(delta)
+
+        # Hidden layer deltas
+        hidden_layer = network[0]
+        hidden_deltas = []
+        for j, neuron in enumerate(hidden_layer):
+            error = 0.0
+            for k, out_neuron in enumerate(output_layer):
+                error += out_neuron['weights'][j] * output_deltas[k]
+            # derivative of sigmoid using neuron['output'] already stored
+            d = neuron['output'] * (1.0 - neuron['output'])
+            neuron['delta'] = error * d
+            hidden_deltas.append(neuron['delta'])
+
+        # Update weights for output layer
+        for i, neuron in enumerate(output_layer):
+            for j in range(len(hidden_outputs)):
+                neuron['weights'][j] += self.learning_rate * neuron['delta'] * hidden_outputs[j]
+            neuron['weights'][-1] += self.learning_rate * neuron['delta']
+
+        # Update weights for hidden layer
+        for j, neuron in enumerate(hidden_layer):
+            for k in range(len(inputs)):
+                neuron['weights'][k] += self.learning_rate * neuron['delta'] * inputs[k]
+            neuron['weights'][-1] += self.learning_rate * neuron['delta']
+
+    def _train_softmax_cross_entropy(self, network, train_set, val_set, verbose=True):
+        best_val_nll = float('inf')
+        best_network = None
+        patience = 20
+        no_improve = 0
+        history = []
+
+        for epoch in range(self.epochs):
+            # Shuffle
+            random.shuffle(train_set)
+            train_loss = 0.0
+            train_correct = 0
+            for row in train_set:
+                features = row[:-1]
+                label = int(row[-1])
+                expected = [0] * self.num_diseases
+                expected[label] = 1
+                hidden_out, logits, probs = self._forward_logits_probs(network, features)
+                # loss
+                train_loss += self._cross_entropy(probs, expected)
+                # accuracy
+                pred = probs.index(max(probs))
+                if pred == label:
+                    train_correct += 1
+                # backward/update
+                self._backward_softmax_ce(network, features, hidden_out, probs, expected)
+
+            # Validation
+            val_loss, val_acc = self._evaluate(network, val_set)
+            history.append({
+                'epoch': epoch,
+                'train_loss': train_loss / max(1, len(train_set)),
+                'train_acc': train_correct / max(1, len(train_set)),
+                'val_loss': val_loss,
+                'val_acc': val_acc
+            })
+
+            if verbose and (epoch % 10 == 0 or epoch == self.epochs - 1):
+                print(f"epoch={epoch:04d}  train_loss={history[-1]['train_loss']:.4f}  train_acc={history[-1]['train_acc']:.3f}  val_loss={val_loss:.4f}  val_acc={val_acc:.3f}")
+
+            # Early stopping on validation loss
+            if val_loss + 1e-6 < best_val_nll:
+                best_val_nll = val_loss
+                best_network = self._deepcopy_network(network)
+                no_improve = 0
+            else:
+                no_improve += 1
+                if no_improve >= patience:
+                    if verbose:
+                        print(f"Early stopping at epoch {epoch} (no val improvement for {patience} epochs)")
+                    break
+
+        if best_network is not None:
+            self.network = best_network
+        return history
+
+    def _evaluate(self, network, dataset):
+        if not dataset:
+            return 0.0, 0.0
+        total_nll = 0.0
+        correct = 0
+        for row in dataset:
+            features = row[:-1]
+            label = int(row[-1])
+            _, logits, probs = self._forward_logits_probs(network, features)
+            expected = [0] * self.num_diseases
+            expected[label] = 1
+            total_nll += self._cross_entropy(probs, expected)
+            if probs.index(max(probs)) == label:
+                correct += 1
+        avg_nll = total_nll / len(dataset)
+        acc = correct / len(dataset)
+        return avg_nll, acc
+
+    def _deepcopy_network(self, network):
+        copied = []
+        for layer in network:
+            new_layer = []
+            for neuron in layer:
+                new_layer.append({'weights': list(neuron['weights'])})
+            copied.append(new_layer)
+        return copied
+
+    def _calibrate_temperature(self, val_set):
+        if not val_set:
+            return 1.0
+        candidates = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0, 2.5, 3.0]
+        best_T = 1.0
+        best_nll = float('inf')
+        original_T = self.temperature
+        for T in candidates:
+            self.temperature = T
+            nll, _ = self._evaluate(self.network, val_set)
+            if nll < best_nll:
+                best_nll = nll
+                best_T = T
+        self.temperature = best_T
+        return best_T
+
+    def _predict_proba(self, features):
+        _, _, probs = self._forward_logits_probs(self.network, features)
+        return probs
+
+    # ===== Persistence =====
+
+    def save_model(self, filename="models/enhanced_medical_model.json"):
+        import json, os
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        model_data = {
+            "config": {
+                "num_symptoms": self.num_symptoms,
+                "num_features": self.num_features,
+                "num_diseases": self.num_diseases,
+                "hidden_neurons": self.hidden_neurons,
+                "learning_rate": self.learning_rate,
+                "epochs": self.epochs,
+                "temperature": self.temperature
+            },
+            "network": [
+                [{"weights": n["weights"]} for n in self.network[0]],
+                [{"weights": n["weights"]} for n in self.network[1]]
+            ]
+        }
+        with open(filename, "w") as f:
+            json.dump(model_data, f, indent=2)
+        print(f"Model saved to {filename}")
+
+    def load_model(self, filename="models/enhanced_medical_model.json"):
+        import json
+        with open(filename, "r") as f:
+            model_data = json.load(f)
+        cfg = model_data["config"]
+        self.num_symptoms = cfg.get("num_symptoms", self.num_symptoms)
+        self.num_features = cfg.get("num_features", self.num_features)
+        self.num_diseases = cfg.get("num_diseases", self.num_diseases)
+        self.hidden_neurons = cfg.get("hidden_neurons", self.hidden_neurons)
+        self.learning_rate = cfg.get("learning_rate", self.learning_rate)
+        self.epochs = cfg.get("epochs", self.epochs)
+        self.temperature = cfg.get("temperature", 1.0)
+
+        # Rebuild network structure
+        self.network = []
+        for layer in model_data["network"]:
+            rebuilt = []
+            for neuron in layer:
+                rebuilt.append({"weights": list(neuron["weights"])})
+            self.network.append(rebuilt)
+        print(f"Model loaded from {filename}")
     
     def _apply_clinical_rules(self, nn_outputs, symptom_ids, severity_vector, has_test_results):
         """Apply clinical decision rules to adjust probabilities"""
