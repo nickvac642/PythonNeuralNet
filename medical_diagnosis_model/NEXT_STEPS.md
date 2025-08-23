@@ -54,6 +54,41 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
   3. After inference, retrieve top 3–5 passages with a query built from the case and top‑k differential.
   4. Generate a short rationale + test suggestions; include citations in the report.
 
+#### Proof‑of‑Concept plan (baked into this project)
+
+- Directory & files
+
+  - `knowledge/` → curated content (markdown/json) with metadata: `title`, `source`, `url`, `version_date`, `tags`, `icd10`, `rule_id`.
+  - `knowledge/index/` → vector index (FAISS/Chroma) + `meta.json` mapping ids → {text, metadata}.
+  - `rag/index.py` → offline: chunk, embed, persist index.
+  - `rag/retriever.py` → runtime: load index, retrieve top‑k passages.
+  - `rag/generator.py` → compose rationale from retrieved passages (template‑based or small LLM).
+  - `rag/config.yaml` → enable flag, model name, top_k, filters, paths.
+
+- Offline indexing (one‑time)
+
+  - Chunk to 300–600 tokens with overlap; embed with `sentence-transformers/all-MiniLM-L6-v2` (or similar); store normalized embeddings.
+  - Persist index + `meta.json`; record index version and corpus snapshot date.
+
+- Runtime integration (v2)
+
+  - In `versions/v2/enhanced_medical_system.py`, after `diagnose_with_reasoning`:
+    - Build query from: primary diagnosis, ICD‑10, key findings (from `clinical_reasoning`), top‑k differential, and any red flags.
+    - `passages = retriever.search(query, top_k, filters={"icd10": primary_icd10})`
+    - `rationale_text = generator.summarize(results, symptom_responses, passages)`
+    - Display `rationale_text` in UI and include it (plus citations) in PDF/Text exports.
+
+- Safety & provenance
+
+  - Do not change probabilities; RAG only annotates.
+  - Show source name/URL/version for each citation; keep `knowledge/README.md` of sources and update cadence.
+  - Keep index local; avoid sending PHI to external services.
+
+- Minimal evaluation
+  - Retrieval precision@k spot‑checks by clinician reviewer.
+  - Helpfulness rating of rationale/test suggestions.
+  - Guardrails for disallowed content; keep output terse and cited.
+
 ## Stretch goals
 
 - Uncertainty‑aware UX
