@@ -1,0 +1,15 @@
+# PythonNeuralNet Medical Diagnosis System Requirements
+
+# PDF Generation
+reportlab>=4.4.3
+
+# Optional: For better performance with large datasets
+numpy>=1.24.0
+
+# Optional: For data visualization
+matplotlib>=3.6.0
+
+# Optional: For advanced neural network features (future)
+# tensorflow>=2.12.0
+# torch>=2.0.0
+# scikit-learn>=1.2.0
