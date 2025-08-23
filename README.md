@@ -44,6 +44,8 @@ python enhanced_medical_system.py
 - **Activation**: Sigmoid for non‑linearity, outputs in [0, 1]
 - **Outputs**: Multi‑class probabilities (one output neuron per class)
 
+Tip: For the step‑by‑step math (forward pass, softmax+cross‑entropy, backprop, calibration), see `foundational_brain/BEHIND_THE_SCENES.md`.
+
 ### Forward Propagation (prediction)
 
 1. For each layer, compute neuron activation: weighted_sum(inputs) + bias
