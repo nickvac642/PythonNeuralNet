@@ -61,3 +61,9 @@ prediction = predict(outputs)
 - **Learning**: Gradient descent with backpropagation
 
 This serves as the foundation for domain-specific applications like medical diagnosis, image recognition, or any pattern recognition task.
+
+## Learn the Math
+
+For a step‑by‑step explanation of the symbols, intuition, and full equations used by this network (forward pass, cross‑entropy loss, backpropagation, and probability calibration), see:
+
+`BEHIND_THE_SCENES.md`
