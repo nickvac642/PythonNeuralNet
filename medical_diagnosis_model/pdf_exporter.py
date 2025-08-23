@@ -151,12 +151,22 @@ class PDFExporter:
         # Differential Diagnosis
         elements.append(Paragraph("Differential Diagnosis", heading_style))
         diff_data = [["Rank", "Condition", "Probability", "ICD-10"]]
-        
-        for i, prob in enumerate(diagnosis_results['all_probabilities'][:5], 1):
+
+        diffs = diagnosis_results.get('differential_diagnosis')
+        if not diffs and 'all_probabilities' in diagnosis_results:
+            diffs = [
+                {
+                    'disease': p.get('disease',''),
+                    'probability': p.get('probability',0.0),
+                    'icd_10': p.get('icd_10','N/A')
+                }
+                for p in diagnosis_results['all_probabilities']
+            ]
+        for i, prob in enumerate((diffs or [])[:5], 1):
             diff_data.append([
                 str(i),
-                prob['disease'],
-                f"{prob['probability']*100:.1f}%",
+                prob.get('disease',''),
+                f"{float(prob.get('probability',0.0))*100:.1f}%",
                 prob.get('icd_10', 'N/A')
             ])
         
@@ -285,9 +295,17 @@ class PDFExporter:
             f.write("\n" + "-" * 70 + "\n")
             f.write("DIFFERENTIAL DIAGNOSIS\n")
             f.write("-" * 70 + "\n")
-            
-            for i, prob in enumerate(diagnosis_results['all_probabilities'][:5], 1):
-                f.write(f"{i}. {prob['disease']}: {prob['probability']*100:.1f}%\n")
+            diffs = diagnosis_results.get('differential_diagnosis')
+            if not diffs and 'all_probabilities' in diagnosis_results:
+                diffs = [
+                    {
+                        'disease': p.get('disease',''),
+                        'probability': p.get('probability',0.0)
+                    }
+                    for p in diagnosis_results['all_probabilities']
+                ]
+            for i, prob in enumerate((diffs or [])[:5], 1):
+                f.write(f"{i}. {prob.get('disease','')}: {float(prob.get('probability',0.0))*100:.1f}%\n")
             
             f.write("\n" + "-" * 70 + "\n")
             f.write("RECOMMENDATIONS\n")

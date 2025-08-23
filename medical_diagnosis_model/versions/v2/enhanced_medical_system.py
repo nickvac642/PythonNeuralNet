@@ -7,7 +7,6 @@ import os
 from datetime import datetime
 from medical_neural_network_v2 import ClinicalReasoningNetwork
 from medical_symptom_schema import SYMPTOMS, SYMPTOM_CATEGORIES, get_symptom_by_name
-from medical_disease_schema import DISEASES
 from medical_disease_schema_v2 import DISEASES_V2
 from diagnosis_history import DiagnosisHistory
 from pdf_exporter import PDFExporter
@@ -219,15 +218,7 @@ class EnhancedMedicalSystem:
                     print(f"Etymology: {disease['etymology']}")
                 printed_meta = True
                 break
-        if not printed_meta:
-            for did, disease in DISEASES.items():
-                if disease['name'] == primary['name']:
-                    print(f"Category: {disease.get('category','N/A')}")
-                    if 'typical_duration' in disease:
-                        print(f"Typical Duration: {disease['typical_duration']}")
-                    if 'etymology' in disease:
-                        print(f"Etymology: {disease['etymology']}")
-                    break
+        # No v1 fallback, v2 schema is source of truth here
         
         # Differential diagnosis table
         print("\n" + "─" * 80)
@@ -253,27 +244,31 @@ class EnhancedMedicalSystem:
             prob_bar = "▪" * int(p * 10)
             print(f"{i:<6} {prob.get('disease',''):<30} {p*100:>6.1f}% {prob_bar:<10} {prob.get('icd_10', 'N/A')}")
         
-        # Symptom analysis
+        # Symptom analysis (v2 clinical reasoning)
         print("\n" + "─" * 80)
         print("SYMPTOM ANALYSIS".center(80))
         print("─" * 80)
-        
-        analysis = results['symptoms_analysis']
-        
-        print(f"\n✓ Symptoms matching {primary['name']}:")
-        if analysis['expected_symptoms_present']:
-            for symptom in analysis['expected_symptoms_present'][:5]:
-                print(f"  • {symptom['symptom']} - Present (typical in {symptom['typical_frequency']*100:.0f}% of cases)")
-        
-        if analysis['expected_symptoms_absent']:
-            print(f"\n⚠ Common symptoms NOT present:")
-            for symptom in analysis['expected_symptoms_absent'][:3]:
-                print(f"  • {symptom['symptom']} - Absent (present in {symptom['typical_frequency']*100:.0f}% of cases)")
-        
-        if analysis['unexpected_symptoms']:
-            print(f"\n❓ Symptoms not typical for {primary['name']}:")
-            for symptom in analysis['unexpected_symptoms'][:3]:
-                print(f"  • {symptom['symptom']}")
+
+        reasoning = results.get('clinical_reasoning', {})
+
+        key_findings = reasoning.get('key_findings', [])
+        supporting = reasoning.get('supporting_features', [])
+        inconsistent = reasoning.get('inconsistent_features', [])
+
+        if key_findings:
+            print("\n✓ Key findings supporting diagnosis:")
+            for k in key_findings[:5]:
+                print(f"  • {k.get('symptom','')} ({k.get('frequency','')})")
+
+        if supporting:
+            print("\nAdditional supporting features:")
+            for s in supporting[:3]:
+                print(f"  • {s.get('symptom','')} ({s.get('frequency','')})")
+
+        if inconsistent:
+            print(f"\n❓ Features less typical for {primary['name']}:")
+            for u in inconsistent[:3]:
+                print(f"  • {u.get('symptom','')}: {u.get('significance','')}")
         
         # Recommendations
         print("\n" + "─" * 80)

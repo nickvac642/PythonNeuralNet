@@ -36,6 +36,43 @@ class DiagnosisHistory:
     
     def save_diagnosis(self, session, symptom_data, diagnosis_results):
         """Save a diagnosis to the current session"""
+        # Normalize differential list for v1/v2 structures
+        diffs = diagnosis_results.get('differential_diagnosis')
+        if not diffs and 'all_probabilities' in diagnosis_results:
+            diffs = [
+                {
+                    "disease": p.get('disease', ''),
+                    "probability": p.get('probability', 0.0),
+                    "icd_10": p.get('icd_10', 'N/A')
+                }
+                for p in diagnosis_results.get('all_probabilities', [])
+            ]
+        diffs = (diffs or [])[:5]
+
+        # Normalize symptom analysis summary for v1/v2 structures
+        if 'clinical_reasoning' in diagnosis_results:
+            reasoning = diagnosis_results.get('clinical_reasoning', {})
+            key_findings = reasoning.get('key_findings', [])
+            inconsistent = reasoning.get('inconsistent_features', [])
+            # Heuristic: count items labeled as absent
+            absent_count = 0
+            for item in inconsistent:
+                s = (item.get('symptom', '') or '').lower()
+                if 'absent' in s:
+                    absent_count += 1
+            symp_summary = {
+                "expected_present": len(key_findings),
+                "expected_absent": absent_count,
+                "unexpected": max(0, len(inconsistent) - absent_count)
+            }
+        else:
+            v1 = diagnosis_results.get('symptoms_analysis', {})
+            symp_summary = {
+                "expected_present": len(v1.get('expected_symptoms_present', [])) if isinstance(v1.get('expected_symptoms_present', []), list) else v1.get('expected_present', 0),
+                "expected_absent": len(v1.get('expected_symptoms_absent', [])) if isinstance(v1.get('expected_symptoms_absent', []), list) else v1.get('expected_absent', 0),
+                "unexpected": len(v1.get('unexpected_symptoms', [])) if isinstance(v1.get('unexpected_symptoms', []), list) else v1.get('unexpected', 0),
+            }
+
         diagnosis_entry = {
             "timestamp": datetime.now().isoformat(),
             "symptoms_reported": symptom_data,
@@ -45,13 +82,9 @@ class DiagnosisHistory:
                 "icd_10": diagnosis_results['primary_diagnosis']['icd_10'],
                 "confidence": diagnosis_results['primary_diagnosis']['confidence']
             },
-            "differential_diagnosis": diagnosis_results['all_probabilities'][:5],
-            "symptom_analysis": {
-                "expected_present": len(diagnosis_results['symptoms_analysis']['expected_symptoms_present']),
-                "expected_absent": len(diagnosis_results['symptoms_analysis']['expected_symptoms_absent']),
-                "unexpected": len(diagnosis_results['symptoms_analysis']['unexpected_symptoms'])
-            },
-            "recommendations": diagnosis_results['recommendations'][:3]
+            "differential_diagnosis": diffs,
+            "symptom_analysis": symp_summary,
+            "recommendations": diagnosis_results.get('recommendations', [])[:3]
         }
         
         session['diagnoses'].append(diagnosis_entry)

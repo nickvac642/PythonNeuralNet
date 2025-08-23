@@ -10,7 +10,7 @@ from medical_disease_schema_v2 import (
     get_syndrome_from_symptoms, get_appropriate_differential,
     requires_testing, get_syndrome_diagnosis, assess_severity
 )
-from medical_training_generator import MedicalDataGenerator
+# Note: v2 generates its own synthetic training data; no dependency on v1 generator
 import time
 import json
 import random
