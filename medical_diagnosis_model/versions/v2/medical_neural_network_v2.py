@@ -520,8 +520,12 @@ class ClinicalReasoningNetwork:
                 break
         if uti_idx is not None:
             # 27: Dysuria, 26: Frequency/Urgency
-            if (26 not in symptom_ids) and (27 not in symptom_ids):
-                adjusted[uti_idx] *= 0.1  # strong downweight when key urinary symptoms absent
+            missing = int(26 not in symptom_ids) + int(27 not in symptom_ids)
+            if missing == 2:
+                # Very strong downweight when both GU keys absent
+                adjusted[uti_idx] *= 0.03
+            elif missing == 1:
+                adjusted[uti_idx] *= 0.2
 
         # Soft-gate to diagnoses appropriate to inferred syndrome; allow general viral syndrome everywhere
         if appropriate_names:
@@ -591,8 +595,8 @@ class ClinicalReasoningNetwork:
                     logits[pna_idx] += 2.0
             # Stronger UTI penalty if urinary keys absent; zero out if syndrome is respiratory
             if uti_idx is not None and (26 not in symptom_ids) and (27 not in symptom_ids):
-                if syndrome_ctx and "Respiratory" in syndrome_ctx:
-                    logits[uti_idx] = -1e6
+                if syndrome_ctx and ("Respiratory" in syndrome_ctx or syndrome_ctx == "Undifferentiated"):
+                    logits[uti_idx] -= 12.0
                 else:
                     logits[uti_idx] -= 8.0
             # Recompute probabilities via softmax

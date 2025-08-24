@@ -198,9 +198,14 @@ def _answers_to_vectors(answers: Dict[int, dict]) -> tuple[list[int], list[float
 def _compute_adjusted_probs(symptom_vector: list[int], severity_vector: list[float], present_ids: list[int]) -> list[float]:
     if model.network is None:
         _ensure_model_loaded()
-    features = symptom_vector + severity_vector
-    base = model._predict_proba(features)
-    adjusted = model._apply_clinical_rules(base, present_ids, severity_vector, has_test_results=None)
+    # Neutral prior when no evidence yet to avoid premature certainty
+    if not present_ids:
+        n = len(DISEASES_V2)
+        adjusted = [1.0 / n] * n
+    else:
+        features = symptom_vector + severity_vector
+        base = model._predict_proba(features)
+        adjusted = model._apply_clinical_rules(base, present_ids, severity_vector, has_test_results=None)
     total = sum(adjusted)
     return [p / total for p in adjusted] if total else adjusted
 
@@ -219,7 +224,9 @@ def _select_next_symptom(disease_probs: list[float], asked: set[int]) -> int | N
     best_symptom = None
     best_eig = -1.0
     # Precompute per-disease symptom frequencies
-    for sid in range(30):
+    triage_sids = [27, 26, 3, 7, 8, 11]  # Dysuria, Frequency, Cough, Rhinorrhea, Congestion, Diarrhea
+    candidate_sids = triage_sids if len(asked) == 0 else list(range(30))
+    for sid in candidate_sids:
         if sid in asked:
             continue
         # P(yes|d)
