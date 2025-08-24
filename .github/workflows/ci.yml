@@ -29,13 +29,13 @@ jobs:
 
       - name: Validate sample datasets
         run: |
-          python medical_diagnosis_model/data/validate_cases.py medical_diagnosis_model/data/samples/cases_v0.1.jsonl
+          python medical_diagnosis_model/tools/sanity.py data
 
       - name: Run unit tests
         env:
           PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/medical_diagnosis_model
           MDM_QUICK_TRAIN: '1'
         run: |
-          python -m pytest -q medical_diagnosis_model/tests/test_api_phase1.py
+          python medical_diagnosis_model/tools/sanity.py tests
 
 
