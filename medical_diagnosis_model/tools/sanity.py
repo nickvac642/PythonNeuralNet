@@ -44,7 +44,7 @@ def _run(cmd: list[str], env: Optional[dict] = None, check: bool = True) -> int:
 
 def cmd_data(args: argparse.Namespace) -> None:
     schema = MODEL_ROOT / "data" / "case.schema.json"
-    samples = args.paths or [str(MODEL_ROOT / "data" / "samples" / "cases_v0.1.jsonl")]
+    samples = getattr(args, "paths", None) or [str(MODEL_ROOT / "data" / "samples" / "cases_v0.1.jsonl")]
     py = sys.executable
     _run([py, str(MODEL_ROOT / "data" / "validate_cases.py"), *samples])
 
@@ -53,6 +53,9 @@ def cmd_tests(args: argparse.Namespace) -> None:
     pyenv = os.environ.copy()
     pyenv["PYTHONPATH"] = f"{ROOT}:{MODEL_ROOT}"
     pyenv.setdefault("MDM_QUICK_TRAIN", "1")
+    # Ensure unit tests don't require API key or OIDC bearer
+    pyenv.pop("MDM_API_KEY", None)
+    pyenv.pop("MDM_AUTH_MODE", None)
     py = sys.executable
     tests = [
         str(MODEL_ROOT / "tests" / "test_api_phase1.py"),
@@ -162,7 +165,8 @@ def cmd_rate(args: argparse.Namespace) -> None:
         url = f"{base}/api/v2/diagnose"
         ok = 0
         over = 0
-        for i in range(args.count):
+        count = getattr(args, "count", 140)
+        for i in range(count):
             r = requests.post(url, headers=h, json={"data": {"Fever": 8}}, timeout=10)
             if r.status_code == 200:
                 ok += 1
@@ -171,7 +175,8 @@ def cmd_rate(args: argparse.Namespace) -> None:
             else:
                 print("Unexpected status:", r.status_code)
         print(f"OK={ok} OVER_LIMIT={over}")
-        if args.expect_over_limit and over == 0:
+        expect_over = bool(getattr(args, "expect_over_limit", False))
+        if expect_over and over == 0:
             raise SystemExit(1)
     finally:
         _stop_server(proc)
