@@ -68,11 +68,11 @@ Acceptance:
     - Version tag and changelog updated when schema changes.
   - Dataset scaffolding (v0)
     - Acceptance criteria:
-      - JSON Schema for clinical cases present at `data/case.schema.json`.
-      - Canonical dictionaries at `data/dictionaries/{symptoms.json,diseases.json}`.
-      - Sample JSONL at `data/samples/cases_v0.1.jsonl` following the schema.
-      - Validator CLI `data/validate_cases.py` passes on samples; `jsonschema` added to requirements.
-      - Command: `python data/validate_cases.py data/samples/cases_v0.1.jsonl` prints `Validation passed: 0 errors`.
+      - [x] JSON Schema for clinical cases present at `data/case.schema.json`.
+      - [x] Canonical dictionaries at `data/dictionaries/{symptoms.json,diseases.json}`.
+      - [x] Sample JSONL at `data/samples/cases_v0.1.jsonl` following the schema.
+      - [x] Validator CLI `data/validate_cases.py` passes on samples; `jsonschema` added to requirements.
+      - [x] Command: `python data/validate_cases.py data/samples/cases_v0.1.jsonl` prints `Validation passed: 0 errors`.
     - References: `data/README.md`, `data/case.schema.json`, `data/dictionaries/`, `data/samples/`, `data/validate_cases.py`.
 - Label policy
   - For each disease: criteria for “confirmed” (ICD‑10 + test) vs “presumptive”; clinician adjudication rules.
@@ -162,9 +162,9 @@ Acceptance:
   - Data dictionary (fields, ranges, encodings); update legal/privacy notes.
   - Unit tests for rules and pipeline; lightweight CI (lint + tests).
   - Acceptance criteria:
-    - `docs/data_dictionary.md` added; CI workflow runs lint + unit tests on PRs.
-    - EIG selector unit tests validate entropy reduction and expected next‑question behavior on toy distributions.
-    - CI executes `python medical_diagnosis_model/data/validate_cases.py` against `data/samples/*.jsonl` and any tracked dataset JSONL files.
+    - [ ] `docs/data_dictionary.md` added; CI workflow runs lint + unit tests on PRs.
+    - [x] EIG selector unit tests validate entropy reduction and expected next‑question behavior on toy distributions.
+    - [x] CI executes `python medical_diagnosis_model/data/validate_cases.py` against `data/samples/*.jsonl` and any tracked dataset JSONL files.
 
 <a id="rag"></a>
 
