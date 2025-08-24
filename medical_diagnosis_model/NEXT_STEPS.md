@@ -4,16 +4,55 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
 
 ## Quick checklist
 
-- [Immediate (week 1–2)](#immediate-week-12)
-- [Foundation upgrades (week 2–3)](#foundation-upgrades-week-23)
-- [Clinical fit (week 3–4)](#clinical-fit-week-34)
-- [Ops & tooling (parallel)](#ops--tooling-parallel)
-- [RAG (optional)](#optional-retrieval-augmented-generation-rag)
-- [Full‑stack web app roadmap](#full‑stack-web-app-conversion-roadmap)
-- [Security & privacy](#security--privacy)
+- [Immediate (week 1–2)](#immediate)
+- [Foundation upgrades (week 2–3)](#foundation)
+- [Clinical fit (week 3–4)](#clinical)
+- [Ops & tooling (parallel)](#ops)
+- [RAG (optional)](#rag)
+- [Full‑stack web app roadmap](#fullstack)
+- [Security & privacy](#security)
 - [Deployment](#deployment)
-- [Stretch goals](#stretch-goals)
-- [First actionable tasks](#first-actionable-tasks-suggested-order)
+- [Stretch goals](#stretch)
+- [First actionable tasks](#first-actionable)
+
+<a id="prompt-examples"></a>
+
+### Prompt examples (copy/paste)
+
+```text
+Task: Implement patient- and time-based train/val/test split with stratification
+Source: NEXT_STEPS.md → Foundation → Splits & imbalance
+Context: macOS 14, Python 3.11 venv ./venv, repo root PythonNeuralNet
+Constraints: non-interactive commands; add unit tests; idempotent CLI
+Acceptance:
+- backend/data/splitter.py with patient/time split; no-leakage tests
+- CLI: python -m backend.tools.split --input data/clean/ --out data/splits/
+- Outputs include class distribution report (per split)
+```
+
+```text
+Task: Expose /api/v2/diagnose and /api/v2/export in FastAPI
+Source: NEXT_STEPS.md → Full‑stack → Backend tasks (phase 1)
+Context: FastAPI + Pydantic; v2 model packaged; local dev only
+Constraints: CORS enabled for http://localhost:3000; typed responses
+Acceptance:
+- backend/app.py serves /api/v2/diagnose returning v2 payload
+- /api/v2/export returns text report path
+- OpenAPI docs load; simple request succeeds via curl
+```
+
+```text
+Task: RAG PoC: index curated knowledge and return cited rationale
+Source: NEXT_STEPS.md → Optional: RAG → Proof‑of‑Concept plan
+Context: Local FAISS/Chroma only; no external PHI; minimal template generation
+Constraints: RAG annotates only; never changes probabilities
+Acceptance:
+- knowledge/ populated; knowledge/index/ built; rag/index.py & retriever.py
+- For 4/5 sample cases: retrieved passages relevant; rationale includes citations
+- Export includes citation URLs/titles; inputs sanitized
+```
+
+<a id="immediate"></a>
 
 ## Immediate (week 1–2)
 
@@ -37,6 +76,8 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
     - Audit log written per record; dry‑run mode produces no persistent PHI.
     - Command: `python -m backend.ingest.ingest --input data/raw.csv --out data/clean/` creates clean artifacts.
 
+<a id="foundation"></a>
+
 ## Foundation upgrades (week 2–3)
 
 - Splits & imbalance
@@ -57,6 +98,8 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
     - Temperature scaling recalibrates on validation set; ECE reported overall and by subgroup.
     - Drift check script flags shifts in class priors and key feature distributions.
 
+<a id="clinical"></a>
+
 ## Clinical fit (week 3–4)
 
 - Rules expansion
@@ -69,6 +112,8 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
   - Acceptance criteria:
     - Red flags trigger explicit warnings and suggested actions; entropy/confidence threshold routes to “need more info”.
     - Test cases cover missing/contradictory inputs and red‑flag handling.
+
+<a id="ops"></a>
 
 ## Ops & tooling (parallel)
 
@@ -87,6 +132,8 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
   - Unit tests for rules and pipeline; lightweight CI (lint + tests).
   - Acceptance criteria:
     - `docs/data_dictionary.md` added; CI workflow runs lint + unit tests on PRs.
+
+<a id="rag"></a>
 
 ### Optional: Retrieval‑Augmented Generation (RAG)
 
@@ -142,6 +189,8 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
   - Acceptance criteria:
     - `knowledge/` populated with curated content and `knowledge/index/` built.
     - Retrieval returns relevant passages for at least 4/5 sample cases; rationale includes citations.
+
+<a id="fullstack"></a>
 
 ## Full‑stack Web App (conversion roadmap)
 
@@ -237,6 +286,8 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
   - Acceptance criteria:
     - Postgres schema applied; `/jobs/:id` reflects worker progress; artifacts saved and retrievable.
 
+<a id="security"></a>
+
 ### Security & privacy
 
 - HTTPS, CORS, CSRF (if needed), JWT/OAuth2 for user auth
@@ -245,6 +296,8 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 
   - Acceptance criteria:
     - Auth on protected endpoints; PHI‑safe mode verified; purge endpoint removes records and artifacts.
+
+<a id="deployment"></a>
 
 ### Deployment
 
@@ -280,6 +333,8 @@ medical_diagnosis_model/
 - Optional RAG rationale (if knowledge/ and index present)
 - `/export` returns a text report; button in UI to download
 
+<a id="stretch"></a>
+
 ## Stretch goals
 
 - Uncertainty‑aware UX
@@ -288,6 +343,8 @@ medical_diagnosis_model/
   - Evaluate on time‑separated or out‑of‑site cohorts.
 - Monitoring
   - Drift detection for feature distributions and calibration; periodic re‑train.
+
+<a id="first-actionable"></a>
 
 ## First actionable tasks (suggested order)
 
