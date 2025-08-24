@@ -101,6 +101,52 @@ pip install reportlab  # For PDF export
 # medical_diagnosis_model/models/enhanced_medical_model.json
 ```
 
+## API (FastAPI) Quickstart & Auth
+
+Start the API (dev):
+
+```bash
+# API key mode (default)
+export MDM_API_KEY=devkey
+uvicorn medical_diagnosis_model.backend.app:app --reload --port 8000
+
+# Optional: adjust CORS and rate limits (dev)
+export MDM_CORS_ORIGINS=http://localhost:3000
+export MDM_RATE_LIMIT_RPM=120
+export MDM_RATE_LIMIT_WINDOW_S=60
+```
+
+Call the API with API key:
+
+```bash
+curl -s -X POST http://localhost:8000/api/v2/diagnose \
+  -H 'Content-Type: application/json' \
+  -H 'X-API-Key: devkey' \
+  -d '{"data": {"Fever":8, "Cough":6}}'
+```
+
+Enable OIDC (production-ready path):
+
+```bash
+export MDM_AUTH_MODE=oidc
+export OIDC_ISSUER=https://your-issuer/      # ends with /
+export OIDC_AUDIENCE=your-api-audience
+uvicorn medical_diagnosis_model.backend.app:app --reload --port 8000
+```
+
+Call with bearer token (obtained from your IdP):
+
+```bash
+curl -s -X POST http://localhost:8000/api/v2/diagnose \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -d '{"data": {"Fever":8, "Cough":6}}'
+```
+
+Notes:
+- API key mode is for dev-only; secrets must not be shipped to browsers. Use server-side calls.
+- OIDC mode verifies RS256 JWTs using JWKS (issuer/audience); scopes can gate endpoints (e.g., `write:export`).
+
 ## Medical Disclaimer
 
 This system is for educational purposes only. It should NOT be used as a substitute for professional medical advice. Always consult qualified healthcare providers for medical diagnosis and treatment.
