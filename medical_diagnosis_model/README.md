@@ -144,6 +144,7 @@ curl -s -X POST http://localhost:8000/api/v2/diagnose \
 ```
 
 Notes:
+
 - API key mode is for dev-only; secrets must not be shipped to browsers. Use server-side calls.
 - OIDC mode verifies RS256 JWTs using JWKS (issuer/audience); scopes can gate endpoints (e.g., `write:export`).
 
