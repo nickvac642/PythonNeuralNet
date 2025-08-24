@@ -29,6 +29,8 @@ from pathlib import Path
 from typing import Optional
 
 import requests
+from rich.console import Console
+from rich.progress import Progress, SpinnerColumn, TextColumn
 
 
 ROOT = Path(__file__).resolve().parents[2]  # repo root
@@ -215,6 +217,7 @@ def cmd_adaptive(args: argparse.Namespace) -> None:
 
 
 def cmd_suite(args: argparse.Namespace) -> None:
+    console = Console()
     statuses = {
         "data": None,
         "tests": None,
@@ -231,18 +234,35 @@ def cmd_suite(args: argparse.Namespace) -> None:
         except SystemExit:
             statuses[key] = False
 
-    # Always run data + tests
-    _safe(cmd_data, "data")
-    _safe(cmd_tests, "tests")
-    # Optionally run API-related checks
+    tasks = [
+        ("data", cmd_data),
+        ("tests", cmd_tests),
+    ]
     if args.with_api:
-        _safe(cmd_api, "api")
+        tasks.append(("api", cmd_api))
     if args.with_export:
-        _safe(cmd_export, "export")
+        tasks.append(("export", cmd_export))
     if args.with_rate:
-        _safe(cmd_rate, "rate")
+        tasks.append(("rate", cmd_rate))
     if args.with_adaptive:
-        _safe(cmd_adaptive, "adaptive")
+        tasks.append(("adaptive", cmd_adaptive))
+
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[bold blue]{task.description}"),
+        TextColumn("[dim]{task.fields[status]}"),
+        console=console,
+        transient=False,
+    ) as progress:
+        task_ids = {}
+        for name, _ in tasks:
+            task_ids[name] = progress.add_task(f"{name}", status="queued")
+        for name, fn in tasks:
+            progress.update(task_ids[name], status="running")
+            _safe(fn, name)
+            final = "ok" if statuses[name] else "fail"
+            color = "green" if statuses[name] else "red"
+            progress.update(task_ids[name], status=f"[{color}]{final}")
 
     # Optional JSON report
     if getattr(args, "report_json", None):
@@ -260,7 +280,7 @@ def cmd_suite(args: argparse.Namespace) -> None:
         out_path = Path(args.report_json)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
-        print(f"Wrote sanity report to {out_path}")
+        console.print(f"[dim]Wrote sanity report to {out_path}")
 
     # Exit non-zero if any selected check failed
     failures = [k for k, v in statuses.items() if v is False]
