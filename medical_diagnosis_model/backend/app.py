@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Header, HTTPException, Request
+from fastapi import FastAPI, Header, HTTPException, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import time
@@ -15,6 +15,7 @@ for p in (REPO_ROOT, MODEL_ROOT):
 
 from medical_diagnosis_model.versions.v2.medical_neural_network_v2 import ClinicalReasoningNetwork
 from medical_diagnosis_model.pdf_exporter import PDFExporter
+from medical_diagnosis_model.backend.security.jwt_dep import verify_bearer
 
 
 app = FastAPI(title="Medical Diagnosis API", version="0.1.0")
@@ -97,8 +98,10 @@ def _auth_check(x_api_key: str | None):
 
 
 @app.post("/api/v2/diagnose")
-def diagnose(payload: Symptoms, x_api_key: str | None = Header(default=None)):
-    _auth_check(x_api_key)
+def diagnose(payload: Symptoms, x_api_key: str | None = Header(default=None), claims: dict = Depends(verify_bearer)):
+    # If not in OIDC mode, fall back to API key header
+    if os.environ.get("MDM_AUTH_MODE", "api_key").lower() != "oidc":
+        _auth_check(x_api_key)
     if model.network is None:
         _ensure_model_loaded()
     results = model.diagnose_with_reasoning(payload.data)
@@ -112,8 +115,13 @@ class ExportRequest(BaseModel):
 
 
 @app.post("/api/v2/export")
-def export_report(req: ExportRequest, x_api_key: str | None = Header(default=None)):
-    _auth_check(x_api_key)
+def export_report(req: ExportRequest, x_api_key: str | None = Header(default=None), claims: dict = Depends(verify_bearer)):
+    if os.environ.get("MDM_AUTH_MODE", "api_key").lower() == "oidc":
+        scopes = (claims.get("scope") or "") if isinstance(claims, dict) else ""
+        if "write:export" not in scopes.split():
+            raise HTTPException(status_code=403, detail="Forbidden")
+    else:
+        _auth_check(x_api_key)
     patient_info = {"patient_id": req.patient_id or "anonymous"}
     path = exporter.export_diagnosis_to_pdf(patient_info, req.symptoms, req.results)
     return {"path": path}
