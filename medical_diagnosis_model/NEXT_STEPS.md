@@ -342,14 +342,14 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 - [x] Package v2 model as a module with a simple `predict(symptoms_dict)` façade; warm‑load on app start
 - [x] FastAPI app with `/diagnose` and `/export` (text/PDF export); OpenAPI docs accessible
 - [x] Config files (YAML/ENV): model path, calibration T, quick‑train flag
-- [ ] Add CORS for local dev (http://localhost:3000)
-- [ ] Basic auth (API key or JWT) for dev; request logging and rate limiting
+- [x] Add CORS for local dev (http://localhost:3000)
+- [x] Basic auth (API key or JWT) for dev; request logging and rate limiting
 
 - Acceptance criteria:
   - [x] `/api/v2/diagnose` returns v2 payload in local runs and TestClient
   - [x] `/api/v2/export` returns a file path; artifact saved under `exports/`
-  - [ ] CORS enabled for dev origin; requests succeed from browser
-  - [ ] Auth key/JWT check in dev; basic rate limiting in place
+  - [x] CORS enabled for dev origin; requests succeed from browser
+  - [x] Auth key/JWT check in dev; basic rate limiting in place
 
 ### Frontend tasks (phase 1)
 
