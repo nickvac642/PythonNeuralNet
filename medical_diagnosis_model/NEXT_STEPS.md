@@ -389,6 +389,54 @@ Adaptive mode (alpha):
     - Incident response runbook in `docs/incident_runbook.md`; exercise performed at least once.
     - Scheduled purge verification job runs and logs results; report stored in `reports/purge_checks/`.
 
+#### Auth: OAuth2/OIDC + JWT (production)
+
+- Identity & flow
+  - Choose provider (Auth0/Okta/Cognito/Keycloak). Use OIDC Authorization Code + PKCE for browser logins; Client Credentials for service‑to‑service.
+  - Prefer BFF pattern: frontend calls a server route that exchanges code → tokens and sets httpOnly, Secure, SameSite=strict session cookie; tokens never stored in browser.
+
+- Token model
+  - Access tokens 5–15 min TTL; refresh tokens with rotation + reuse detection.
+  - Claims: `sub`, `aud`, `iss`, `exp`, `iat`, `scope`/roles; optional tenant/org.
+  - Validate via JWKS (`/.well-known/jwks.json`); support key rotation using `kid`.
+
+- FastAPI protection
+  - Add Bearer dependency that caches JWKS, verifies signature and `iss`/`aud`/`exp`, and extracts user/roles from claims.
+  - Apply to routers/endpoints; return 401 (unauthenticated) / 403 (forbidden) appropriately.
+
+- Authorization
+  - Define RBAC scopes (e.g., `read:diagnosis`, `write:export`, `admin:*`).
+  - Enforce at route level and within business logic for resource ownership.
+
+- App/infra hardening
+  - Strict redirect URI allowlist; `state` + PKCE; HTTPS only; CORS locked to prod domains.
+  - Secrets in secret manager; structured audit logs with `sub`/`jti`; per‑IP and per‑subject rate limiting.
+  - Token revocation list (store `jti`) for logout/compromise handling.
+
+- Lifecycle & ops
+  - Session idle and absolute timeouts; logout clears session and revokes refresh.
+  - Metrics/alerts on auth failures, token errors, rate‑limit hits.
+  - Runbooks for key rotation, incident response, and compromised credentials.
+
+- Testing & CI
+  - Mock provider for unit tests; E2E against a dev tenant.
+  - Negative tests: expired token, wrong `aud`/`iss`, revoked `jti`, missing scopes.
+  - CI secrets stored in GitHub Actions secrets; no tokens in logs.
+
+- Suggested implementation order
+  1. Pick provider and create dev tenant/app; set `OIDC_ISSUER`, `OIDC_AUDIENCE`.
+  2. Implement JWKS validation dependency and scope checks in FastAPI behind a feature flag.
+  3. Add Next.js BFF login/callback routes using Authorization Code + PKCE; issue server session cookie.
+  4. Gate endpoints by scopes; add role mapping and ownership checks.
+  5. Add refresh rotation, logout, revocation list; structured audit logs.
+  6. E2E tests (happy path + negatives), CI secrets, and a staging rollout.
+
+- Acceptance criteria
+  - `backend/security/jwt_dep.py` with JWKS caching and verification; unit tests for `iss`/`aud`/`exp` and invalid `kid`.
+  - Protected routes use dependency with scope checks; 401/403 paths covered by tests.
+  - Next.js server routes implement code exchange with PKCE and set httpOnly cookies; tokens not accessible to JS.
+  - Staging environment configured with provider; E2E passes; rollback plan documented.
+
 <a id="deployment"></a>
 
 ### Deployment
