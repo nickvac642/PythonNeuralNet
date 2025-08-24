@@ -1,0 +1,30 @@
+[
+  {
+    "case": "Resp_FluLike",
+    "status": 200,
+    "primary": "Viral Upper Respiratory Infection",
+    "icd_10": "J06.9",
+    "confidence": 0.16592135380801673
+  },
+  {
+    "case": "Resp_StrepLike",
+    "status": 200,
+    "primary": "Viral Upper Respiratory Infection",
+    "icd_10": "J06.9",
+    "confidence": 0.16592135380801673
+  },
+  {
+    "case": "Resp_PneumoniaLike",
+    "status": 200,
+    "primary": "Viral Upper Respiratory Infection",
+    "icd_10": "J06.9",
+    "confidence": 0.16592135380801673
+  },
+  {
+    "case": "GU_UTI",
+    "status": 200,
+    "primary": "Urinary Tract Infection",
+    "icd_10": "N39.0",
+    "confidence": 0.9999999998425868
+  }
+]

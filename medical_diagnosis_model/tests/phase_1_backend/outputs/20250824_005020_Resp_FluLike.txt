@@ -1,0 +1,147 @@
+{
+  "symptoms": {
+    "Fever": 8,
+    "Cough": 7,
+    "Fatigue": 6,
+    "Runny Nose": 5,
+    "Sore Throat": 4,
+    "Headache": 5,
+    "Muscle Pain": 6
+  },
+  "response": {
+    "syndrome": "Respiratory Febrile",
+    "severity_assessment": "MODERATE",
+    "primary_diagnosis": {
+      "disease_id": 1,
+      "name": "Influenza-like Illness",
+      "medical_name": "ILI (Influenza-like Illness)",
+      "icd_10": "J11.1",
+      "confidence": 0.7078957764589175,
+      "diagnostic_certainty": "PRESUMPTIVE",
+      "description": "Clinical syndrome consistent with influenza but not laboratory confirmed"
+    },
+    "clinical_reasoning": {
+      "syndrome_identified": "Respiratory Febrile",
+      "key_findings": [
+        {
+          "symptom": "Fever",
+          "significance": "Common in this condition",
+          "frequency": "90% of cases"
+        },
+        {
+          "symptom": "Cough",
+          "significance": "Common in this condition",
+          "frequency": "85% of cases"
+        },
+        {
+          "symptom": "Fatigue",
+          "significance": "Common in this condition",
+          "frequency": "95% of cases"
+        },
+        {
+          "symptom": "Headache",
+          "significance": "Common in this condition",
+          "frequency": "80% of cases"
+        },
+        {
+          "symptom": "Muscle Pain",
+          "significance": "Common in this condition",
+          "frequency": "85% of cases"
+        }
+      ],
+      "supporting_features": [
+        {
+          "symptom": "Sore Throat",
+          "significance": "Sometimes seen",
+          "frequency": "60% of cases"
+        }
+      ],
+      "inconsistent_features": [
+        {
+          "symptom": "Runny Nose",
+          "significance": "Not typical for this diagnosis"
+        }
+      ]
+    },
+    "differential_diagnosis": [
+      {
+        "disease": "Influenza-like Illness",
+        "probability": 0.7078957764589175,
+        "icd_10": "J11.1",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Fatigue",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "Viral Upper Respiratory Infection",
+        "probability": 0.058107623836494024,
+        "icd_10": "J06.9",
+        "diagnostic_certainty": "CLINICAL",
+        "key_discriminating_features": [
+          "Runny Nose",
+          "Nasal Congestion",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "COVID-19-like Illness",
+        "probability": 0.058107623836494024,
+        "icd_10": "U07.2",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Fatigue"
+        ]
+      },
+      {
+        "disease": "Pneumonia Syndrome",
+        "probability": 0.058107623836494024,
+        "icd_10": "J18.9",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Shortness of Breath"
+        ]
+      },
+      {
+        "disease": "Streptococcal Pharyngitis",
+        "probability": 0.058107623836494024,
+        "icd_10": "J02.0",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Sore Throat",
+          "Fever",
+          "Swelling"
+        ]
+      }
+    ],
+    "required_tests": [
+      "Influenza A/B antigen or PCR for confirmation"
+    ],
+    "supportive_tests": [
+      "CBC",
+      "CRP if pneumonia suspected"
+    ],
+    "clinical_pearls": [
+      "Abrupt onset is characteristic",
+      "Myalgia more prominent than with common cold",
+      "Consider antiviral if <48 hours of symptoms"
+    ],
+    "red_flags": [
+      "Persistent fever"
+    ],
+    "recommendations": [
+      "Consider testing to confirm: Influenza A/B antigen or PCR for confirmation",
+      "Medical evaluation within 24-48 hours",
+      "Consider influenza testing if within 48 hours of onset",
+      "Antiviral therapy most effective if started early",
+      "Monitor for secondary bacterial pneumonia",
+      "Clinical note: Abrupt onset is characteristic"
+    ]
+  }
+}

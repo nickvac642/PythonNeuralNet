@@ -1,0 +1,130 @@
+{
+  "symptoms": {
+    "Sore Throat": 8,
+    "Fever": 7,
+    "Headache": 5,
+    "Cough": 0
+  },
+  "response": {
+    "syndrome": "Respiratory Febrile",
+    "severity_assessment": "MODERATE",
+    "primary_diagnosis": {
+      "disease_id": 0,
+      "name": "Viral Upper Respiratory Infection",
+      "medical_name": "Viral URI",
+      "icd_10": "J06.9",
+      "confidence": 0.16592135380801673,
+      "diagnostic_certainty": "CLINICAL",
+      "description": "Clinical syndrome of upper respiratory symptoms likely viral in origin"
+    },
+    "clinical_reasoning": {
+      "syndrome_identified": "Respiratory Febrile",
+      "key_findings": [
+        {
+          "symptom": "Cough",
+          "significance": "Common in this condition",
+          "frequency": "75% of cases"
+        }
+      ],
+      "supporting_features": [
+        {
+          "symptom": "Sore Throat",
+          "significance": "Sometimes seen",
+          "frequency": "70% of cases"
+        },
+        {
+          "symptom": "Fever",
+          "significance": "Sometimes seen",
+          "frequency": "30% of cases"
+        },
+        {
+          "symptom": "Headache",
+          "significance": "Sometimes seen",
+          "frequency": "50% of cases"
+        }
+      ],
+      "inconsistent_features": [
+        {
+          "symptom": "Runny Nose (absent)",
+          "significance": "Expected in 85% of cases"
+        }
+      ]
+    },
+    "differential_diagnosis": [
+      {
+        "disease": "Viral Upper Respiratory Infection",
+        "probability": 0.16592135380801673,
+        "icd_10": "J06.9",
+        "diagnostic_certainty": "CLINICAL",
+        "key_discriminating_features": [
+          "Runny Nose",
+          "Nasal Congestion",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "Influenza-like Illness",
+        "probability": 0.16592135380801673,
+        "icd_10": "J11.1",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Fatigue",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "COVID-19-like Illness",
+        "probability": 0.16592135380801673,
+        "icd_10": "U07.2",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Fatigue"
+        ]
+      },
+      {
+        "disease": "Pneumonia Syndrome",
+        "probability": 0.16592135380801673,
+        "icd_10": "J18.9",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Shortness of Breath"
+        ]
+      },
+      {
+        "disease": "Streptococcal Pharyngitis",
+        "probability": 0.16592135380801673,
+        "icd_10": "J02.0",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Sore Throat",
+          "Fever",
+          "Swelling"
+        ]
+      }
+    ],
+    "required_tests": [],
+    "supportive_tests": [
+      "Respiratory viral panel (if severe)"
+    ],
+    "clinical_pearls": [
+      "Most common respiratory diagnosis",
+      "Cough may persist 2-3 weeks",
+      "Antibiotics not indicated"
+    ],
+    "red_flags": [
+      "High fever >103\u00b0F"
+    ],
+    "recommendations": [
+      "Medical evaluation within 24-48 hours",
+      "Supportive care: rest, fluids, symptom management",
+      "Antibiotics not indicated for viral illness",
+      "Return if symptoms worsen or persist >10 days",
+      "Clinical note: Most common respiratory diagnosis"
+    ]
+  }
+}

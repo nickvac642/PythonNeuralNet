@@ -1,0 +1,59 @@
+Interview Prep – Medical Diagnosis Project (v2)
+
+1) 60-second opener (say it as a story)
+“I started with a tiny neural net (fixed multi-class output and prediction bugs, added early stopping), then grew it into a clinically sensible diagnosis system. v2 makes ‘syndrome-first’ calls and only steps down to specific diseases with confirmatory tests. I added clinical rules (e.g., Centor), red flags, and probability calibration; organized the repo into a reusable foundational brain plus a versioned medical app; shipped a FastAPI endpoint; and defined governance/acceptance criteria so it can evolve safely.”
+
+2) Fun problem options (pick 1–2)
+A) Clinical feedback → engineering
+- Problem: “Don’t jump to Influenza without a test.”
+- What I did: Implemented syndrome-first logic, diagnostic certainty levels (Clinical/Presumptive/Confirmatory), Centor-style rules, and downgrade-to-syndrome when tests are missing.
+- Impact: Safer differentials, clearer test prompts, fewer inappropriate specific diagnoses.
+
+B) Modularization at scale
+- Problem: Drift and confusion from duplicate core NN code.
+- What I did: Centralized foundational_brain/NeuralNet.py, updated v1/v2 imports, improved PYTHONPATH via run.py, removed duplicate.
+- Impact: Clean reuse, easier versioning, simpler demos.
+
+C) Calibration clarity
+- Problem: Overconfident probabilities.
+- What I did: Temperature scaling on a held-out split, with a plan for reliability diagrams and ECE.
+- Impact: More honest confidence reporting.
+
+3) Exactly what I personally did (be explicit)
+- Fixed core NN issues: multi-class output handling, predict, early stopping, input validation.
+- Designed/implemented v2 clinical reasoning: rules, certainty levels, red flags, recommendations.
+- Wrote medical_diagnosis_model/run.py dynamic runner and backend/app.py FastAPI endpoint.
+- Created config scaffolds (configs/*.yaml) and governance/acceptance criteria in NEXT_STEPS.md.
+- Repo hygiene: removed duplicate NeuralNet.py, standardized model artifact path (models/enhanced_medical_model.json), updated READMEs.
+
+4) Deep-dive topics if they probe
+- Softmax + cross-entropy vs sigmoid + MSE; gradient and behavior differences.
+- Temperature scaling math and why we calibrate on a held-out set.
+- Data leakage risks and patient-/time-based splitting.
+- Reliability diagrams/ECE; subgroup calibration and drift checks.
+- Rule execution without overriding probabilities; “need more info” thresholding.
+- PHI-safe ingestion, purge, DUA, incident runbook; why these matter.
+
+5) What’s next (you know your gaps)
+- Add metrics suite (AUROC/AUPRC/F1/confusion) + reliability diagrams/ECE.
+- Implement patient/time-based splits and class imbalance handling.
+- Minimal pytest for rules/pipeline; GitHub Actions CI.
+- Optional RAG PoC with curated sources and citation governance.
+
+6) How to demo quickly (commands)
+- API (from medical_diagnosis_model/):
+  uvicorn backend.app:app --reload --port 8000
+- Test request:
+  curl -X POST http://localhost:8000/api/v2/diagnose     -H 'Content-Type: application/json'     -d '{data: {Fever:8, Fatigue:7, Cough:6}}'
+- Runner menu:
+  python run.py
+
+7) Behavioral anchors
+- Be honest about what’s implemented vs. planned (NEXT_STEPS has acceptance criteria and governance).
+- Speak to trade-offs (synthetic data first; plan for splits/calibration/drift).
+- Emphasize human-in-the-loop and safety rails.
+
+8) Closing line
+“This was fun because it bridges medical reasoning with practical ML engineering. I turned qualitative clinical feedback into rules, certainty, and calibration, packaged it with clear run paths and governance, and set it up to scale with metrics, splits, and CI.”
+
+(End)

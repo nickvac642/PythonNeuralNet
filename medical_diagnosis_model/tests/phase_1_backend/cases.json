@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Resp_FluLike",
+    "symptoms": {"Fever": 8, "Cough": 7, "Fatigue": 6, "Runny Nose": 5, "Sore Throat": 4, "Headache": 5, "Muscle Pain": 6},
+    "expected_primary": "Influenza-like Illness"
+  },
+  {
+    "name": "Resp_StrepLike",
+    "symptoms": {"Sore Throat": 8, "Fever": 7, "Headache": 5, "Cough": 0},
+    "expected_primary": "Viral Upper Respiratory Infection"
+  },
+  {
+    "name": "Resp_PneumoniaLike",
+    "symptoms": {"Fever": 8, "Cough": 8, "Shortness of Breath": 7, "Chest Pain": 5},
+    "expected_primary": "Pneumonia Syndrome"
+  },
+  {
+    "name": "GU_UTI",
+    "symptoms": {"Painful Urination": 9, "Frequent Urination": 8, "Fever": 4},
+    "expected_primary": "Urinary Tract Infection"
+  },
+  {
+    "name": "COVID_like",
+    "symptoms": {"Fever": 7, "Cough": 6, "Fatigue": 6, "Shortness of Breath": 5, "Blurred Vision": 0, "Nausea": 3, "Headache": 5, "Muscle Pain": 5},
+    "expected_primary": "COVID-19-like Illness"
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "symptoms": {
+    "Fever": 7,
+    "Cough": 6,
+    "Fatigue": 6,
+    "Shortness of Breath": 5,
+    "Blurred Vision": 0,
+    "Nausea": 3,
+    "Headache": 5,
+    "Muscle Pain": 5
+  },
+  "response": {
+    "syndrome": "Respiratory Febrile",
+    "severity_assessment": "MODERATE",
+    "primary_diagnosis": {
+      "disease_id": 2,
+      "name": "COVID-19-like Illness",
+      "medical_name": "Suspected COVID-19",
+      "icd_10": "U07.2",
+      "confidence": 0.30686565509161,
+      "diagnostic_certainty": "CONFIRMATORY",
+      "description": "Clinical syndrome consistent with COVID-19 pending confirmation"
+    },
+    "clinical_reasoning": {
+      "syndrome_identified": "Respiratory Febrile",
+      "key_findings": [
+        {
+          "symptom": "Fever",
+          "significance": "Common in this condition",
+          "frequency": "75% of cases"
+        },
+        {
+          "symptom": "Cough",
+          "significance": "Common in this condition",
+          "frequency": "80% of cases"
+        },
+        {
+          "symptom": "Fatigue",
+          "significance": "Common in this condition",
+          "frequency": "85% of cases"
+        }
+      ],
+      "supporting_features": [
+        {
+          "symptom": "Shortness of Breath",
+          "significance": "Sometimes seen",
+          "frequency": "40% of cases"
+        },
+        {
+          "symptom": "Blurred Vision",
+          "significance": "Sometimes seen",
+          "frequency": "60% of cases"
+        },
+        {
+          "symptom": "Headache",
+          "significance": "Sometimes seen",
+          "frequency": "65% of cases"
+        },
+        {
+          "symptom": "Muscle Pain",
+          "significance": "Sometimes seen",
+          "frequency": "50% of cases"
+        }
+      ],
+      "inconsistent_features": [
+        {
+          "symptom": "Nausea",
+          "significance": "Not typical for this diagnosis"
+        }
+      ]
+    },
+    "differential_diagnosis": [
+      {
+        "disease": "COVID-19-like Illness",
+        "probability": 0.30686565509161,
+        "icd_10": "U07.2",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Fatigue"
+        ]
+      },
+      {
+        "disease": "Viral Upper Respiratory Infection",
+        "probability": 0.13788362692546563,
+        "icd_10": "J06.9",
+        "diagnostic_certainty": "CLINICAL",
+        "key_discriminating_features": [
+          "Runny Nose",
+          "Nasal Congestion",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "Influenza-like Illness",
+        "probability": 0.13788362692546563,
+        "icd_10": "J11.1",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Fatigue",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "Pneumonia Syndrome",
+        "probability": 0.13788362692546563,
+        "icd_10": "J18.9",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Shortness of Breath"
+        ]
+      },
+      {
+        "disease": "Streptococcal Pharyngitis",
+        "probability": 0.13788362692546563,
+        "icd_10": "J02.0",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Sore Throat",
+          "Fever",
+          "Swelling"
+        ]
+      }
+    ],
+    "required_tests": [
+      "SARS-CoV-2 PCR or antigen test"
+    ],
+    "supportive_tests": [
+      "Chest X-ray",
+      "D-dimer",
+      "CRP",
+      "Ferritin if severe"
+    ],
+    "clinical_pearls": [
+      "Loss of taste/smell highly specific",
+      "GI symptoms more common than flu",
+      "Silent hypoxia possible",
+      "Consider monoclonal antibodies if high risk"
+    ],
+    "red_flags": [],
+    "recommendations": [
+      "Confirmatory testing recommended: SARS-CoV-2 PCR or antigen test",
+      "Medical evaluation within 24-48 hours",
+      "Clinical note: Loss of taste/smell highly specific"
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "symptoms": {
+    "Fever": 8,
+    "Cough": 8,
+    "Shortness of Breath": 7,
+    "Chest Pain": 5
+  },
+  "response": {
+    "syndrome": "Respiratory Febrile",
+    "severity_assessment": "SEVERE - Immediate evaluation needed",
+    "primary_diagnosis": {
+      "disease_id": 5,
+      "name": "Pneumonia Syndrome",
+      "medical_name": "Community-Acquired Pneumonia Syndrome",
+      "icd_10": "J18.9",
+      "confidence": 0.5788135091613005,
+      "diagnostic_certainty": "PRESUMPTIVE",
+      "description": "Clinical syndrome of lung infection requiring imaging confirmation"
+    },
+    "clinical_reasoning": {
+      "syndrome_identified": "Respiratory Febrile",
+      "key_findings": [
+        {
+          "symptom": "Fever",
+          "significance": "Common in this condition",
+          "frequency": "85% of cases"
+        },
+        {
+          "symptom": "Cough",
+          "significance": "Common in this condition",
+          "frequency": "95% of cases"
+        },
+        {
+          "symptom": "Shortness of Breath",
+          "significance": "Common in this condition",
+          "frequency": "75% of cases"
+        }
+      ],
+      "supporting_features": [
+        {
+          "symptom": "Chest Pain",
+          "significance": "Sometimes seen",
+          "frequency": "65% of cases"
+        }
+      ],
+      "inconsistent_features": [
+        {
+          "symptom": "Fatigue (absent)",
+          "significance": "Expected in 90% of cases"
+        }
+      ]
+    },
+    "differential_diagnosis": [
+      {
+        "disease": "Pneumonia Syndrome",
+        "probability": 0.5788135091613005,
+        "icd_10": "J18.9",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Shortness of Breath"
+        ]
+      },
+      {
+        "disease": "COVID-19-like Illness",
+        "probability": 0.10573969162291627,
+        "icd_10": "U07.2",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Fever",
+          "Cough",
+          "Fatigue"
+        ]
+      },
+      {
+        "disease": "Viral Upper Respiratory Infection",
+        "probability": 0.07833389020352231,
+        "icd_10": "J06.9",
+        "diagnostic_certainty": "CLINICAL",
+        "key_discriminating_features": [
+          "Runny Nose",
+          "Nasal Congestion",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "Influenza-like Illness",
+        "probability": 0.07833389020352231,
+        "icd_10": "J11.1",
+        "diagnostic_certainty": "PRESUMPTIVE",
+        "key_discriminating_features": [
+          "Fever",
+          "Fatigue",
+          "Cough"
+        ]
+      },
+      {
+        "disease": "Streptococcal Pharyngitis",
+        "probability": 0.07833389020352231,
+        "icd_10": "J02.0",
+        "diagnostic_certainty": "CONFIRMATORY",
+        "key_discriminating_features": [
+          "Sore Throat",
+          "Fever",
+          "Swelling"
+        ]
+      }
+    ],
+    "required_tests": [
+      "Chest X-ray",
+      "CBC",
+      "BMP"
+    ],
+    "supportive_tests": [
+      "Blood cultures if hospitalized",
+      "Sputum culture",
+      "Procalcitonin"
+    ],
+    "clinical_pearls": [
+      "Diagnosis requires infiltrate on imaging",
+      "Use CURB-65 for severity",
+      "Atypical presentation in elderly"
+    ],
+    "red_flags": [
+      "Significant shortness of breath - requires evaluation"
+    ],
+    "recommendations": [
+      "Consider testing to confirm: Chest X-ray, CBC, BMP",
+      "Immediate medical evaluation recommended",
+      "Clinical note: Diagnosis requires infiltrate on imaging"
+    ]
+  }
+}

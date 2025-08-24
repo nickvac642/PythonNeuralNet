@@ -1,0 +1,47 @@
+[
+  {
+    "case": "Resp_FluLike",
+    "status": 200,
+    "primary": "Influenza-like Illness",
+    "icd_10": "J11.1",
+    "confidence": 0.7078957764589175,
+    "expected_primary": "Influenza-like Illness",
+    "match": true
+  },
+  {
+    "case": "Resp_StrepLike",
+    "status": 200,
+    "primary": "Viral Upper Respiratory Infection",
+    "icd_10": "J06.9",
+    "confidence": 0.16592135380801673,
+    "expected_primary": "Viral Upper Respiratory Infection",
+    "match": true
+  },
+  {
+    "case": "Resp_PneumoniaLike",
+    "status": 200,
+    "primary": "Pneumonia Syndrome",
+    "icd_10": "J18.9",
+    "confidence": 0.5788135091613005,
+    "expected_primary": "Pneumonia Syndrome",
+    "match": true
+  },
+  {
+    "case": "GU_UTI",
+    "status": 200,
+    "primary": "Urinary Tract Infection",
+    "icd_10": "N39.0",
+    "confidence": 0.9999999998419382,
+    "expected_primary": "Urinary Tract Infection",
+    "match": true
+  },
+  {
+    "case": "COVID_like",
+    "status": 200,
+    "primary": "COVID-19-like Illness",
+    "icd_10": "U07.2",
+    "confidence": 0.30686565509161,
+    "expected_primary": "COVID-19-like Illness",
+    "match": true
+  }
+]

@@ -10,7 +10,7 @@ except Exception:
     # Fallback if PYTHONPATH not set
     from NeuralNet import initialize_network, predict
 from medical_symptom_schema import SYMPTOMS, get_symptom_by_name
-from medical_disease_schema_v2 import (
+from .medical_disease_schema_v2 import (
     DISEASES_V2, CLINICAL_RULES, DIAGNOSTIC_CERTAINTY,
     get_syndrome_from_symptoms, get_appropriate_differential,
     requires_testing, get_syndrome_diagnosis, assess_severity
@@ -465,6 +465,14 @@ class ClinicalReasoningNetwork:
     def _apply_clinical_rules(self, nn_outputs, symptom_ids, severity_vector, has_test_results):
         """Apply clinical decision rules to adjust probabilities"""
         adjusted = nn_outputs.copy()
+
+        # Determine syndrome to guide appropriate weighting
+        try:
+            syndrome_ctx = get_syndrome_from_symptoms(symptom_ids)
+            appropriate_names = set(get_appropriate_differential(syndrome_ctx))
+        except Exception:
+            syndrome_ctx = "Undifferentiated"
+            appropriate_names = set()
         
         # Example: Apply Centor criteria for strep
         strep_idx = None
@@ -491,6 +499,107 @@ class ClinicalReasoningNetwork:
                 adjusted[strep_idx] *= 0.5  # Possible
             else:
                 adjusted[strep_idx] *= 1.5  # Likely
+
+        # Generic negative-evidence penalty: if highly expected symptoms are absent, downweight
+        for did, disease in DISEASES_V2.items():
+            patterns = disease.get('symptom_patterns', {})
+            missing_high = 0
+            for sid, pattern in patterns.items():
+                freq = pattern.get('frequency', 0.0)
+                if freq >= 0.85 and sid not in symptom_ids:
+                    missing_high += 1
+            if missing_high > 0:
+                # Exponential penalty per missing key symptom
+                adjusted[did] *= (0.6 ** missing_high)
+
+        # Specific guard: UTI should not rank high without dysuria and frequency/urgency
+        uti_idx = None
+        for did, disease in DISEASES_V2.items():
+            if disease['name'] == "Urinary Tract Infection":
+                uti_idx = did
+                break
+        if uti_idx is not None:
+            # 27: Dysuria, 26: Frequency/Urgency
+            if (26 not in symptom_ids) and (27 not in symptom_ids):
+                adjusted[uti_idx] *= 0.1  # strong downweight when key urinary symptoms absent
+
+        # Soft-gate to diagnoses appropriate to inferred syndrome; allow general viral syndrome everywhere
+        if appropriate_names:
+            allowed = set(appropriate_names)
+            allowed.add("Viral Syndrome")
+            # Convert to log domain, apply additive biases, then re-softmax for stability
+            eps = 1e-12
+            logits = [self._ln(max(p, eps)) for p in adjusted]
+            for did, disease in DISEASES_V2.items():
+                if disease['name'] in allowed:
+                    logits[did] += 2.5  # boost allowed
+                else:
+                    logits[did] -= 2.5  # penalize disallowed
+            
+            # Disease-specific discriminative boosts based on key features
+            # Helper to find disease index by name
+            def _idx(name: str):
+                for _did, _dis in DISEASES_V2.items():
+                    if _dis['name'] == name:
+                        return _did
+                return None
+            
+            uri_idx = _idx("Viral Upper Respiratory Infection")
+            ili_idx = _idx("Influenza-like Illness")
+            covid_idx = _idx("COVID-19-like Illness")
+            pna_idx = _idx("Pneumonia Syndrome")
+            
+            # Symptom severities for readability
+            fever = severity_vector[0] if len(severity_vector) > 0 else 0
+            fatigue = severity_vector[1] if len(severity_vector) > 1 else 0
+            cough = severity_vector[3] if len(severity_vector) > 3 else 0
+            dyspnea = severity_vector[4] if len(severity_vector) > 4 else 0
+            sore_throat = severity_vector[6] if len(severity_vector) > 6 else 0
+            rhinorrhea = severity_vector[7] if len(severity_vector) > 7 else 0
+            congestion = severity_vector[8] if len(severity_vector) > 8 else 0
+            nausea = severity_vector[9] if len(severity_vector) > 9 else 0
+            myalgia = severity_vector[16] if len(severity_vector) > 16 else 0
+            chest_pain = severity_vector[18] if len(severity_vector) > 18 else 0
+            anosmia = severity_vector[28] if len(severity_vector) > 28 else 0
+            
+            # URI: rhinorrhea + congestion + cough, not very high fever, limited myalgia
+            if uri_idx is not None:
+                if rhinorrhea > 0.3 and congestion > 0.3 and cough > 0.2:
+                    logits[uri_idx] += 1.5
+                if fever < 0.6 and myalgia < 0.6:
+                    logits[uri_idx] += 0.5
+            
+            # ILI: high fever + myalgia (+/- severe fatigue)
+            if ili_idx is not None:
+                if fever >= 0.6 and myalgia >= 0.6:
+                    logits[ili_idx] += 2.5
+                if fatigue >= 0.7:
+                    logits[ili_idx] += 0.5
+            
+            # COVID-like: anosmia highly specific; GI + cough supportive; dyspnea moderate
+            if covid_idx is not None:
+                if anosmia >= 0.8:
+                    logits[covid_idx] += 2.5
+                if nausea >= 0.3 and cough > 0.2:
+                    logits[covid_idx] += 0.5
+                if dyspnea >= 0.4:
+                    logits[covid_idx] += 0.3
+            
+            # Pneumonia: dyspnea + chest pain + strong cough
+            if pna_idx is not None:
+                if dyspnea >= 0.5 and chest_pain >= 0.4 and cough >= 0.5:
+                    logits[pna_idx] += 2.0
+            # Stronger UTI penalty if urinary keys absent; zero out if syndrome is respiratory
+            if uti_idx is not None and (26 not in symptom_ids) and (27 not in symptom_ids):
+                if syndrome_ctx and "Respiratory" in syndrome_ctx:
+                    logits[uti_idx] = -1e6
+                else:
+                    logits[uti_idx] -= 8.0
+            # Recompute probabilities via softmax
+            m = max(logits)
+            exps = [pow(2.718281828459045, z - m) for z in logits]
+            s = sum(exps)
+            adjusted = [e / s for e in exps]
         
         # Normalize probabilities
         total = sum(adjusted)

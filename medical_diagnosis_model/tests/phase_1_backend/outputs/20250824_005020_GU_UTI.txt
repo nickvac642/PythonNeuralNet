@@ -1,0 +1,73 @@
+{
+  "symptoms": {
+    "Painful Urination": 9,
+    "Frequent Urination": 8,
+    "Fever": 4
+  },
+  "response": {
+    "syndrome": "Undifferentiated",
+    "severity_assessment": "SEVERE",
+    "primary_diagnosis": {
+      "disease_id": 10,
+      "name": "Urinary Tract Infection",
+      "medical_name": "Uncomplicated Cystitis",
+      "icd_10": "N39.0",
+      "confidence": 0.9999999998419382,
+      "diagnostic_certainty": "PRESUMPTIVE",
+      "description": "Bacterial infection of bladder"
+    },
+    "clinical_reasoning": {
+      "syndrome_identified": "Undifferentiated",
+      "key_findings": [
+        {
+          "symptom": "Painful Urination",
+          "significance": "Common in this condition",
+          "frequency": "95% of cases"
+        },
+        {
+          "symptom": "Frequent Urination",
+          "significance": "Common in this condition",
+          "frequency": "90% of cases"
+        }
+      ],
+      "supporting_features": [
+        {
+          "symptom": "Fever",
+          "significance": "Sometimes seen",
+          "frequency": "20% of cases"
+        }
+      ],
+      "inconsistent_features": []
+    },
+    "differential_diagnosis": [
+      {
+        "disease": "Viral Syndrome",
+        "probability": 1.4841315907911846e-10,
+        "icd_10": "B34.9",
+        "diagnostic_certainty": "CLINICAL",
+        "key_discriminating_features": [
+          "Fatigue"
+        ]
+      }
+    ],
+    "required_tests": [
+      "Urinalysis"
+    ],
+    "supportive_tests": [
+      "Urine culture if recurrent/complicated"
+    ],
+    "clinical_pearls": [
+      "Uncomplicated in healthy women",
+      "3 days of antibiotics sufficient",
+      "Pyridium for symptom relief"
+    ],
+    "red_flags": [
+      "Fever"
+    ],
+    "recommendations": [
+      "Consider testing to confirm: Urinalysis",
+      "Immediate medical evaluation recommended",
+      "Clinical note: Uncomplicated in healthy women"
+    ]
+  }
+}
