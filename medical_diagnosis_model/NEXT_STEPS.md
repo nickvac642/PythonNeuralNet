@@ -66,6 +66,14 @@ Acceptance:
     - `configs/clinical_schema.yaml` exists with symptom/vitals/labs definitions and synonyms.
     - `backend/tools/validate_schema.py` validates ranges, encodings, and uniqueness; CI runs it.
     - Version tag and changelog updated when schema changes.
+  - Dataset scaffolding (v0)
+    - Acceptance criteria:
+      - JSON Schema for clinical cases present at `data/case.schema.json`.
+      - Canonical dictionaries at `data/dictionaries/{symptoms.json,diseases.json}`.
+      - Sample JSONL at `data/samples/cases_v0.1.jsonl` following the schema.
+      - Validator CLI `data/validate_cases.py` passes on samples; `jsonschema` added to requirements.
+      - Command: `python data/validate_cases.py data/samples/cases_v0.1.jsonl` prints `Validation passed: 0 errors`.
+    - References: `data/README.md`, `data/case.schema.json`, `data/dictionaries/`, `data/samples/`, `data/validate_cases.py`.
 - Label policy
   - For each disease: criteria for “confirmed” (ICD‑10 + test) vs “presumptive”; clinician adjudication rules.
   - Acceptance criteria:
@@ -156,6 +164,7 @@ Acceptance:
   - Acceptance criteria:
     - `docs/data_dictionary.md` added; CI workflow runs lint + unit tests on PRs.
     - EIG selector unit tests validate entropy reduction and expected next‑question behavior on toy distributions.
+    - CI executes `python medical_diagnosis_model/data/validate_cases.py` against `data/samples/*.jsonl` and any tracked dataset JSONL files.
 
 <a id="rag"></a>
 
@@ -404,6 +413,13 @@ medical_diagnosis_model/
     api/ (routers: diagnose, export, batch, history)
     models/ (loaders, calibration)
     rag/ (retriever, generator, config)
+  data/
+    case.schema.json
+    dictionaries/
+      symptoms.json
+      diseases.json
+    samples/
+      cases_v*.jsonl
   frontend/
     nextjs/ (pages, components, api client)
   workers/
