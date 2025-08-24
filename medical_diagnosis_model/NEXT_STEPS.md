@@ -349,9 +349,12 @@ medical_diagnosis_model/
 ## First actionable tasks (suggested order)
 
 1. Create `configs/clinical_schema.yaml` with symptom/vitals/labs mappings.
-2. Implement patient‑level splitter and class weighting; add Adam/L2/dropout toggles.
-3. Add metrics module (AUROC/AUPRC/F1/Confusion) and reliability diagram + ECE.
-4. Expand rules: Centor + CURB‑65; add “need more info” if entropy/confidence threshold.
-5. Build batch CLI to score CSV and emit results JSON/CSV.
+2. Write `docs/label_policy.md`; wire gold labels (confirmed vs presumptive) into dataset.
+3. Build PHI‑safe ingestion CLI: de‑identify, normalize units, audit logs → `data/clean/`.
+4. Implement patient‑ and time‑based splits with stratification; add class weighting.
+5. Add training toggles (Adam, L2, dropout) and fixed seeds via `configs/training.yaml`.
+6. Add metrics module (AUROC/AUPRC/F1/Confusion) and reliability diagram + ECE.
+7. Expand rules: Centor + CURB‑65; add “need more info” if entropy/confidence threshold.
+8. Build batch CLI to score CSV and emit results JSON/CSV.
 
 > Tip: keep a changelog and version datasets/runs (seed, config, code commit) for reproducibility.
