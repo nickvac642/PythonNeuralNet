@@ -273,13 +273,13 @@ class InteractiveMedicalDiagnosis:
         # Check if we have a trained model
         try:
             print("Loading trained medical model...")
-            self.network.load_model("trained_medical_model.json")
+            self.network.load_model("models/trained_medical_model.json")
             print("Model loaded successfully!")
         except:
             print("No trained model found. Training new model...")
             print("This may take a few minutes...")
             self.network.train(cases_per_disease=50, verbose=True)
-            self.network.save_model("trained_medical_model.json")
+            self.network.save_model("models/trained_medical_model.json")
         
         while True:
             # Reset symptoms

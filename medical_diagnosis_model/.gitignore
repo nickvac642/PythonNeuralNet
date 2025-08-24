@@ -1,3 +1,11 @@
+# Generated artifacts (do not commit)
+exports/*
+diagnosis_history/*
+tests/phase_1_backend/outputs/*
+
+# v1 demo-trained artifact (generated)
+models/trained_medical_model.json
+
 # Python
 __pycache__/
 *.py[cod]

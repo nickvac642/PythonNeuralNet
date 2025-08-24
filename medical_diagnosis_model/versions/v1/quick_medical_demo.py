@@ -24,11 +24,11 @@ def run_quick_demo():
     # Load or train model
     network = MedicalDiagnosisNetwork(hidden_neurons=15, learning_rate=0.3, epochs=5000)
     try:
-        network.load_model("trained_medical_model.json")
+        network.load_model("models/trained_medical_model.json")
     except:
         print("\nTraining model... (this will take a moment)")
         network.train(cases_per_disease=50, verbose=False)
-        network.save_model("trained_medical_model.json")
+        network.save_model("models/trained_medical_model.json")
     
     # Collect symptoms
     symptom_responses = {}

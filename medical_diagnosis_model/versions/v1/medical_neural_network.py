@@ -321,4 +321,4 @@ if __name__ == "__main__":
     
     # Save the model
     print("\n" + "=" * 70)
-    med_network.save_model("trained_medical_model.json")
+    med_network.save_model("models/trained_medical_model.json")
