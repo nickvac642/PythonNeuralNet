@@ -206,6 +206,48 @@ medical_diagnosis_model/
 - Optional RAG rationale (if knowledge/ and index present)
 - `/export` returns a text report; button in UI to download
 
+## Interview‑aligned capabilities (must‑haves and nice‑to‑haves)
+
+### React/Next.js, Python, TypeScript (Must‑Have)
+
+- Frontend: convert the wizard to Next.js (TypeScript) with strong types for symptoms, results, and RAG citations.
+- API client: typed fetch layer (Zod or OpenAPI client) for `/api/v2/diagnose`, `/export`, `/batch`.
+- Backend: FastAPI with Pydantic models and explicit response schemas; mypy/ruff for typing/linting.
+
+### LLM/AI API integration (Must‑Have)
+
+- Add an optional `rag/generator.py` path using a hosted LLM (or local) for fluent but grounded rationale.
+- Prompt design: templates that include primary dx, key findings, differential, and retrieved passages; enforce citation markers.
+- Guardrails: max tokens, disallow medication/dose advice, output schema validation.
+
+### RAG, prompt design, vector search (Must‑Have)
+
+- Build `rag/index.py` (chunk → embed → store FAISS/Chroma) and `rag/retriever.py` (semantic search with filters).
+- Add retrieval evaluation (precision@k), prompt ablations (different templates), and a small prompt library.
+
+### Docker & Kubernetes on AWS (Must‑Have)
+
+- Dockerfiles for backend and frontend; multi‑stage builds.
+- docker‑compose for dev; k8s manifests or a Helm chart (`infra/k8s/`) with: Deployment, Service, HPA, ConfigMap/Secret, Ingress.
+- AWS path: ECR for images, EKS for cluster, ALB ingress; S3 for exports/models; IAM roles for service accounts.
+
+### CI/CD, API design, distributed systems (Must‑Have)
+
+- CI: GitHub Actions to run lint/tests, build images, push to ECR, deploy to EKS.
+- API: versioning (`/api/v2`), pagination for history, idempotent batch endpoints, health/readiness (`/healthz`, `/readyz`).
+- Distributed: add Redis + Celery/RQ workers; retry strategy, dead‑letter queue; structured logs; Prometheus metrics.
+
+### Data analytics & unstructured pipelines (Nice‑to‑Have)
+
+- Add analytics jobs to compute cohort stats, calibration by subgroup, and drift reports; store in Postgres + dashboards (Grafana/Metabase).
+- Unstructured pipeline: parse uploaded PDFs/notes (local OCR/NLP) into symptom candidates for human review; do not auto‑ingest as truth.
+
+### Secure architecture & privacy‑first (Nice‑to‑Have)
+
+- Secrets: use AWS Secrets Manager/SSM; no secrets in env files; rotate regularly.
+- Network: VPC, private subnets for services, public only for ingress; least‑privilege IAM.
+- App: CORS/CSRF where relevant, JWT/OAuth2; audit logs; encryption at rest/in transit; explicit retention and purge endpoints.
+
 ## Stretch goals
 
 - Uncertainty‑aware UX
