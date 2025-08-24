@@ -212,18 +212,57 @@ def cmd_adaptive(args: argparse.Namespace) -> None:
 
 
 def cmd_suite(args: argparse.Namespace) -> None:
+    statuses = {
+        "data": None,
+        "tests": None,
+        "api": None,
+        "export": None,
+        "rate": None,
+        "adaptive": None,
+    }
+
+    def _safe(run_fn, key):
+        try:
+            run_fn(args)
+            statuses[key] = True
+        except SystemExit:
+            statuses[key] = False
+
     # Always run data + tests
-    cmd_data(args)
-    cmd_tests(args)
+    _safe(cmd_data, "data")
+    _safe(cmd_tests, "tests")
     # Optionally run API-related checks
     if args.with_api:
-        cmd_api(args)
+        _safe(cmd_api, "api")
     if args.with_export:
-        cmd_export(args)
+        _safe(cmd_export, "export")
     if args.with_rate:
-        cmd_rate(args)
+        _safe(cmd_rate, "rate")
     if args.with_adaptive:
-        cmd_adaptive(args)
+        _safe(cmd_adaptive, "adaptive")
+
+    # Optional JSON report
+    if getattr(args, "report_json", None):
+        import json, datetime
+        report = {
+            "timestamp": datetime.datetime.utcnow().isoformat() + "Z",
+            "config": {
+                "with_api": bool(args.with_api),
+                "with_export": bool(args.with_export),
+                "with_rate": bool(args.with_rate),
+                "with_adaptive": bool(args.with_adaptive),
+            },
+            "statuses": statuses,
+        }
+        out_path = Path(args.report_json)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+        print(f"Wrote sanity report to {out_path}")
+
+    # Exit non-zero if any selected check failed
+    failures = [k for k, v in statuses.items() if v is False]
+    if failures:
+        raise SystemExit(1)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -268,6 +307,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp_suite.add_argument("--with-export", action="store_true")
     sp_suite.add_argument("--with-rate", action="store_true")
     sp_suite.add_argument("--with-adaptive", action="store_true")
+    sp_suite.add_argument("--report-json", default=None, help="Write JSON summary to this path")
     sp_suite.set_defaults(func=cmd_suite)
 
     return p
