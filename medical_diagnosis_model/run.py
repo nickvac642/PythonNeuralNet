@@ -40,7 +40,7 @@ DESCRIPTION_HINTS = {
 def ensure_notice():
     if os.environ.get("VIRTUAL_ENV") is None:
         print("[notice] No virtual environment detected. For best results run:\n"
-              "         python3 -m venv venv && source venv/bin/activate && pip install -r ../requirements.txt\n")
+              "         python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt\n")
 
 
 def discover_targets() -> list[dict]:
@@ -139,8 +139,11 @@ def run_target(t: dict):
     print(f"\n→ Running: {' '.join(cmd)}\n")
     try:
         env = os.environ.copy()
-        # Ensure imports can resolve shared modules at model root (e.g., NeuralNet.py)
-        env["PYTHONPATH"] = str(ROOT) + (os.pathsep + env["PYTHONPATH"] if "PYTHONPATH" in env and env["PYTHONPATH"] else "")
+        # Ensure imports can resolve shared modules at model root and foundational_brain
+        repo_root = ROOT.parent
+        paths = [str(ROOT), str(repo_root)]
+        existing = env.get("PYTHONPATH") or ""
+        env["PYTHONPATH"] = os.pathsep.join([p for p in paths + ([existing] if existing else []) if p])
         subprocess.run(cmd, cwd=ROOT, check=False, env=env)
     except KeyboardInterrupt:
         pass

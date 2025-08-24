@@ -3,7 +3,10 @@ Enhanced Medical Diagnosis Neural Network
 Built on the foundation of symptom-disease mappings with medical terminology
 """
 
-from NeuralNet import initialize_network, train_network, forward_user_input, predict
+try:
+    from foundational_brain.NeuralNet import initialize_network, train_network, forward_user_input, predict
+except Exception:
+    from NeuralNet import initialize_network, train_network, forward_user_input, predict
 from medical_symptom_schema import SYMPTOMS, get_symptom_by_name
 from medical_disease_schema import DISEASES, get_differential_diagnosis
 from medical_training_generator import MedicalDataGenerator

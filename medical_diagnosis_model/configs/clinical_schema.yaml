@@ -1,0 +1,27 @@
+version: 0.1.0
+symptoms:
+  # Example scaffold; extend per NEXT_STEPS
+  Fever:
+    id: FEVER
+    synonyms: ["pyrexia", "feverish"]
+    severity_scale: 0-10
+  Cough:
+    id: COUGH
+    synonyms: ["coughing"]
+    severity_scale: 0-10
+vitals:
+  Temperature:
+    unit: celsius
+    normal_range: [36.0, 37.4]
+  HeartRate:
+    unit: bpm
+    normal_range: [60, 100]
+labs: {}
+demographics:
+  age:
+    unit: years
+context:
+  season: [winter, spring, summer, fall]
+encoding:
+  missing: null
+

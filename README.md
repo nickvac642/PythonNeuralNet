@@ -26,9 +26,12 @@ source venv/bin/activate
 # Install dependencies (PDF export for medical model)
 pip install -r requirements.txt
 
-# Run the medical diagnosis model (full demo)
+# Run the medical diagnosis model
 cd medical_diagnosis_model
-python enhanced_medical_system.py
+# Option A: Dynamic menu for all versions/demos
+python run.py
+# Option B: Directly run the current v2 interactive system
+python versions/v2/enhanced_medical_system.py
 
 # Or start from the foundation in your own project
 # cp -r ../foundational_brain ../my_new_model
@@ -213,18 +216,18 @@ PythonNeuralNet/
 │   └── README.md
 │
 ├── medical_diagnosis_model/       # Clinical diagnosis application
-│   ├── NeuralNet.py               # Dependency (foundation)
-│   ├── medical_symptom_schema.py
-│   ├── medical_disease_schema_v2.py
-│   ├── medical_training_generator.py
-│   ├── medical_neural_network_v2.py
-│   ├── enhanced_medical_system.py
+│   ├── versions/
+│   │   ├── v1/                    # Legacy baseline
+│   │   └── v2/                    # Current (clinical reasoning)
 │   ├── diagnosis_history.py
+│   ├── medical_symptom_schema.py
+│   ├── medical_training_generator.py
 │   ├── pdf_exporter.py
 │   ├── models/                    # Saved model artifacts
 │   ├── data/                      # Generated datasets/examples
 │   ├── exports/                   # PDF and output artifacts
 │   ├── diagnosis_history/         # Saved sessions
+│   ├── run.py                     # Dynamic runner (discovers versions)
 │   ├── README.md
 │   └── training_architecture_diagram.md
 │

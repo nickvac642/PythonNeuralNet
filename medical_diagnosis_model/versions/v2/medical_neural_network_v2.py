@@ -3,7 +3,12 @@ Enhanced Medical Neural Network V2
 Implements clinical reasoning, syndrome-level diagnosis, and medical decision rules
 """
 
-from NeuralNet import initialize_network, predict
+try:
+    # Prefer foundational implementation
+    from foundational_brain.NeuralNet import initialize_network, predict
+except Exception:
+    # Fallback if PYTHONPATH not set
+    from NeuralNet import initialize_network, predict
 from medical_symptom_schema import SYMPTOMS, get_symptom_by_name
 from medical_disease_schema_v2 import (
     DISEASES_V2, CLINICAL_RULES, DIAGNOSTIC_CERTAINTY,

@@ -77,16 +77,13 @@ medical_diagnosis_model/
 ## Quick Start
 
 ```bash
-# v2 (current): full interactive system with clinical reasoning
+# Dynamic menu (recommended)
+python run.py
+
+# Or run specific versions directly
 python versions/v2/enhanced_medical_system.py
-
-# v2 demo (non-interactive scenario run)
 python versions/v2/demo_clinical_reasoning.py
-
-# v1 quick demo (7 common symptoms)
 python versions/v1/quick_medical_demo.py
-
-# v1 full interactive flow
 python versions/v1/interactive_medical_diagnosis.py
 ```
 
