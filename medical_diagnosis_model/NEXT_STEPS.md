@@ -8,6 +8,7 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
 - [Immediate (week 1–2)](#immediate)
 - [Foundation upgrades (week 2–3)](#foundation)
 - [Clinical fit (week 3–4)](#clinical)
+- [Adaptive questioning (clinical fit)](#adaptive)
 - [Ops & tooling (parallel)](#ops)
 - [RAG (optional)](#rag)
 - [Full‑stack web app roadmap](#fullstack)
@@ -102,6 +103,7 @@ Acceptance:
     - Temperature scaling recalibrates on validation set; ECE reported overall and by subgroup.
     - Drift check script flags shifts in class priors and key feature distributions.
     - Quarterly subgroup error and calibration review documented with mitigation action items.
+    - For adaptive mode: track median questions to reach decision threshold, and question distribution per syndrome.
 
 <a id="clinical"></a>
 
@@ -119,6 +121,20 @@ Acceptance:
     - Red flags trigger explicit warnings and suggested actions; entropy/confidence threshold routes to “need more info”.
     - Test cases cover missing/contradictory inputs and red‑flag handling.
     - Red‑flag list reviewed and signed off by clinician reviewer; escalation path tested in a tabletop exercise.
+
+<a id="adaptive"></a>
+
+### Adaptive questioning (Akinator‑style)
+
+- Purpose: adaptively select the next most informative question (symptom) while preserving clinical safety, syndrome‑first gating, and negative‑evidence handling.
+- Core method: expected information gain (entropy reduction) over current disease posterior; answers support yes/no/unknown.
+- Stop rules: threshold on top‑1 confidence or maximum question count; downgrade to syndrome if confirmatory test is required.
+- Acceptance criteria:
+  - Selector module exists (e.g., `backend/selector/eig_selector.py`) that scores candidate questions by expected entropy reduction; supports yes/no/unknown and missing data.
+  - Integrated with v2 reasoning: selector respects syndrome gates and red‑flag interrupts; negative evidence penalties remain applied.
+  - Stop rules implemented and configurable; unknown answers do not increase risk (conservative default).
+  - Unit tests cover selector math on synthetic distributions and end‑to‑end adaptive sessions (FastAPI TestClient) reaching stable decisions in ≤ N questions for sample cases.
+  - Cross‑references: API exposes interactive endpoints; frontend has an Adaptive mode behind a feature flag; metrics include question efficiency.
 
 <a id="ops"></a>
 
@@ -139,6 +155,7 @@ Acceptance:
   - Unit tests for rules and pipeline; lightweight CI (lint + tests).
   - Acceptance criteria:
     - `docs/data_dictionary.md` added; CI workflow runs lint + unit tests on PRs.
+    - EIG selector unit tests validate entropy reduction and expected next‑question behavior on toy distributions.
 
 <a id="rag"></a>
 
@@ -220,6 +237,12 @@ Acceptance:
 - `GET  /api/v2/history/:patient_id` → sessions
 - `GET  /api/v2/versions` → available model versions
   - Provide an OpenAPI spec and generate a TypeScript client for the frontend to prevent schema drift.
+
+Interactive (adaptive) endpoints (alpha):
+
+- `POST /api/v2/adaptive/start` → { optional: prior_answers } → { session_id, next_question }
+- `POST /api/v2/adaptive/answer` → { session_id, question, answer: yes|no|unknown, optional: severity } → { next_question or results }
+- `POST /api/v2/adaptive/finish` → { session_id } → final results
 
 ### FastAPI specifics (quick start)
 
@@ -329,6 +352,10 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 - Acceptance criteria:
   - Wizard flow submits to API and renders primary diagnosis, confidence, differential, rules.
   - Export button downloads a text report; basic error states covered.
+
+Adaptive mode (alpha):
+
+- Interactive wizard calls `/api/v2/adaptive/*` to fetch next question and submit answers (Yes/No/Unknown). Feature‑flagged; respects red‑flag interrupts and stop‑on‑confidence.
 
 ### Persistence & workers (phase 2)
 
@@ -440,5 +467,7 @@ medical_diagnosis_model/
 6. Add metrics module (AUROC/AUPRC/F1/Confusion) and reliability diagram + ECE.
 7. Expand rules: Centor + CURB‑65; add “need more info” if entropy/confidence threshold.
 8. Build batch CLI to score CSV and emit results JSON/CSV.
+
+9. Implement adaptive questioning selector stub (`backend/selector/eig_selector.py`) with unit tests on toy distributions; wire a no‑UI CLI demo.
 
 > Tip: keep a changelog and version datasets/runs (seed, config, code commit) for reproducibility.
