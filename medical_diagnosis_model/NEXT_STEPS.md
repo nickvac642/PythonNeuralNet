@@ -4,6 +4,7 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
 
 ## Quick checklist
 
+- [10‑minute Quickstart](#quickstart)
 - [Immediate (week 1–2)](#immediate)
 - [Foundation upgrades (week 2–3)](#foundation)
 - [Clinical fit (week 3–4)](#clinical)
@@ -13,6 +14,7 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
 - [Security & privacy](#security)
 - [Deployment](#deployment)
 - [Stretch goals](#stretch)
+- [Governance checklist](#governance)
 - [First actionable tasks](#first-actionable)
 
 <a id="prompt-examples"></a>
@@ -250,6 +252,48 @@ def diagnose(payload: Symptoms):
     return results
 ```
 
+<a id="quickstart"></a>
+
+### 10‑minute Quickstart
+
+Pre‑flight (macOS/zsh):
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python -m pip install --upgrade pip
+pip install fastapi uvicorn pydantic
+```
+
+Scaffold directories:
+
+```bash
+mkdir -p backend api models rag knowledge knowledge/index configs reports runs exports
+```
+
+Create the API:
+
+- Copy the FastAPI scaffold from “FastAPI specifics (quick start)” into `backend/app.py`.
+
+Run locally:
+
+```bash
+uvicorn backend.app:app --reload --port 8000
+```
+
+Smoke test:
+
+```bash
+curl -X POST http://localhost:8000/api/v2/diagnose \
+  -H 'Content-Type: application/json' \
+  -d '{"data": {"Fever":8, "Fatigue":7, "Cough":6}}'
+```
+
+Next steps:
+
+- Add `configs/clinical_schema.yaml` and `configs/training.yaml` per sections below.
+- If enabling RAG later, populate `knowledge/` and build `knowledge/index/`.
+
 - Run locally: `uvicorn backend.app:app --reload --port 8000`
 - Try a request:
 
@@ -354,6 +398,32 @@ medical_diagnosis_model/
   - Evaluate on time‑separated or out‑of‑site cohorts.
 - Monitoring
   - Drift detection for feature distributions and calibration; periodic re‑train.
+
+<a id="governance"></a>
+
+## Appendix: Governance checklist
+
+- Clinical sign‑off
+  - Label policy changes reviewed and approved by a clinician; changelog records reviewer and date.
+  - Clinical rules/thresholds (Centor, CURB‑65, red flags) changes reviewed; updates logged in `docs/rules_changelog.md`.
+- Data governance
+  - Data Use Agreement (DUA) required for any import/export; tracked in `docs/dua.md`.
+  - PHI purge verification runs on schedule; logs saved under `reports/purge_checks/`.
+  - Incident response runbook maintained in `docs/incident_runbook.md`; tabletop exercise performed at least annually.
+- RAG provenance
+  - Quarterly source/citation review; `knowledge/README.md` lists sources, last review dates, and curators; untrusted sources disallowed.
+- Fairness & calibration
+  - Quarterly subgroup error/ECE review; mitigation actions tracked and assigned owners.
+- Rollout controls
+  - Shadow‑mode/pilot behind feature flags; clinician scoring collected prior to enablement.
+  - Canary deployments with rollback plan; toggles for RAG and new rules.
+- Review cadence (suggested)
+  - Monthly: drift reports for features/class priors; check for distribution shifts.
+  - Quarterly: calibration/fairness review; RAG sources review; purge verification report.
+  - Semi‑annual: incident response tabletop exercise.
+- Ownership & audit
+  - Roles: Clinical reviewer, Data steward, Security lead, ML owner, Ops owner (document in `docs/governance_log.md`).
+  - Artifacts retained: run configs/metrics in `runs/`, schema versions, code commit hashes, decision logs.
 
 <a id="first-actionable"></a>
 
