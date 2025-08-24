@@ -162,9 +162,15 @@ class ClinicalReasoningNetwork:
         for symptom_name, severity in symptoms_dict.items():
             sid, symptom = get_symptom_by_name(symptom_name)
             if sid is not None and sid < self.num_symptoms:
-                symptom_vector[sid] = 1
-                severity_vector[sid] = severity / 10.0
-                symptom_ids.append(sid)
+                try:
+                    sev_norm = float(severity) / 10.0
+                except Exception:
+                    sev_norm = 0.0
+                # Treat zero (or negative) severity as absent
+                if sev_norm > 0.0:
+                    symptom_vector[sid] = 1
+                    severity_vector[sid] = sev_norm
+                    symptom_ids.append(sid)
         
         # Determine syndrome
         syndrome = get_syndrome_from_symptoms(symptom_ids)
@@ -462,6 +468,61 @@ class ClinicalReasoningNetwork:
             self.network.append(rebuilt)
         print(f"Model loaded from {filename}")
     
+    # ===== Training from JSONL (v0.2) =====
+    def train_from_jsonl(self, jsonl_path: str, seed: int = 42, verbose: bool = True):
+        import random
+        random.seed(seed)
+        # Load data
+        rows = []
+        import json
+        with open(jsonl_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                obj = json.loads(line)
+                rows.append(obj)
+        # Build vectors
+        dataset = []
+        for obj in rows:
+            sym = obj.get("symptoms", {})
+            label_name = obj.get("label_name")
+            # Map label to id
+            label_id = None
+            for did, d in DISEASES_V2.items():
+                if d.get("name") == label_name:
+                    label_id = did
+                    break
+            if label_id is None:
+                continue
+            symptom_vector = [0] * self.num_symptoms
+            severity_vector = [0.0] * self.num_symptoms
+            for name, sev in sym.items():
+                sid, _ = get_symptom_by_name(name)
+                if sid is None or sid >= self.num_symptoms:
+                    continue
+                try:
+                    sevn = float(sev) / 10.0
+                except Exception:
+                    sevn = 0.0
+                if sevn > 0.0:
+                    symptom_vector[sid] = 1
+                    severity_vector[sid] = sevn
+            features = symptom_vector + severity_vector + [label_id]
+            dataset.append(features)
+        # Shuffle and split
+        random.shuffle(dataset)
+        split = int(0.8 * len(dataset))
+        train_set = dataset[:split]
+        val_set = dataset[split:]
+        # Init and train
+        self.network = initialize_network(self.num_features, self.hidden_neurons, self.num_diseases)
+        history = self._train_softmax_cross_entropy(self.network, train_set, val_set, verbose=verbose)
+        self.temperature = self._calibrate_temperature(val_set)
+        if verbose:
+            print(f"Calibration: selected T={self.temperature:.2f}")
+        return history
+    
     def _apply_clinical_rules(self, nn_outputs, symptom_ids, severity_vector, has_test_results):
         """Apply clinical decision rules to adjust probabilities"""
         adjusted = nn_outputs.copy()
@@ -572,6 +633,9 @@ class ClinicalReasoningNetwork:
                     logits[uri_idx] += 1.5
                 if fever < 0.6 and myalgia < 0.6:
                     logits[uri_idx] += 0.5
+                # Negative evidence: GU keys absent with strong URI pattern present
+                if uti_idx is not None and (rhinorrhea > 0.3 or congestion > 0.3) and (26 not in symptom_ids) and (27 not in symptom_ids):
+                    logits[uti_idx] -= 6.0
             
             # ILI: high fever + myalgia (+/- severe fatigue)
             if ili_idx is not None:

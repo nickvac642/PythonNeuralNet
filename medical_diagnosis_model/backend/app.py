@@ -34,7 +34,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 model = ClinicalReasoningNetwork(hidden_neurons=25, learning_rate=0.3, epochs=1000)
-MODEL_PATH = os.path.join(MODEL_ROOT, "models", "enhanced_medical_model.json")
+# Prefer v0.2 model if present; allow env override
+DEFAULT_MODEL = os.path.join(MODEL_ROOT, "models", "enhanced_medical_model.json")
+V02_MODEL = os.path.join(MODEL_ROOT, "models", "enhanced_medical_model_v02.json")
+MODEL_PATH = os.environ.get("MDM_MODEL_PATH") or (V02_MODEL if os.path.exists(V02_MODEL) else DEFAULT_MODEL)
 exporter = PDFExporter(export_dir=os.path.join(MODEL_ROOT, "exports"))
 _RATE_LIMIT_STORE: dict[str, dict[str, float | int]] = {}
 _ADAPTIVE_SESSIONS: Dict[str, Dict] = {}
