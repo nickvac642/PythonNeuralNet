@@ -58,11 +58,14 @@ def cmd_tests(args: argparse.Namespace) -> None:
     pyenv.pop("MDM_API_KEY", None)
     pyenv.pop("MDM_AUTH_MODE", None)
     py = sys.executable
-    tests = [
-        str(MODEL_ROOT / "tests" / "test_api_phase1.py"),
-        str(MODEL_ROOT / "tests" / "test_selector.py"),
-    ]
-    _run([py, "-m", "pytest", "-q", *tests], env=pyenv)
+    tests_path = getattr(args, "tests_path", None) or str(MODEL_ROOT / "tests")
+    maxfail = str(getattr(args, "maxfail", 1))
+    kexpr = getattr(args, "tests_k", None)
+    cmd = [py, "-m", "pytest", "-q", f"--maxfail={maxfail}"]
+    if kexpr:
+        cmd += ["-k", kexpr]
+    cmd += [tests_path]
+    _run(cmd, env=pyenv)
 
 
 def _wait_for(url: str, timeout_s: int = 30) -> None:
@@ -281,6 +284,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp_data.set_defaults(func=cmd_data)
 
     sp_tests = sub.add_parser("tests", help="Run unit tests (pytest)")
+    sp_tests.add_argument("--tests-path", default=None, help="Path to tests (default: medical.../tests)")
+    sp_tests.add_argument("--tests-k", default=None, help="pytest -k expression to filter tests")
+    sp_tests.add_argument("--maxfail", type=int, default=1, help="Fail fast after N failures (default: 1)")
     sp_tests.set_defaults(func=cmd_tests)
 
     sp_api = sub.add_parser("api", help="Smoke test /diagnose endpoint")
@@ -308,6 +314,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp_suite.add_argument("--with-rate", action="store_true")
     sp_suite.add_argument("--with-adaptive", action="store_true")
     sp_suite.add_argument("--report-json", default=None, help="Write JSON summary to this path")
+    sp_suite.add_argument("--tests-path", default=None)
+    sp_suite.add_argument("--tests-k", default=None)
+    sp_suite.add_argument("--maxfail", type=int, default=1)
     sp_suite.set_defaults(func=cmd_suite)
 
     return p
