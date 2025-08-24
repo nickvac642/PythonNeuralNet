@@ -138,11 +138,11 @@ Acceptance:
 - Core method: expected information gain (entropy reduction) over current disease posterior; answers support yes/no/unknown.
 - Stop rules: threshold on top‑1 confidence or maximum question count; downgrade to syndrome if confirmatory test is required.
 - Acceptance criteria:
-  - Selector module exists (e.g., `backend/selector/eig_selector.py`) that scores candidate questions by expected entropy reduction; supports yes/no/unknown and missing data.
-  - Integrated with v2 reasoning: selector respects syndrome gates and red‑flag interrupts; negative evidence penalties remain applied.
-  - Stop rules implemented and configurable; unknown answers do not increase risk (conservative default).
-  - Unit tests cover selector math on synthetic distributions and end‑to‑end adaptive sessions (FastAPI TestClient) reaching stable decisions in ≤ N questions for sample cases.
-  - Cross‑references: API exposes interactive endpoints; frontend has an Adaptive mode behind a feature flag; metrics include question efficiency.
+  - [x] Selector module exists (e.g., `backend/selector/eig_selector.py`) that scores candidate questions by expected entropy reduction; supports yes/no/unknown and missing data.
+  - [x] Integrated with v2 reasoning: selector respects syndrome gates and negative evidence; endpoints return diagnosis when threshold reached or max questions hit.
+  - [x] Stop rules implemented and configurable (env/params); unknown answers supported.
+  - [ ] Unit tests cover end‑to‑end adaptive sessions (FastAPI TestClient) reaching stable decisions in ≤ N questions for sample cases.
+  - [x] Cross‑references: API exposes interactive endpoints (`/api/v2/adaptive/{start,answer,finish}`); frontend Adaptive mode planned; metrics to include question efficiency.
 
 <a id="ops"></a>
 

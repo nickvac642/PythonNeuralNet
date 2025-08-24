@@ -8,6 +8,7 @@ Subcommands (composable):
   - api: smoke test /api/v2/diagnose endpoint
   - export: call /api/v2/export using prior diagnose results
   - rate: probe rate limiting behavior
+  - adaptive: exercise /api/v2/adaptive/* flow (start → answer → finish)
   - suite: orchestrate data + tests (+ optional api/export/rate)
 
 Notes:
@@ -182,6 +183,34 @@ def cmd_rate(args: argparse.Namespace) -> None:
         _stop_server(proc)
 
 
+def cmd_adaptive(args: argparse.Namespace) -> None:
+    proc, base = _start_server(args)
+    try:
+        h = {"Content-Type": "application/json"}
+        if args.api_key:
+            h["X-API-Key"] = args.api_key
+        # Start session with a hint
+        start = requests.post(f"{base}/api/v2/adaptive/start", headers=h, json={"prior_answers": {"Fever": 8}}, timeout=10)
+        start.raise_for_status()
+        session = start.json()["session_id"]
+        next_q = start.json().get("next_question")
+        # Answer one question if provided
+        if next_q:
+            qid = next_q["symptom_id"]
+            ans = requests.post(f"{base}/api/v2/adaptive/answer", headers=h, json={
+                "session_id": session,
+                "question": qid,
+                "answer": "no"
+            }, timeout=10)
+            ans.raise_for_status()
+        # Finish session
+        fin = requests.post(f"{base}/api/v2/adaptive/finish", headers=h, json={"session_id": session}, timeout=10)
+        fin.raise_for_status()
+        print("adaptive finished status:", fin.status_code)
+    finally:
+        _stop_server(proc)
+
+
 def cmd_suite(args: argparse.Namespace) -> None:
     # Always run data + tests
     cmd_data(args)
@@ -193,6 +222,8 @@ def cmd_suite(args: argparse.Namespace) -> None:
         cmd_export(args)
     if args.with_rate:
         cmd_rate(args)
+    if args.with_adaptive:
+        cmd_adaptive(args)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -227,11 +258,16 @@ def build_parser() -> argparse.ArgumentParser:
     sp_rate.add_argument("--expect-over-limit", action="store_true")
     sp_rate.set_defaults(func=cmd_rate)
 
+    sp_adapt = sub.add_parser("adaptive", help="Exercise adaptive start/answer/finish flow")
+    add_api_opts(sp_adapt)
+    sp_adapt.set_defaults(func=cmd_adaptive)
+
     sp_suite = sub.add_parser("suite", help="Run a suite: data + tests + optional API checks")
     add_api_opts(sp_suite)
     sp_suite.add_argument("--with-api", action="store_true")
     sp_suite.add_argument("--with-export", action="store_true")
     sp_suite.add_argument("--with-rate", action="store_true")
+    sp_suite.add_argument("--with-adaptive", action="store_true")
     sp_suite.set_defaults(func=cmd_suite)
 
     return p
