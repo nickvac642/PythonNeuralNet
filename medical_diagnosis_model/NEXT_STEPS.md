@@ -69,6 +69,8 @@ Acceptance:
     - `docs/label_policy.md` describes labels and confirmatory evidence mapping.
     - Dataset fields include `diagnostic_certainty` and `evidence` (tests performed, results).
     - Unit tests assert mapping logic from raw cases → gold labels.
+    - Clinician sign-off required for any label policy change; changelog entry records reviewer and date.
+    - PRs modifying label policy carry a "Clinical-Reviewed" label before merge.
 - PHI‑safe ingestion scaffolding
   - De‑identify; normalize units; provenance/audit logging; no raw PHI on disk.
   - Acceptance criteria:
@@ -97,6 +99,7 @@ Acceptance:
     - `backend/metrics/` outputs metrics JSON and plots (confusion, reliability) to `reports/`.
     - Temperature scaling recalibrates on validation set; ECE reported overall and by subgroup.
     - Drift check script flags shifts in class priors and key feature distributions.
+    - Quarterly subgroup error and calibration review documented with mitigation action items.
 
 <a id="clinical"></a>
 
@@ -107,11 +110,13 @@ Acceptance:
   - Acceptance criteria:
     - Unit tests for Centor and CURB‑65 thresholds; seasonality/exposure rules documented and tested.
     - Rules integrated in reasoning step without overriding probabilities unless gated by evidence.
+    - Clinician review and approval required for rule thresholds; changes logged in `docs/rules_changelog.md`.
 - Safety rails
   - Red‑flag escalation list; conservative defaults on missing/conflicting data; “need more info” branch.
   - Acceptance criteria:
     - Red flags trigger explicit warnings and suggested actions; entropy/confidence threshold routes to “need more info”.
     - Test cases cover missing/contradictory inputs and red‑flag handling.
+    - Red‑flag list reviewed and signed off by clinician reviewer; escalation path tested in a tabletop exercise.
 
 <a id="ops"></a>
 
@@ -189,6 +194,7 @@ Acceptance:
   - Acceptance criteria:
     - `knowledge/` populated with curated content and `knowledge/index/` built.
     - Retrieval returns relevant passages for at least 4/5 sample cases; rationale includes citations.
+    - Quarterly citation/source review; `knowledge/README.md` lists sources, review dates, and curators; untrusted sources disallowed.
 
 <a id="fullstack"></a>
 
@@ -296,6 +302,9 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 
   - Acceptance criteria:
     - Auth on protected endpoints; PHI‑safe mode verified; purge endpoint removes records and artifacts.
+    - Data Use Agreement (DUA) checklist required for any data import/export; stored in `docs/dua.md`.
+    - Incident response runbook in `docs/incident_runbook.md`; exercise performed at least once.
+    - Scheduled purge verification job runs and logs results; report stored in `reports/purge_checks/`.
 
 <a id="deployment"></a>
 
@@ -309,6 +318,8 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
   - Acceptance criteria:
     - Local dev via docker‑compose brings up API + frontend; migrations run automatically.
     - CI pipeline builds images and deploys to staging; smoke test hits `/healthz` and `/api/v2/versions`.
+    - Shadow-mode/pilot evaluation enabled behind feature flags; clinician scoring collected before enablement.
+    - Canary deployment with rollback plan documented; feature toggles for RAG and new rules.
 
 ### Suggested directory layout
 
