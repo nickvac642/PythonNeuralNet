@@ -77,3 +77,66 @@ This modular structure allows you to:
 - Reuse the foundational code
 - Develop multiple applications in parallel
 - Easily share specific models without unnecessary files
+
+## Medical Model Directory Map (v2)
+
+```
+medical_diagnosis_model/
+  backend/
+    app.py                 # FastAPI app: /api/v2/diagnose, /export, /adaptive/*
+    security/jwt_dep.py    # OIDC/JWT scaffold (feature-flagged)
+    selector/eig_selector.py # EIG ranking util (math-only)
+  configs/
+    clinical_schema.yaml   # Clinical data mappings (scaffold)
+    training.yaml          # Training/optimizer toggles (scaffold)
+  data/
+    case.schema.json       # JSON Schema for clinical cases
+    dictionaries/          # Canonical symptoms/diseases
+    samples/               # Example JSONL dataset
+    validate_cases.py      # Schema validator CLI
+  tests/
+    test_api_phase1.py     # API TestClient expected primaries
+    test_selector.py       # EIG selector unit test
+    phase_1_backend/       # cURL-based test harness & outputs
+  tools/
+    sanity.py              # Modular sanity CLI (data/tests/api/export/rate/adaptive/suite)
+  versions/
+    v1/, v2/               # Model implementations and demos
+  exports/                 # Generated reports (gitignored)
+  models/                  # Saved models (dev artifacts)
+  diagnosis_history/       # Session logs (gitignored)
+  README.md                # Usage + Auth
+  NEXT_STEPS.md            # Roadmap & acceptance criteria
+```
+
+## Task Map (completed → pending)
+
+- Completed
+  - Data scaffolding: `data/case.schema.json`, `data/dictionaries/*`, `data/samples/*`, `data/validate_cases.py`
+  - Backend phase 1: `/diagnose`, `/export` endpoints; CORS; API key auth; request logging; rate limiting
+  - Security scaffold: OIDC/JWT dependency (`backend/security/jwt_dep.py`) behind `MDM_AUTH_MODE=oidc`
+  - CI: GitHub Actions runs dataset validation and unit tests via sanity CLI
+  - Adaptive (alpha): `/api/v2/adaptive/{start,answer,finish}` + EIG selector; sanity CLI coverage
+
+- Pending (next)
+  - Synthetic generator → emit JSONL to schema (`medical_training_generator.py` refactor)
+  - Golden set (100 curated cases) with rationale/certainty
+  - Data quality tests (sanity rules, leakage, balance) and `DATA_CARD.md`
+  - Metrics & calibration module (AUROC/AUPRC/F1, reliability/ECE)
+  - Batch scoring CLI (`backend/tools/batch`) and outputs
+  - Adaptive end-to-end unit tests (FastAPI TestClient)
+  - RAG PoC (knowledge/, index/, retriever/generator)
+  - Frontend adaptive mode; persistence/workers; deployment
+
+## Quick Testing Commands
+
+```bash
+# From medical_diagnosis_model/
+python tools/sanity.py data
+python tools/sanity.py tests
+python tools/sanity.py api --auto-start --api-key devkey
+python tools/sanity.py export --auto-start --api-key devkey
+python tools/sanity.py rate --auto-start --api-key devkey --count 140 --expect-over-limit
+python tools/sanity.py adaptive --auto-start --api-key devkey
+python tools/sanity.py suite --auto-start --api-key devkey --with-api --with-export --with-rate --with-adaptive
+```
