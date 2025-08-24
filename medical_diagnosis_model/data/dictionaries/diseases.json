@@ -1,0 +1,42 @@
+{
+  "diseases": [
+    {
+      "id": "viral_uri",
+      "name": "Viral upper respiratory infection",
+      "icd10_codes": ["J06.9"],
+      "category": "Respiratory",
+      "syndrome": "UpperRespiratoryInfection",
+      "key_symptoms": ["cough", "rhinorrhea", "nasal_congestion", "sore_throat", "fever"],
+      "typical_duration": "3-10 days"
+    },
+    {
+      "id": "streptococcal_pharyngitis",
+      "name": "Streptococcal pharyngitis",
+      "icd10_codes": ["J02.0"],
+      "category": "Respiratory",
+      "syndrome": "Pharyngitis",
+      "key_symptoms": ["sore_throat", "fever"],
+      "typical_duration": "3-7 days"
+    },
+    {
+      "id": "urinary_tract_infection",
+      "name": "Urinary tract infection",
+      "icd10_codes": ["N39.0"],
+      "category": "Genitourinary",
+      "syndrome": "LowerUTI",
+      "key_symptoms": ["dysuria", "urinary_frequency"],
+      "typical_duration": "3-14 days"
+    },
+    {
+      "id": "pneumonia",
+      "name": "Pneumonia",
+      "icd10_codes": ["J18.9"],
+      "category": "Respiratory",
+      "syndrome": "Pneumonia",
+      "key_symptoms": ["fever", "cough", "dyspnea", "chest_pain"],
+      "typical_duration": "7-21 days"
+    }
+  ]
+}
+
+

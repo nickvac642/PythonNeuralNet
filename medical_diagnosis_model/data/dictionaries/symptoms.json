@@ -1,0 +1,16 @@
+{
+  "symptoms": [
+    {"id": "fever", "name_common": "Fever", "name_medical": "Pyrexia", "icd10_codes": ["R50.9"], "category": "Respiratory", "description": "Elevated body temperature"},
+    {"id": "cough", "name_common": "Cough", "name_medical": "Cough", "icd10_codes": ["R05.9"], "category": "Respiratory", "description": "Cough of any type"},
+    {"id": "sore_throat", "name_common": "Sore throat", "name_medical": "Pharyngitis", "icd10_codes": ["R07.0"], "category": "Respiratory", "description": "Painful throat"},
+    {"id": "rhinorrhea", "name_common": "Runny nose", "name_medical": "Rhinorrhea", "icd10_codes": ["R09.81"], "category": "Respiratory", "description": "Excess nasal discharge"},
+    {"id": "nasal_congestion", "name_common": "Nasal congestion", "name_medical": "Nasal congestion", "icd10_codes": ["R09.81"], "category": "Respiratory", "description": "Blocked nose"},
+    {"id": "dyspnea", "name_common": "Shortness of breath", "name_medical": "Dyspnea", "icd10_codes": ["R06.00"], "category": "Respiratory", "description": "Difficulty breathing"},
+    {"id": "chest_pain", "name_common": "Chest pain", "name_medical": "Chest pain", "icd10_codes": ["R07.9"], "category": "Respiratory", "description": "Chest discomfort/pain"},
+    {"id": "dysuria", "name_common": "Painful urination", "name_medical": "Dysuria", "icd10_codes": ["R30.0"], "category": "Genitourinary", "description": "Burning with urination"},
+    {"id": "urinary_frequency", "name_common": "Urinary frequency", "name_medical": "Frequency of micturition", "icd10_codes": ["R35.0"], "category": "Genitourinary", "description": "Frequent urination"},
+    {"id": "flank_pain", "name_common": "Flank pain", "name_medical": "Flank pain", "icd10_codes": ["R10.9"], "category": "Genitourinary", "description": "Pain in the flank area"}
+  ]
+}
+
+

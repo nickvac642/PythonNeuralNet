@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/clinical_case_v2.json",
+  "title": "Clinical Case v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "meta",
+    "patient",
+    "symptoms",
+    "label"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "const": "v2" },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at", "source", "split"],
+      "properties": {
+        "created_at": { "type": "string", "format": "date-time" },
+        "source": { "type": "string" },
+        "split": { "type": "string", "enum": ["train", "val", "test", "dev"] },
+        "dataset_version": { "type": "string" }
+      }
+    },
+    "patient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["age", "sex"],
+      "properties": {
+        "age": { "type": "integer", "minimum": 0, "maximum": 120 },
+        "sex": { "type": "string", "enum": ["male", "female", "other", "unknown"] }
+      }
+    },
+    "symptoms": {
+      "type": "object",
+      "description": "Map of symptom_id -> {present: bool, severity: 0-3?}",
+      "propertyNames": { "type": "string", "pattern": "^[a-zA-Z0-9_]+$" },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["present"],
+        "properties": {
+          "present": { "type": "boolean" },
+          "severity": { "type": "integer", "minimum": 0, "maximum": 3 }
+        }
+      }
+    },
+    "label": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_diagnosis", "certainty"],
+      "properties": {
+        "primary_diagnosis": { "type": "string" },
+        "certainty": { "type": "string", "enum": ["clinical", "presumptive", "confirmatory"] },
+        "differential": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true,
+          "minItems": 0
+        }
+      }
+    },
+    "rationale": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "red_flags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}
+
+
