@@ -252,8 +252,43 @@ def _select_next_symptom(disease_probs: list[float], asked: set[int]) -> int | N
     return best_symptom
 
 
-def _session_should_stop(probs: list[float], num_questions: int, threshold: float, max_q: int) -> bool:
-    return (max(probs) >= threshold) or (num_questions >= max_q)
+def _has_supporting_evidence(top_disease_id: int, present_ids: list[int]) -> bool:
+    try:
+        disease = DISEASES_V2[top_disease_id]
+    except Exception:
+        return False
+    name = disease.get("name", "")
+    # Hard GU gate: UTI requires at least one urinary key
+    if name == "Urinary Tract Infection":
+        return (26 in present_ids) or (27 in present_ids)
+    # Generic: any high-frequency key symptom present
+    patterns = disease.get("symptom_patterns", {})
+    for sid, pat in patterns.items():
+        if pat.get("frequency", 0.0) >= 0.7 and sid in present_ids:
+            return True
+    return False
+
+
+def _session_should_stop(
+    probs: list[float],
+    num_questions: int,
+    threshold: float,
+    max_q: int,
+    present_ids: list[int],
+    top_disease_id: int,
+) -> bool:
+    # Respect max questions
+    if num_questions >= max_q:
+        return True
+    # Require both probability and minimal supporting evidence
+    if max(probs) >= threshold and _has_supporting_evidence(top_disease_id, present_ids):
+        # Optional minimum questions gate (default 0)
+        try:
+            min_q = int(os.environ.get("MDM_ADAPTIVE_MIN_Q", "0"))
+        except ValueError:
+            min_q = 0
+        return num_questions >= min_q
+    return False
 
 
 def _build_next_question(sid: int | None) -> dict | None:
@@ -318,7 +353,8 @@ def adaptive_answer(req: AdaptiveAnswerRequest, x_api_key: str | None = Header(d
     # Recompute
     sv, sev, present = _answers_to_vectors(sess["answers"]) 
     probs = _compute_adjusted_probs(sv, sev, present)
-    if _session_should_stop(probs, sess["num_q"], sess["threshold"], sess["max_q"]):
+    top_did = max(range(len(probs)), key=lambda i: probs[i]) if probs else 0
+    if _session_should_stop(probs, sess["num_q"], sess["threshold"], sess["max_q"], present, top_did):
         # Build diagnosis using current answers (convert to name: severity 0-10)
         symptom_dict = {}
         for sid_k, info in sess["answers"].items():
