@@ -147,6 +147,30 @@ Notes:
 - API key mode is for dev-only; secrets must not be shipped to browsers. Use server-side calls.
 - OIDC mode verifies RS256 JWTs using JWKS (issuer/audience); scopes can gate endpoints (e.g., `write:export`).
 
+## Sanity CLI (modular)
+
+Run targeted checks:
+
+```bash
+# Validate data
+python tools/sanity.py data
+
+# Run unit tests
+python tools/sanity.py tests
+
+# Smoke test API (auto-starts server with MDM_API_KEY if provided)
+python tools/sanity.py api --auto-start --api-key devkey
+
+# Export end-to-end
+python tools/sanity.py export --auto-start --api-key devkey
+
+# Rate-limit probe (expect some 429s if limit is low)
+python tools/sanity.py rate --auto-start --api-key devkey --count 140 --expect-over-limit
+
+# Full suite (data + tests + API + export + rate)
+python tools/sanity.py suite --auto-start --api-key devkey --with-api --with-export --with-rate
+```
+
 ## Medical Disclaimer
 
 This system is for educational purposes only. It should NOT be used as a substitute for professional medical advice. Always consult qualified healthcare providers for medical diagnosis and treatment.
