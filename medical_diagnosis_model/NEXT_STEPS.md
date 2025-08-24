@@ -6,6 +6,7 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
 
 - Define schema mapping
   - Single source of truth for: symptoms (IDs/labels), vitals (units/ranges), labs (normalization), demographics, context (season/exposure), unknown/NA encoding.
+  - Canonical ontology & synonym map for symptoms; explicit schema versioning and change log.
 - Label policy
   - For each disease: criteria for “confirmed” (ICD‑10 + test) vs “presumptive”; clinician adjudication rules.
 - PHI‑safe ingestion scaffolding
@@ -14,12 +15,12 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
 ## Foundation upgrades (week 2–3)
 
 - Splits & imbalance
-  - Patient‑level train/val/test split (no leakage); stratify; add class weights or weighted sampling.
+  - Patient‑level and time‑based train/val/test split (no leakage); stratify; add class weights or weighted sampling.
 - Training
   - Switch to Adam; add L2 weight decay; optional dropout in hidden layer; expose via config.
 - Metrics & calibration
   - AUROC, AUPRC, F1, Top‑k, confusion per class.
-  - Reliability diagrams + ECE; re‑tune temperature on held‑out set; subgroup calibration.
+  - Reliability diagrams + ECE; re‑tune temperature on held‑out set; subgroup calibration (age/sex/season). Add drift monitors for class priors and feature distributions.
 
 ## Clinical fit (week 3–4)
 
@@ -83,6 +84,7 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
   - Do not change probabilities; RAG only annotates.
   - Show source name/URL/version for each citation; keep `knowledge/README.md` of sources and update cadence.
   - Keep index local; avoid sending PHI to external services.
+  - Sanitize prompts/inputs; enforce citation presence in generated text.
 
 - Minimal evaluation
   - Retrieval precision@k spot‑checks by clinician reviewer.
@@ -108,6 +110,7 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
 - `POST /api/v2/batch` → CSV/JSONL upload → job id → progress → result file
 - `GET  /api/v2/history/:patient_id` → sessions
 - `GET  /api/v2/versions` → available model versions
+  - Provide an OpenAPI spec and generate a TypeScript client for the frontend to prevent schema drift.
 
 ### FastAPI specifics (quick start)
 
@@ -179,9 +182,10 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 
 ### Deployment
 
-- Dockerize backend and frontend; docker‑compose for local
+- Dockerize backend and frontend; docker‑compose for local; persistent volumes for model and embedding index.
 - Deploy to Fly.io/Render/DigitalOcean (simple) or Kubernetes (scaling)
 - CI/CD: lint/tests → build → deploy; environment‑specific configs
+- Database migrations with Alembic; pre‑deploy smoke tests.
 
 ### Suggested directory layout
 
