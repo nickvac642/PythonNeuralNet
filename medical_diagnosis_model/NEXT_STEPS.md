@@ -2,42 +2,91 @@
 
 Use this as a checklist to evolve v2 into a clinically useful, data‑driven system.
 
+## Quick checklist
+
+- [Immediate (week 1–2)](#immediate-week-12)
+- [Foundation upgrades (week 2–3)](#foundation-upgrades-week-23)
+- [Clinical fit (week 3–4)](#clinical-fit-week-34)
+- [Ops & tooling (parallel)](#ops--tooling-parallel)
+- [RAG (optional)](#optional-retrieval-augmented-generation-rag)
+- [Full‑stack web app roadmap](#full‑stack-web-app-conversion-roadmap)
+- [Security & privacy](#security--privacy)
+- [Deployment](#deployment)
+- [Stretch goals](#stretch-goals)
+- [First actionable tasks](#first-actionable-tasks-suggested-order)
+
 ## Immediate (week 1–2)
 
 - Define schema mapping
   - Single source of truth for: symptoms (IDs/labels), vitals (units/ranges), labs (normalization), demographics, context (season/exposure), unknown/NA encoding.
   - Canonical ontology & synonym map for symptoms; explicit schema versioning and change log.
+  - Acceptance criteria:
+    - `configs/clinical_schema.yaml` exists with symptom/vitals/labs definitions and synonyms.
+    - `backend/tools/validate_schema.py` validates ranges, encodings, and uniqueness; CI runs it.
+    - Version tag and changelog updated when schema changes.
 - Label policy
   - For each disease: criteria for “confirmed” (ICD‑10 + test) vs “presumptive”; clinician adjudication rules.
+  - Acceptance criteria:
+    - `docs/label_policy.md` describes labels and confirmatory evidence mapping.
+    - Dataset fields include `diagnostic_certainty` and `evidence` (tests performed, results).
+    - Unit tests assert mapping logic from raw cases → gold labels.
 - PHI‑safe ingestion scaffolding
   - De‑identify; normalize units; provenance/audit logging; no raw PHI on disk.
+  - Acceptance criteria:
+    - `backend/ingest/ingest.py` with de‑id functions and unit normalization.
+    - Audit log written per record; dry‑run mode produces no persistent PHI.
+    - Command: `python -m backend.ingest.ingest --input data/raw.csv --out data/clean/` creates clean artifacts.
 
 ## Foundation upgrades (week 2–3)
 
 - Splits & imbalance
   - Patient‑level and time‑based train/val/test split (no leakage); stratify; add class weights or weighted sampling.
+  - Acceptance criteria:
+    - `backend/data/splitter.py` implements patient/time‑based splits; no leakage tests pass.
+    - CLI: `python -m backend.tools.split --input data/clean/ --out data/splits/` writes CSV lists and a class distribution report.
 - Training
   - Switch to Adam; add L2 weight decay; optional dropout in hidden layer; expose via config.
+  - Acceptance criteria:
+    - Config toggles in `configs/training.yaml` enable Adam/L2/dropout; seed fixed.
+    - Training summary logs include optimizer, regularization, and early stopping status.
 - Metrics & calibration
   - AUROC, AUPRC, F1, Top‑k, confusion per class.
   - Reliability diagrams + ECE; re‑tune temperature on held‑out set; subgroup calibration (age/sex/season). Add drift monitors for class priors and feature distributions.
+  - Acceptance criteria:
+    - `backend/metrics/` outputs metrics JSON and plots (confusion, reliability) to `reports/`.
+    - Temperature scaling recalibrates on validation set; ECE reported overall and by subgroup.
+    - Drift check script flags shifts in class priors and key feature distributions.
 
 ## Clinical fit (week 3–4)
 
 - Rules expansion
   - Centor (with age), CURB‑65, seasonality priors, exposure risks; test‑gating suggestions.
+  - Acceptance criteria:
+    - Unit tests for Centor and CURB‑65 thresholds; seasonality/exposure rules documented and tested.
+    - Rules integrated in reasoning step without overriding probabilities unless gated by evidence.
 - Safety rails
   - Red‑flag escalation list; conservative defaults on missing/conflicting data; “need more info” branch.
+  - Acceptance criteria:
+    - Red flags trigger explicit warnings and suggested actions; entropy/confidence threshold routes to “need more info”.
+    - Test cases cover missing/contradictory inputs and red‑flag handling.
 
 ## Ops & tooling (parallel)
 
 - Experiment tracking & configs
   - YAML configs, fixed seeds, run logs; simple experiment registry.
+  - Acceptance criteria:
+    - Each run saves `configs/*.yaml`, seed, code commit, and metrics in `runs/{timestamp}/`.
+    - A summary index CSV lists runs with key metrics for comparison.
 - Batch CLI
   - Score CSV/JSONL → outputs with predictions, differentials, confidence, flags.
+  - Acceptance criteria:
+    - CLI: `python -m backend.tools.batch --input data/cases.csv --out outputs/` writes per‑row results JSON/CSV.
+    - Exit codes: 0 on success; non‑zero on validation errors; logs include row numbers.
 - Docs & tests
   - Data dictionary (fields, ranges, encodings); update legal/privacy notes.
   - Unit tests for rules and pipeline; lightweight CI (lint + tests).
+  - Acceptance criteria:
+    - `docs/data_dictionary.md` added; CI workflow runs lint + unit tests on PRs.
 
 ### Optional: Retrieval‑Augmented Generation (RAG)
 
@@ -90,6 +139,9 @@ Use this as a checklist to evolve v2 into a clinically useful, data‑driven sys
   - Retrieval precision@k spot‑checks by clinician reviewer.
   - Helpfulness rating of rationale/test suggestions.
   - Guardrails for disallowed content; keep output terse and cited.
+  - Acceptance criteria:
+    - `knowledge/` populated with curated content and `knowledge/index/` built.
+    - Retrieval returns relevant passages for at least 4/5 sample cases; rationale includes citations.
 
 ## Full‑stack Web App (conversion roadmap)
 
@@ -161,6 +213,10 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 3. Config files (YAML/ENV): model path, calibration T, RAG enable, knowledge paths
 4. Basic auth (API key or JWT) for dev; request logging and rate limiting
 
+- Acceptance criteria:
+  - API responds on `/api/v2/diagnose` with v2 payload; OpenAPI docs accessible; CORS works in dev.
+  - Text export endpoint returns a file; config toggles read from ENV/YAML.
+
 ### Frontend tasks (phase 1)
 
 1. Create a Next.js app with a symptom wizard (common + full), severity sliders, red‑flag badges
@@ -168,11 +224,18 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 3. Show RAG rationale + citations (when enabled); button to export report
 4. Minimal history page (local only) until Postgres is wired
 
+- Acceptance criteria:
+  - Wizard flow submits to API and renders primary diagnosis, confidence, differential, rules.
+  - Export button downloads a text report; basic error states covered.
+
 ### Persistence & workers (phase 2)
 
 - Postgres schema: patients, sessions, diagnoses, exports
 - Move PDF export and batch scoring to a worker (Celery/RQ) with Redis; expose `/jobs/:id`
 - Store artifacts in `exports/` (dev) → S3‑compatible object store (prod)
+
+  - Acceptance criteria:
+    - Postgres schema applied; `/jobs/:id` reflects worker progress; artifacts saved and retrievable.
 
 ### Security & privacy
 
@@ -180,12 +243,19 @@ curl -X POST http://localhost:8000/api/v2/diagnose \
 - PHI‑safe mode: omit patient identifiers; encrypt at rest/in transit; audit logs
 - Retention policy for history/exports; admin endpoint to purge
 
+  - Acceptance criteria:
+    - Auth on protected endpoints; PHI‑safe mode verified; purge endpoint removes records and artifacts.
+
 ### Deployment
 
 - Dockerize backend and frontend; docker‑compose for local; persistent volumes for model and embedding index.
 - Deploy to Fly.io/Render/DigitalOcean (simple) or Kubernetes (scaling)
 - CI/CD: lint/tests → build → deploy; environment‑specific configs
 - Database migrations with Alembic; pre‑deploy smoke tests.
+
+  - Acceptance criteria:
+    - Local dev via docker‑compose brings up API + frontend; migrations run automatically.
+    - CI pipeline builds images and deploys to staging; smoke test hits `/healthz` and `/api/v2/versions`.
 
 ### Suggested directory layout
 
@@ -209,48 +279,6 @@ medical_diagnosis_model/
 - `/diagnose` returns current v2 results; frontend wizard submits and renders
 - Optional RAG rationale (if knowledge/ and index present)
 - `/export` returns a text report; button in UI to download
-
-## Interview‑aligned capabilities (must‑haves and nice‑to‑haves)
-
-### React/Next.js, Python, TypeScript (Must‑Have)
-
-- Frontend: convert the wizard to Next.js (TypeScript) with strong types for symptoms, results, and RAG citations.
-- API client: typed fetch layer (Zod or OpenAPI client) for `/api/v2/diagnose`, `/export`, `/batch`.
-- Backend: FastAPI with Pydantic models and explicit response schemas; mypy/ruff for typing/linting.
-
-### LLM/AI API integration (Must‑Have)
-
-- Add an optional `rag/generator.py` path using a hosted LLM (or local) for fluent but grounded rationale.
-- Prompt design: templates that include primary dx, key findings, differential, and retrieved passages; enforce citation markers.
-- Guardrails: max tokens, disallow medication/dose advice, output schema validation.
-
-### RAG, prompt design, vector search (Must‑Have)
-
-- Build `rag/index.py` (chunk → embed → store FAISS/Chroma) and `rag/retriever.py` (semantic search with filters).
-- Add retrieval evaluation (precision@k), prompt ablations (different templates), and a small prompt library.
-
-### Docker & Kubernetes on AWS (Must‑Have)
-
-- Dockerfiles for backend and frontend; multi‑stage builds.
-- docker‑compose for dev; k8s manifests or a Helm chart (`infra/k8s/`) with: Deployment, Service, HPA, ConfigMap/Secret, Ingress.
-- AWS path: ECR for images, EKS for cluster, ALB ingress; S3 for exports/models; IAM roles for service accounts.
-
-### CI/CD, API design, distributed systems (Must‑Have)
-
-- CI: GitHub Actions to run lint/tests, build images, push to ECR, deploy to EKS.
-- API: versioning (`/api/v2`), pagination for history, idempotent batch endpoints, health/readiness (`/healthz`, `/readyz`).
-- Distributed: add Redis + Celery/RQ workers; retry strategy, dead‑letter queue; structured logs; Prometheus metrics.
-
-### Data analytics & unstructured pipelines (Nice‑to‑Have)
-
-- Add analytics jobs to compute cohort stats, calibration by subgroup, and drift reports; store in Postgres + dashboards (Grafana/Metabase).
-- Unstructured pipeline: parse uploaded PDFs/notes (local OCR/NLP) into symptom candidates for human review; do not auto‑ingest as truth.
-
-### Secure architecture & privacy‑first (Nice‑to‑Have)
-
-- Secrets: use AWS Secrets Manager/SSM; no secrets in env files; rotate regularly.
-- Network: VPC, private subnets for services, public only for ingress; least‑privilege IAM.
-- App: CORS/CSRF where relevant, JWT/OAuth2; audit logs; encryption at rest/in transit; explicit retention and purge endpoints.
 
 ## Stretch goals
 
