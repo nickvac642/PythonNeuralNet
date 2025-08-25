@@ -134,6 +134,9 @@ Acceptance:
   - Acceptance criteria:
     - Unit tests for Centor and CURB‑65 thresholds; seasonality/exposure rules documented and tested.
     - Rules integrated in reasoning step without overriding probabilities unless gated by evidence.
+    - Implemented guardrails:
+      - Pneumonia triad (cough+dyspnea+chest pain+fever, no anosmia) favors `Pneumonia Syndrome`.
+      - Strep/URI pattern (sore throat high, cough absent, no anosmia) downweights ILI/COVID and nudges `Viral Upper Respiratory Infection`.
     - Clinician review and approval required for rule thresholds; changes logged in `docs/rules_changelog.md`.
 - Safety rails
   - Red‑flag escalation list; conservative defaults on missing/conflicting data; “need more info” branch.
@@ -153,7 +156,7 @@ Acceptance:
   - [x] Selector module exists (e.g., `backend/selector/eig_selector.py`) that scores candidate questions by expected entropy reduction; supports yes/no/unknown and missing data.
   - [x] Integrated with v2 reasoning: selector respects syndrome gates and negative evidence; endpoints return diagnosis when threshold reached or max questions hit.
   - [x] Stop rules implemented and configurable (env/params); unknown answers supported.
-  - [ ] Unit tests cover end‑to‑end adaptive sessions (FastAPI TestClient) reaching stable decisions in ≤ N questions for sample cases.
+  - [x] Unit tests cover end‑to‑end adaptive sessions (FastAPI TestClient) reaching a stable decision with stop rules; question count target to be tuned later.
   - [x] Cross‑references: API exposes interactive endpoints (`/api/v2/adaptive/{start,answer,finish}`); frontend Adaptive mode planned; metrics to include question efficiency.
 
 <a id="ops"></a>

@@ -231,3 +231,10 @@ This document lives in `foundational_brain/BEHIND_THE_SCENES.md` and explains th
 - Data gen: `medical_diagnosis_model/data/generate_v02.py`
 - Train from JSONL: `medical_diagnosis_model/versions/v2/medical_neural_network_v2.py`
 - Pipeline + metrics: `medical_diagnosis_model/tools/train_pipeline.py`
+
+### A9. Deterministic guardrails for classic patterns (implemented)
+- Purpose: ensure clinically classic presentations don’t get overshadowed by similar syndromes when key discriminators are absent.
+- Two guardrails currently applied post‑gating and before final normalization:
+  - Pneumonia triad: when cough ≥ 0.6, dyspnea ≥ 0.6, chest pain ≥ 0.4, fever ≥ 0.6, and anosmia < 0.3 → favor `Pneumonia Syndrome` over `COVID‑19‑like Illness`.
+  - Strep/URI pattern: when sore throat ≥ 0.6 and cough < 0.2 with no anosmia → downweight `Influenza‑like Illness` and `COVID‑19‑like Illness`, nudge `Viral Upper Respiratory Infection`.
+- Rationale: codify obvious differentials to avoid over‑reliance on priors when discriminators (e.g., anosmia) are absent.
