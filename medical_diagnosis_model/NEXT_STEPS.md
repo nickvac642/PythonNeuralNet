@@ -60,6 +60,7 @@ Acceptance:
 ## Immediate (week 1–2)
 
 - Define schema mapping
+
   - Single source of truth for: symptoms (IDs/labels), vitals (units/ranges), labs (normalization), demographics, context (season/exposure), unknown/NA encoding.
   - Canonical ontology & synonym map for symptoms; explicit schema versioning and change log.
   - Acceptance criteria:
@@ -74,6 +75,16 @@ Acceptance:
       - [x] Validator CLI `data/validate_cases.py` passes on samples; `jsonschema` added to requirements.
       - [x] Command: `python data/validate_cases.py data/samples/cases_v0.1.jsonl` prints `Validation passed: 0 errors`.
     - References: `data/README.md`, `data/case.schema.json`, `data/dictionaries/`, `data/samples/`, `data/validate_cases.py`.
+
+- [x] Training data v0.2 (balance + explicit negatives)
+  - Goal: reduce early UTI bias; encode negative GU evidence in respiratory cases and vice‑versa; strengthen URI patterns and mild/early variants.
+  - Acceptance criteria:
+    - [x] Generator emits JSONL to schema with balanced class counts (or class weights are configured). See `data/generate_v02.py` → `data/v02/cases_v02.jsonl`.
+    - [x] Respiratory cases explicitly mark `dysuria=0`, `frequency=0`; GU cases often mark `cough=0`, `rhinorrhea=0`, `congestion=0`.
+    - [x] URI patterns included (cough + rhinorrhea + congestion ± low fever, sore throat); GU patterns (dysuria + frequency).
+    - [x] Mild/early and atypical variants present; unknowns used appropriately.
+    - [x] Dataset versioned as v0.2; training pipeline `tools/train_pipeline.py` writes model to `models/enhanced_medical_model_v02.json`.
+    - [x] Re‑train + calibration performed; quick confusion/ECE report at `reports/metrics_v02.json` shows improved Resp vs GU separation.
 - Label policy
   - For each disease: criteria for “confirmed” (ICD‑10 + test) vs “presumptive”; clinician adjudication rules.
   - Acceptance criteria:
@@ -103,6 +114,7 @@ Acceptance:
   - Acceptance criteria:
     - Config toggles in `configs/training.yaml` enable Adam/L2/dropout; seed fixed.
     - Training summary logs include optimizer, regularization, and early stopping status.
+    - Class weighting or balanced sampling applied if class counts are imbalanced; documented in DATA_CARD.
 - Metrics & calibration
   - AUROC, AUPRC, F1, Top‑k, confusion per class.
   - Reliability diagrams + ECE; re‑tune temperature on held‑out set; subgroup calibration (age/sex/season). Add drift monitors for class priors and feature distributions.
@@ -532,14 +544,15 @@ medical_diagnosis_model/
 ## First actionable tasks (suggested order)
 
 1. Create `configs/clinical_schema.yaml` with symptom/vitals/labs mappings.
-2. Write `docs/label_policy.md`; wire gold labels (confirmed vs presumptive) into dataset.
-3. Build PHI‑safe ingestion CLI: de‑identify, normalize units, audit logs → `data/clean/`.
-4. Implement patient‑ and time‑based splits with stratification; add class weighting.
-5. Add training toggles (Adam, L2, dropout) and fixed seeds via `configs/training.yaml`.
-6. Add metrics module (AUROC/AUPRC/F1/Confusion) and reliability diagram + ECE.
-7. Expand rules: Centor + CURB‑65; add “need more info” if entropy/confidence threshold.
-8. Build batch CLI to score CSV and emit results JSON/CSV.
+2. Regenerate training data v0.2 (balanced counts or class weights; explicit negative GU for respiratory and vice‑versa; URI patterns; mild/early/atypical). Retrain + recalibrate; update DATA_CARD.
+3. Write `docs/label_policy.md`; wire gold labels (confirmed vs presumptive) into dataset.
+4. Build PHI‑safe ingestion CLI: de‑identify, normalize units, audit logs → `data/clean/`.
+5. Implement patient‑ and time‑based splits with stratification; add class weighting.
+6. Add training toggles (Adam, L2, dropout) and fixed seeds via `configs/training.yaml`.
+7. Add metrics module (AUROC/AUPRC/F1/Confusion) and reliability diagram + ECE.
+8. Expand rules: Centor + CURB‑65; add “need more info” if entropy/confidence threshold.
+9. Build batch CLI to score CSV and emit results JSON/CSV.
 
-9. Implement adaptive questioning selector stub (`backend/selector/eig_selector.py`) with unit tests on toy distributions; wire a no‑UI CLI demo.
+10. Implement adaptive questioning selector stub (`backend/selector/eig_selector.py`) with unit tests on toy distributions; wire a no‑UI CLI demo.
 
 > Tip: keep a changelog and version datasets/runs (seed, config, code commit) for reproducibility.
