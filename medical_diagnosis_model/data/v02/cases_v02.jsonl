@@ -1,0 +1,750 @@
+{"symptoms": {"Fatigue": 3.2, "Headache": 2.3, "Muscle Pain": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.4, "Fever": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.7, "Fever": 5.0, "Headache": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.6, "Shortness of Breath": 6.9, "Blurred Vision": 9.9, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.3, "Frequent Urination": 6.8, "Back Pain": 4.8, "Fever": 1.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 6.6, "Nasal Congestion": 6.2, "Sore Throat": 3.3, "Cough": 2.6, "Fatigue": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Sore Throat": 4.6, "Cough": 5.7, "Fatigue": 2.8, "Headache": 3.7, "Fever": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.3, "Fever": 4.9, "Headache": 3.5, "Muscle Pain": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 8.9, "Frequent Urination": 7.9, "Nausea": 2.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.3, "Nasal Congestion": 3.4, "Sore Throat": 5.0, "Cough": 2.5, "Fatigue": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Shortness of Breath": 2.5, "Fatigue": 5.3, "Blurred Vision": 6.2, "Sore Throat": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 3.1, "Headache": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 3.7, "Fever": 2.2, "Muscle Pain": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.2, "Cough": 6.1, "Muscle Pain": 7.0, "Diarrhea": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.1, "Fever": 3.8, "Headache": 4.2, "Muscle Pain": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 5.8, "Headache": 5.0, "Muscle Pain": 6.1, "Sore Throat": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.7, "Fatigue": 6.2, "Cough": 3.7, "Headache": 5.3, "Muscle Pain": 5.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 3.9, "Cough": 2.9, "Fatigue": 3.3, "Muscle Pain": 2.5, "Sore Throat": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 2.9, "Cough": 2.4, "Shortness of Breath": 6.9, "Fatigue": 6.8, "Blurred Vision": 6.2, "Headache": 3.2, "Muscle Pain": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.5, "Frequent Urination": 4.8, "Back Pain": 2.8, "Fever": 1.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 3.5, "Nasal Congestion": 5.3, "Sore Throat": 4.0, "Fatigue": 3.5, "Headache": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 4.5, "Cough": 3.0, "Headache": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.8, "Nasal Congestion": 3.2, "Cough": 5.3, "Fatigue": 2.2, "Fever": 1.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.5, "Fever": 3.1, "Headache": 4.8, "Muscle Pain": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 6.8, "Sore Throat": 2.8, "Cough": 2.6, "Fatigue": 2.8, "Headache": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.9, "Cough": 5.3, "Shortness of Breath": 7.9, "Blurred Vision": 8.9, "Sore Throat": 2.7, "Diarrhea": 6.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 8.5, "Cough": 5.2, "Headache": 5.5, "Muscle Pain": 7.7, "Sore Throat": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 7.7, "Frequent Urination": 7.1, "Back Pain": 3.9, "Nausea": 3.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 3.5, "Headache": 3.8, "Muscle Pain": 3.4, "Nausea": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.3, "Fatigue": 7.2, "Cough": 5.8, "Headache": 7.4, "Muscle Pain": 6.2, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.5, "Fatigue": 5.2, "Cough": 4.7, "Headache": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 5.9, "Fever": 3.1, "Headache": 3.5, "Muscle Pain": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 3.2, "Muscle Pain": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.4, "Fatigue": 6.2, "Cough": 2.6, "Muscle Pain": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.0, "Fever": 4.0, "Headache": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.0, "Fatigue": 7.3, "Headache": 5.7, "Muscle Pain": 5.9, "Diarrhea": 5.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 5.3, "Nasal Congestion": 5.6, "Sore Throat": 2.4, "Fatigue": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 8.3, "Frequent Urination": 7.2, "Back Pain": 4.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 7.3, "Headache": 7.1, "Muscle Pain": 7.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 7.6, "Frequent Urination": 6.2, "Back Pain": 5.3, "Nausea": 1.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 4.2, "Cough": 5.1, "Headache": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.9, "Cough": 3.6, "Fatigue": 5.5, "Headache": 3.7, "Muscle Pain": 6.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.3, "Frequent Urination": 7.6, "Back Pain": 4.1, "Fever": 1.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 6.0, "Frequent Urination": 7.0, "Back Pain": 3.4, "Nausea": 2.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 3.1, "Muscle Pain": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 4.3, "Nasal Congestion": 6.6, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.8, "Fever": 2.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.3, "Cough": 6.6, "Fatigue": 8.1, "Blurred Vision": 9.3, "Headache": 3.5, "Muscle Pain": 5.9, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.6, "Cough": 6.8, "Headache": 5.3, "Muscle Pain": 6.3, "Sore Throat": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 3.4, "Headache": 2.8, "Muscle Pain": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.4, "Fatigue": 5.0, "Cough": 3.1, "Headache": 2.6, "Muscle Pain": 5.0, "Sore Throat": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.1, "Cough": 5.0, "Fatigue": 7.9, "Headache": 6.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.1, "Headache": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 3.5, "Nasal Congestion": 4.5, "Fever": 1.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 9.0, "Cough": 7.2, "Fatigue": 7.9, "Blurred Vision": 8.5, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.6, "Cough": 5.9, "Headache": 4.5, "Fever": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 5.4, "Cough": 3.7, "Fatigue": 7.7, "Headache": 4.9, "Diarrhea": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 5.8, "Nasal Congestion": 3.7, "Sore Throat": 5.0, "Cough": 5.3, "Headache": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.7, "Fever": 2.8, "Headache": 4.5, "Muscle Pain": 5.0, "Nausea": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.9, "Shortness of Breath": 3.8, "Fatigue": 6.9, "Headache": 5.8, "Muscle Pain": 4.5, "Sore Throat": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 8.0, "Cough": 4.7, "Headache": 5.2, "Muscle Pain": 6.1, "Sore Throat": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 4.0, "Nasal Congestion": 6.0, "Cough": 4.9, "Fatigue": 4.0, "Fever": 1.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Headache": 5.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 6.7, "Frequent Urination": 6.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 4.7, "Frequent Urination": 3.2, "Back Pain": 2.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.7, "Headache": 4.3, "Muscle Pain": 4.6, "Sore Throat": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 7.6, "Frequent Urination": 7.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.1, "Fatigue": 5.8, "Cough": 3.8, "Headache": 4.8, "Muscle Pain": 6.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 6.2, "Nasal Congestion": 7.0, "Sore Throat": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 7.9, "Frequent Urination": 5.6, "Back Pain": 3.8, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Cough": 5.0, "Fatigue": 7.2, "Headache": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 4.6, "Cough": 4.1, "Fatigue": 2.7, "Headache": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 4.5, "Sore Throat": 3.0, "Cough": 2.5, "Fatigue": 2.9, "Headache": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.2, "Sore Throat": 6.0, "Cough": 5.9, "Headache": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 2.4, "Sore Throat": 1.9, "Cough": 1.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.0, "Fever": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 3.2, "Nasal Congestion": 3.9, "Cough": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Headache": 5.7, "Nausea": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.4, "Fatigue": 7.1, "Muscle Pain": 6.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 2.5, "Fatigue": 6.2, "Blurred Vision": 5.1, "Sore Throat": 1.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 3.7, "Fever": 2.8, "Headache": 2.6, "Muscle Pain": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.8, "Cough": 5.9, "Muscle Pain": 6.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.3, "Frequent Urination": 8.0, "Fever": 1.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.5, "Fatigue": 5.7, "Cough": 3.4, "Headache": 4.8, "Muscle Pain": 3.8, "Sore Throat": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 9.0, "Frequent Urination": 7.5, "Back Pain": 5.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 7.0, "Nasal Congestion": 6.1, "Sore Throat": 5.2, "Cough": 4.1, "Fatigue": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.3, "Headache": 3.3, "Muscle Pain": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 4.8, "Frequent Urination": 4.6, "Back Pain": 3.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 4.1, "Muscle Pain": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.3, "Fatigue": 6.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.5, "Frequent Urination": 7.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.9, "Fatigue": 8.8, "Headache": 5.3, "Muscle Pain": 7.2, "Sore Throat": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 7.7, "Cough": 6.5, "Shortness of Breath": 3.8, "Fatigue": 5.9, "Headache": 6.5, "Muscle Pain": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.5, "Nasal Congestion": 2.3, "Sore Throat": 2.9, "Cough": 1.7, "Headache": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.6, "Cough": 8.0, "Fatigue": 8.7, "Headache": 5.2, "Sore Throat": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 6.7, "Fatigue": 3.7, "Headache": 4.9, "Fever": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 3.0, "Headache": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 4.2, "Frequent Urination": 2.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.8, "Fatigue": 7.9, "Cough": 6.6, "Headache": 6.5, "Muscle Pain": 7.9, "Sore Throat": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.9, "Fatigue": 8.5, "Cough": 4.8, "Muscle Pain": 6.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.1, "Fever": 3.8, "Muscle Pain": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 7.7, "Frequent Urination": 5.2, "Back Pain": 4.0, "Fever": 1.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 3.6, "Cough": 1.1, "Fatigue": 1.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 6.9, "Nasal Congestion": 3.1, "Cough": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.2, "Fever": 2.4, "Headache": 3.8, "Muscle Pain": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 2.8, "Fever": 2.5, "Headache": 2.4, "Muscle Pain": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Nasal Congestion": 4.0, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 5.6, "Cough": 8.0, "Fatigue": 6.3, "Muscle Pain": 6.3, "Sore Throat": 3.4, "Diarrhea": 6.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.9, "Fatigue": 8.3, "Cough": 6.4, "Headache": 8.0, "Muscle Pain": 6.8, "Sore Throat": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.9, "Cough": 4.3, "Shortness of Breath": 5.1, "Fatigue": 7.9, "Sore Throat": 4.1, "Diarrhea": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.9, "Fatigue": 7.8, "Cough": 5.0, "Headache": 6.4, "Muscle Pain": 7.6, "Sore Throat": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 3.6, "Cough": 2.1, "Fatigue": 2.8, "Headache": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.5, "Fatigue": 7.2, "Cough": 5.1, "Headache": 7.0, "Muscle Pain": 8.0, "Sore Throat": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.2, "Cough": 4.5, "Blurred Vision": 9.5, "Headache": 3.8, "Sore Throat": 3.9, "Diarrhea": 6.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.4, "Fatigue": 9.0, "Cough": 6.1, "Headache": 7.5, "Muscle Pain": 6.5, "Sore Throat": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.5, "Headache": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 5.5, "Headache": 4.3, "Muscle Pain": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 2.2, "Shortness of Breath": 4.8, "Headache": 3.5, "Sore Throat": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 6.3, "Headache": 4.3, "Muscle Pain": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.7, "Frequent Urination": 5.5, "Back Pain": 4.8, "Fever": 3.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 4.9, "Frequent Urination": 4.4, "Back Pain": 2.6, "Fever": 1.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 3.0, "Nasal Congestion": 3.8, "Sore Throat": 3.0, "Cough": 2.0, "Headache": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 3.3, "Frequent Urination": 5.0, "Back Pain": 1.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.2, "Nasal Congestion": 3.5, "Sore Throat": 4.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.7, "Cough": 6.8, "Shortness of Breath": 5.8, "Fatigue": 8.3, "Headache": 4.2, "Muscle Pain": 6.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 4.9, "Fatigue": 5.0, "Cough": 3.7, "Muscle Pain": 5.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 3.6, "Nasal Congestion": 1.9, "Sore Throat": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 2.7, "Cough": 4.5, "Fatigue": 5.0, "Blurred Vision": 5.8, "Muscle Pain": 4.9, "Sore Throat": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Cough": 7.7, "Fatigue": 6.0, "Blurred Vision": 8.6, "Muscle Pain": 6.4, "Sore Throat": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.2, "Headache": 3.1, "Muscle Pain": 2.8, "Nausea": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.5, "Headache": 3.6, "Muscle Pain": 5.6, "Sore Throat": 3.7, "Diarrhea": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 5.2, "Nasal Congestion": 6.7, "Sore Throat": 5.5, "Fatigue": 4.4, "Headache": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.7, "Fatigue": 7.4, "Blurred Vision": 8.2, "Headache": 4.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.7, "Frequent Urination": 6.8, "Fever": 2.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.5, "Frequent Urination": 6.3, "Back Pain": 4.8, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 6.0, "Headache": 4.6, "Muscle Pain": 4.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.0, "Cough": 3.6, "Fatigue": 6.4, "Headache": 3.9, "Diarrhea": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.6, "Fatigue": 8.6, "Cough": 5.2, "Muscle Pain": 6.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.0, "Cough": 6.7, "Headache": 6.1, "Sore Throat": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.2, "Fatigue": 5.1, "Cough": 4.0, "Headache": 3.5, "Muscle Pain": 4.1, "Sore Throat": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 4.1, "Frequent Urination": 2.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.4, "Cough": 5.5, "Muscle Pain": 6.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 3.2, "Fever": 1.5, "Headache": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.9, "Cough": 2.4, "Shortness of Breath": 5.3, "Fatigue": 4.6, "Headache": 1.9, "Sore Throat": 2.2, "Diarrhea": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.7, "Fatigue": 8.5, "Cough": 5.0, "Headache": 7.2, "Muscle Pain": 6.2, "Sore Throat": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.6, "Nasal Congestion": 6.8, "Sore Throat": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 8.9, "Frequent Urination": 6.5, "Back Pain": 4.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 4.3, "Nasal Congestion": 3.3, "Sore Throat": 6.0, "Fatigue": 2.6, "Headache": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.9, "Headache": 3.6, "Muscle Pain": 5.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 4.1, "Frequent Urination": 2.7, "Fever": 0.9, "Nausea": 1.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 5.5, "Cough": 4.4, "Fatigue": 4.1, "Headache": 4.1, "Muscle Pain": 3.9, "Diarrhea": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.2, "Nasal Congestion": 6.9, "Sore Throat": 5.1, "Cough": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 4.8, "Fever": 2.2, "Headache": 2.7, "Muscle Pain": 1.9, "Nausea": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 7.1, "Frequent Urination": 7.5, "Back Pain": 4.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.3, "Cough": 4.1, "Shortness of Breath": 3.5, "Fatigue": 5.3, "Headache": 2.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.1, "Frequent Urination": 6.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 6.8, "Nasal Congestion": 6.9, "Sore Throat": 5.9, "Cough": 2.4, "Fatigue": 4.2, "Headache": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 5.0, "Nasal Congestion": 6.5, "Cough": 4.1, "Fatigue": 4.2, "Headache": 4.0, "Fever": 1.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.8, "Cough": 3.6, "Muscle Pain": 3.4, "Sore Throat": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.7, "Fatigue": 6.8, "Cough": 3.7, "Headache": 4.4, "Muscle Pain": 4.4, "Sore Throat": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 6.9, "Frequent Urination": 8.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 3.2, "Headache": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.1, "Cough": 6.4, "Headache": 5.7, "Muscle Pain": 6.1, "Sore Throat": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 3.3, "Headache": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 6.1, "Nasal Congestion": 6.0, "Fatigue": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 8.4, "Frequent Urination": 5.4, "Back Pain": 4.5, "Fever": 1.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 8.5, "Fatigue": 8.3, "Cough": 4.9, "Headache": 5.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.9, "Fever": 2.7, "Muscle Pain": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.7, "Cough": 5.4, "Shortness of Breath": 7.1, "Fatigue": 7.7, "Blurred Vision": 9.0, "Sore Throat": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.3, "Headache": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.9, "Fatigue": 8.2, "Cough": 4.2, "Muscle Pain": 7.6, "Sore Throat": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 5.0, "Cough": 5.1, "Fatigue": 3.2, "Headache": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.7, "Fatigue": 3.7, "Cough": 4.5, "Headache": 2.9, "Muscle Pain": 3.7, "Sore Throat": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.1, "Fatigue": 7.7, "Cough": 6.2, "Sore Throat": 5.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.9, "Cough": 5.2, "Fatigue": 7.3, "Blurred Vision": 9.5, "Muscle Pain": 6.9, "Sore Throat": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Sore Throat": 4.6, "Cough": 5.7, "Headache": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 7.6, "Cough": 7.6, "Fatigue": 5.5, "Headache": 6.4, "Sore Throat": 3.5, "Diarrhea": 6.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 6.9, "Nasal Congestion": 4.1, "Sore Throat": 4.7, "Cough": 2.2, "Headache": 4.7, "Fever": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.6, "Cough": 7.7, "Fatigue": 6.7, "Blurred Vision": 8.4, "Headache": 5.9, "Muscle Pain": 5.4, "Sore Throat": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 2.9, "Cough": 3.5, "Shortness of Breath": 6.1, "Fatigue": 4.7, "Headache": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.5, "Frequent Urination": 5.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 5.1, "Fever": 4.3, "Headache": 4.8, "Nausea": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Cough": 6.4, "Fatigue": 5.6, "Blurred Vision": 8.5, "Headache": 6.6, "Muscle Pain": 6.1, "Sore Throat": 2.0, "Diarrhea": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Nausea": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.8, "Fatigue": 8.1, "Cough": 5.8, "Headache": 7.1, "Muscle Pain": 7.3, "Sore Throat": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 3.7, "Headache": 3.3, "Muscle Pain": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 7.6, "Frequent Urination": 6.2, "Back Pain": 4.3, "Fever": 2.6, "Nausea": 1.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 6.0, "Frequent Urination": 5.3, "Back Pain": 4.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Headache": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 6.4, "Fever": 2.2, "Headache": 5.3, "Muscle Pain": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.6, "Fever": 2.9, "Nausea": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.5, "Fatigue": 5.9, "Cough": 3.1, "Headache": 3.5, "Muscle Pain": 5.5, "Sore Throat": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 5.3, "Fever": 3.2, "Muscle Pain": 4.1, "Nausea": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.6, "Fatigue": 7.9, "Headache": 5.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.1, "Cough": 3.8, "Blurred Vision": 9.1, "Headache": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 6.4, "Cough": 3.5, "Shortness of Breath": 5.6, "Fatigue": 7.4, "Blurred Vision": 9.7, "Sore Throat": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 5.1, "Cough": 5.2, "Fatigue": 6.0, "Headache": 3.5, "Muscle Pain": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Cough": 4.5, "Shortness of Breath": 3.1, "Fatigue": 6.8, "Headache": 6.6, "Muscle Pain": 6.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 8.4, "Back Pain": 3.9, "Fever": 1.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.7, "Fatigue": 8.8, "Cough": 4.8, "Muscle Pain": 7.3, "Sore Throat": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 3.9, "Cough": 3.5, "Headache": 4.1, "Muscle Pain": 4.2, "Sore Throat": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.9, "Fatigue": 8.3, "Cough": 6.2, "Headache": 6.6, "Muscle Pain": 7.0, "Sore Throat": 6.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 8.0, "Frequent Urination": 7.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.6, "Nasal Congestion": 5.6, "Fatigue": 2.1, "Headache": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 9.0, "Cough": 4.5, "Headache": 5.4, "Muscle Pain": 7.0, "Sore Throat": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 6.3, "Fatigue": 7.0, "Headache": 3.5, "Muscle Pain": 7.0, "Sore Throat": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.8, "Cough": 6.7, "Shortness of Breath": 5.1, "Fatigue": 7.7, "Blurred Vision": 8.1, "Headache": 4.9, "Sore Throat": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 4.0, "Nasal Congestion": 3.9, "Cough": 3.2, "Fatigue": 4.1, "Headache": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 5.8, "Frequent Urination": 5.2, "Nausea": 1.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 4.7, "Nasal Congestion": 3.6, "Sore Throat": 2.9, "Fatigue": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.9, "Cough": 3.1, "Shortness of Breath": 8.0, "Fatigue": 8.0, "Blurred Vision": 9.8, "Headache": 3.4, "Muscle Pain": 5.1, "Sore Throat": 4.0, "Diarrhea": 5.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 1.3, "Headache": 3.5, "Muscle Pain": 2.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Headache": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 6.8, "Sore Throat": 4.3, "Diarrhea": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Cough": 3.2, "Fatigue": 8.8, "Blurred Vision": 9.8, "Muscle Pain": 4.8, "Sore Throat": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 6.7, "Fever": 2.0, "Headache": 5.5, "Muscle Pain": 5.9, "Nausea": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Nasal Congestion": 4.7, "Sore Throat": 3.5, "Cough": 1.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 5.6, "Cough": 3.2, "Fatigue": 6.0, "Headache": 6.6, "Sore Throat": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 6.0, "Headache": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Cough": 4.5, "Shortness of Breath": 5.3, "Fatigue": 6.7, "Blurred Vision": 8.6, "Headache": 5.8, "Muscle Pain": 5.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 6.9, "Fatigue": 8.7, "Headache": 5.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 5.4, "Sore Throat": 5.3, "Cough": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 6.4, "Nasal Congestion": 4.5, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Nasal Congestion": 5.5, "Sore Throat": 5.5, "Cough": 2.6, "Fatigue": 3.3, "Headache": 2.8, "Fever": 2.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.2, "Nasal Congestion": 4.3, "Cough": 2.2, "Fatigue": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 4.5, "Frequent Urination": 4.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 6.8, "Headache": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 7.6, "Frequent Urination": 6.2, "Fever": 2.5, "Nausea": 2.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.2, "Fatigue": 8.3, "Cough": 5.0, "Headache": 7.9, "Muscle Pain": 7.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.1, "Fatigue": 4.6, "Cough": 2.7, "Headache": 3.7, "Muscle Pain": 4.2, "Sore Throat": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 4.3, "Blurred Vision": 9.0, "Muscle Pain": 5.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Nasal Congestion": 5.0, "Sore Throat": 5.7, "Fatigue": 3.9, "Fever": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Nasal Congestion": 4.9, "Sore Throat": 4.7, "Cough": 5.6, "Fatigue": 2.2, "Fever": 1.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.4, "Nausea": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.1, "Frequent Urination": 3.6, "Back Pain": 2.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 5.2, "Fever": 3.9, "Headache": 5.9, "Muscle Pain": 6.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.9, "Shortness of Breath": 5.5, "Fatigue": 8.9, "Muscle Pain": 6.1, "Diarrhea": 6.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.9, "Nasal Congestion": 3.1, "Sore Throat": 3.9, "Fatigue": 3.2, "Fever": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 5.7, "Frequent Urination": 5.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.8, "Fatigue": 8.4, "Blurred Vision": 10.0, "Headache": 6.3, "Muscle Pain": 6.2, "Diarrhea": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.5, "Frequent Urination": 7.4, "Back Pain": 4.8, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 4.5, "Nasal Congestion": 4.3, "Cough": 5.0, "Headache": 2.2, "Fever": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 7.6, "Frequent Urination": 5.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 4.6, "Fever": 3.5, "Muscle Pain": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 5.2, "Sore Throat": 5.1, "Cough": 4.8, "Fever": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Cough": 3.5, "Fatigue": 1.3, "Headache": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 4.4, "Headache": 3.9, "Nausea": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.5, "Cough": 2.5, "Fatigue": 4.1, "Blurred Vision": 6.8, "Headache": 4.4, "Sore Throat": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.0, "Fever": 4.5, "Headache": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 3.7, "Nasal Congestion": 4.6, "Sore Throat": 3.0, "Cough": 3.1, "Headache": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 5.4, "Fatigue": 5.6, "Blurred Vision": 9.8, "Headache": 5.8, "Diarrhea": 5.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Cough": 6.0, "Shortness of Breath": 5.8, "Fatigue": 7.1, "Headache": 5.3, "Muscle Pain": 6.7, "Sore Throat": 2.6, "Diarrhea": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.1, "Fever": 4.1, "Headache": 6.0, "Nausea": 2.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.9, "Cough": 6.4, "Fatigue": 8.6, "Blurred Vision": 8.6, "Headache": 3.6, "Muscle Pain": 6.4, "Sore Throat": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 5.7, "Fatigue": 3.9, "Cough": 4.2, "Headache": 3.7, "Muscle Pain": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 8.2, "Frequent Urination": 5.3, "Back Pain": 3.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 4.8, "Frequent Urination": 5.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.8, "Cough": 4.6, "Shortness of Breath": 4.6, "Fatigue": 6.1, "Blurred Vision": 9.7, "Headache": 5.3, "Sore Throat": 2.6, "Diarrhea": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.1, "Fatigue": 7.6, "Cough": 5.0, "Headache": 5.9, "Sore Throat": 5.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.4, "Fatigue": 6.6, "Cough": 4.1, "Headache": 3.6, "Muscle Pain": 4.6, "Sore Throat": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.3, "Fatigue": 4.0, "Cough": 3.2, "Headache": 4.6, "Muscle Pain": 4.9, "Sore Throat": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.0, "Cough": 7.4, "Shortness of Breath": 4.2, "Fatigue": 7.5, "Blurred Vision": 8.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.5, "Nasal Congestion": 4.3, "Cough": 5.3, "Headache": 4.5, "Fever": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 5.0, "Nasal Congestion": 5.0, "Sore Throat": 2.1, "Fatigue": 4.9, "Headache": 3.1, "Fever": 2.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.6, "Sore Throat": 4.0, "Cough": 5.5, "Fatigue": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.9, "Fever": 3.4, "Headache": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Nasal Congestion": 3.7, "Sore Throat": 1.9, "Cough": 1.8, "Fatigue": 1.5, "Headache": 1.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.6, "Nasal Congestion": 4.3, "Sore Throat": 2.6, "Cough": 2.8, "Fatigue": 1.8, "Fever": 1.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.7, "Fatigue": 8.6, "Headache": 5.8, "Muscle Pain": 5.2, "Sore Throat": 2.8, "Diarrhea": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Cough": 2.5, "Fatigue": 4.1, "Blurred Vision": 5.9, "Muscle Pain": 3.2, "Sore Throat": 2.9, "Diarrhea": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 3.1, "Frequent Urination": 4.6, "Back Pain": 4.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 7.5, "Frequent Urination": 7.9, "Fever": 2.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.6, "Nasal Congestion": 5.5, "Sore Throat": 5.8, "Cough": 5.2, "Headache": 2.2, "Fever": 1.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 6.2, "Frequent Urination": 6.2, "Back Pain": 4.2, "Nausea": 1.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 8.7, "Fatigue": 7.6, "Cough": 6.3, "Headache": 6.9, "Muscle Pain": 7.3, "Sore Throat": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 6.1, "Frequent Urination": 5.5, "Back Pain": 5.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.2, "Fatigue": 5.6, "Cough": 4.7, "Headache": 5.1, "Muscle Pain": 4.0, "Sore Throat": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Headache": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 3.5, "Fever": 1.8, "Headache": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.7, "Fatigue": 4.6, "Cough": 4.1, "Headache": 3.6, "Muscle Pain": 4.7, "Sore Throat": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 8.8, "Cough": 5.2, "Headache": 5.8, "Muscle Pain": 7.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 3.5, "Sore Throat": 3.9, "Headache": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Cough": 4.8, "Fatigue": 5.7, "Blurred Vision": 8.1, "Muscle Pain": 6.9, "Sore Throat": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 8.9, "Frequent Urination": 6.1, "Fever": 1.1, "Nausea": 1.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Cough": 5.3, "Fatigue": 5.5, "Blurred Vision": 9.3, "Sore Throat": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 4.8, "Nasal Congestion": 5.1, "Sore Throat": 4.5, "Cough": 6.0, "Headache": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 7.7, "Cough": 3.4, "Shortness of Breath": 7.6, "Fatigue": 8.3, "Blurred Vision": 9.7, "Muscle Pain": 6.0, "Diarrhea": 6.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 2.4, "Headache": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 8.4, "Frequent Urination": 6.4, "Back Pain": 4.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 6.7, "Headache": 4.7, "Nausea": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.3, "Cough": 7.8, "Shortness of Breath": 5.6, "Blurred Vision": 8.6, "Headache": 4.8, "Muscle Pain": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.6, "Nasal Congestion": 5.8, "Cough": 3.6, "Fatigue": 3.2, "Headache": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 4.2, "Nasal Congestion": 7.0, "Sore Throat": 2.6, "Cough": 3.4, "Fatigue": 3.6, "Headache": 3.0, "Fever": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.0, "Cough": 6.2, "Fatigue": 3.8, "Diarrhea": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.4, "Frequent Urination": 6.0, "Back Pain": 5.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.9, "Cough": 3.2, "Shortness of Breath": 3.6, "Fatigue": 3.9, "Blurred Vision": 5.8, "Headache": 3.5, "Diarrhea": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 4.3, "Frequent Urination": 5.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 5.5, "Fever": 2.2, "Headache": 5.2, "Muscle Pain": 5.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Cough": 5.4, "Fatigue": 7.1, "Blurred Vision": 9.7, "Headache": 3.2, "Muscle Pain": 6.6, "Sore Throat": 2.5, "Diarrhea": 4.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.4, "Nasal Congestion": 6.4, "Sore Throat": 3.4, "Cough": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.8, "Cough": 4.5, "Fatigue": 7.1, "Blurred Vision": 9.4, "Headache": 3.6, "Sore Throat": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.7, "Fever": 4.8, "Headache": 5.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.4, "Cough": 7.7, "Fatigue": 5.7, "Blurred Vision": 9.5, "Headache": 6.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 4.0, "Frequent Urination": 4.0, "Back Pain": 2.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.5, "Fatigue": 8.4, "Cough": 4.3, "Headache": 5.6, "Sore Throat": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 3.9, "Frequent Urination": 3.0, "Back Pain": 3.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Cough": 6.8, "Shortness of Breath": 7.6, "Fatigue": 8.0, "Blurred Vision": 8.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 4.9, "Fatigue": 5.0, "Cough": 3.2, "Headache": 4.0, "Muscle Pain": 4.2, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 5.6, "Blurred Vision": 8.1, "Headache": 3.5, "Muscle Pain": 4.6, "Diarrhea": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 9.0, "Frequent Urination": 6.9, "Back Pain": 3.4, "Fever": 3.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.3, "Frequent Urination": 5.7, "Nausea": 2.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 4.9, "Headache": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.4, "Frequent Urination": 5.1, "Back Pain": 4.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 3.4, "Shortness of Breath": 2.9, "Fatigue": 4.5, "Blurred Vision": 5.9, "Muscle Pain": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 8.5, "Back Pain": 5.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 6.0, "Headache": 4.1, "Nausea": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.2, "Cough": 3.9, "Fatigue": 3.9, "Blurred Vision": 4.7, "Muscle Pain": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.4, "Fever": 4.4, "Headache": 4.1, "Muscle Pain": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 8.4, "Frequent Urination": 5.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Cough": 5.9, "Shortness of Breath": 4.2, "Fatigue": 8.5, "Headache": 6.8, "Sore Throat": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 5.9, "Nasal Congestion": 4.2, "Sore Throat": 3.6, "Cough": 2.5, "Fatigue": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 7.2, "Cough": 5.3, "Fatigue": 6.7, "Blurred Vision": 9.0, "Headache": 4.8, "Muscle Pain": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.2, "Cough": 5.3, "Blurred Vision": 8.4, "Headache": 4.4, "Muscle Pain": 7.0, "Sore Throat": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.5, "Fatigue": 7.2, "Headache": 7.9, "Muscle Pain": 7.7, "Sore Throat": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 8.0, "Frequent Urination": 6.7, "Back Pain": 4.8, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 7.5, "Shortness of Breath": 3.1, "Fatigue": 5.5, "Sore Throat": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 6.2, "Fever": 4.2, "Headache": 3.5, "Muscle Pain": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.9, "Fatigue": 5.0, "Cough": 4.0, "Muscle Pain": 3.5, "Sore Throat": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 6.7, "Nasal Congestion": 4.8, "Sore Throat": 3.0, "Cough": 5.2, "Fever": 1.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.3, "Fatigue": 8.4, "Cough": 5.5, "Headache": 7.6, "Muscle Pain": 6.9, "Sore Throat": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 7.8, "Cough": 5.8, "Fatigue": 6.5, "Blurred Vision": 8.3, "Muscle Pain": 5.3, "Sore Throat": 4.5, "Diarrhea": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.0, "Cough": 5.4, "Fatigue": 7.7, "Muscle Pain": 5.2, "Sore Throat": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.6, "Cough": 6.3, "Headache": 5.7, "Muscle Pain": 7.5, "Sore Throat": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 7.8, "Frequent Urination": 5.0, "Fever": 2.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Cough": 3.4, "Shortness of Breath": 3.6, "Fatigue": 8.5, "Blurred Vision": 8.1, "Headache": 6.1, "Muscle Pain": 4.8, "Sore Throat": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 5.6, "Nasal Congestion": 4.0, "Cough": 3.5, "Fatigue": 2.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 8.8, "Frequent Urination": 7.6, "Back Pain": 5.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 7.5, "Fatigue": 8.3, "Headache": 5.2, "Muscle Pain": 6.9, "Sore Throat": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 2.2, "Headache": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 3.2, "Nasal Congestion": 4.7, "Sore Throat": 3.2, "Cough": 4.1, "Fatigue": 2.3, "Fever": 1.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.4, "Shortness of Breath": 5.8, "Fatigue": 8.8, "Blurred Vision": 9.3, "Muscle Pain": 4.2, "Sore Throat": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.1, "Frequent Urination": 7.6, "Back Pain": 5.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Cough": 5.1, "Fatigue": 6.3, "Blurred Vision": 8.1, "Muscle Pain": 5.0, "Sore Throat": 4.9, "Diarrhea": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 4.0, "Nasal Congestion": 3.8, "Sore Throat": 4.1, "Fatigue": 2.6, "Headache": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.6, "Cough": 5.2, "Shortness of Breath": 6.1, "Fatigue": 8.2, "Blurred Vision": 9.9, "Headache": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.9, "Fever": 4.8, "Muscle Pain": 4.0, "Nausea": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.8, "Fatigue": 8.2, "Cough": 5.1, "Headache": 6.3, "Muscle Pain": 6.5, "Sore Throat": 5.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.1, "Nasal Congestion": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Cough": 2.2, "Fatigue": 6.5, "Blurred Vision": 6.6, "Headache": 3.0, "Diarrhea": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.3, "Fever": 4.7, "Muscle Pain": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.6, "Headache": 8.0, "Muscle Pain": 7.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.2, "Muscle Pain": 3.6, "Nausea": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.8, "Fatigue": 7.3, "Cough": 6.8, "Muscle Pain": 6.0, "Sore Throat": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 7.8, "Cough": 7.6, "Shortness of Breath": 8.4, "Fatigue": 6.4, "Blurred Vision": 9.7, "Sore Throat": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.2, "Fatigue": 8.6, "Cough": 4.0, "Muscle Pain": 7.2, "Sore Throat": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 9.0, "Fatigue": 8.7, "Cough": 4.9, "Muscle Pain": 6.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 8.5, "Frequent Urination": 6.9, "Back Pain": 4.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 6.0, "Fever": 2.2, "Headache": 3.2, "Muscle Pain": 4.7, "Nausea": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.5, "Fatigue": 7.9, "Cough": 5.7, "Muscle Pain": 7.1, "Sore Throat": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.2, "Fever": 3.4, "Headache": 4.1, "Nausea": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.8, "Fatigue": 7.1, "Cough": 6.5, "Headache": 6.1, "Muscle Pain": 6.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Muscle Pain": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.6, "Cough": 4.4, "Fatigue": 8.9, "Blurred Vision": 9.1, "Headache": 6.4, "Muscle Pain": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.3, "Frequent Urination": 5.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 7.9, "Back Pain": 4.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.1, "Frequent Urination": 7.1, "Back Pain": 3.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 3.7, "Nasal Congestion": 4.8, "Sore Throat": 4.1, "Cough": 3.5, "Fatigue": 3.2, "Headache": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 6.7, "Back Pain": 3.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 5.0, "Fatigue": 6.5, "Cough": 3.4, "Muscle Pain": 3.5, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.9, "Cough": 2.8, "Fatigue": 4.1, "Blurred Vision": 6.7, "Headache": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.5, "Muscle Pain": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.4, "Fatigue": 7.7, "Headache": 7.8, "Sore Throat": 6.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.6, "Nasal Congestion": 2.5, "Cough": 4.0, "Headache": 1.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 7.3, "Frequent Urination": 5.9, "Back Pain": 4.4, "Nausea": 2.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.5, "Cough": 7.1, "Shortness of Breath": 6.1, "Fatigue": 6.9, "Blurred Vision": 9.8, "Headache": 3.6, "Muscle Pain": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 3.9, "Cough": 2.1, "Shortness of Breath": 5.5, "Fatigue": 5.0, "Muscle Pain": 3.2, "Sore Throat": 2.6, "Diarrhea": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.2, "Fatigue": 8.9, "Cough": 5.7, "Headache": 5.0, "Muscle Pain": 7.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 3.4, "Headache": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 6.3, "Nasal Congestion": 6.2, "Cough": 2.5, "Headache": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 9.0, "Cough": 3.5, "Fatigue": 5.3, "Blurred Vision": 8.8, "Headache": 3.4, "Diarrhea": 6.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 3.4, "Fever": 2.8, "Muscle Pain": 1.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.1, "Cough": 6.0, "Headache": 4.8, "Sore Throat": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 3.6, "Nausea": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 5.1, "Fever": 4.5, "Muscle Pain": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.2, "Cough": 6.1, "Headache": 5.5, "Muscle Pain": 7.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 3.7, "Fatigue": 8.9, "Blurred Vision": 8.9, "Muscle Pain": 5.6, "Sore Throat": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 6.7, "Fatigue": 7.5, "Cough": 4.0, "Headache": 7.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 7.6, "Fatigue": 8.8, "Cough": 4.2, "Headache": 6.5, "Muscle Pain": 7.2, "Sore Throat": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.2, "Nasal Congestion": 4.3, "Sore Throat": 4.0, "Cough": 4.0, "Headache": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.7, "Cough": 4.1, "Muscle Pain": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 3.7, "Shortness of Breath": 4.4, "Fatigue": 4.6, "Blurred Vision": 5.1, "Headache": 3.4, "Sore Throat": 2.6, "Diarrhea": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.7, "Back Pain": 4.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 4.4, "Frequent Urination": 3.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.7, "Frequent Urination": 5.1, "Back Pain": 4.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 7.8, "Fatigue": 8.5, "Cough": 6.7, "Headache": 5.7, "Muscle Pain": 6.8, "Sore Throat": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.5, "Fatigue": 8.2, "Cough": 6.1, "Muscle Pain": 7.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.4, "Fatigue": 8.3, "Cough": 5.2, "Headache": 5.2, "Muscle Pain": 7.2, "Sore Throat": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.9, "Frequent Urination": 4.8, "Back Pain": 2.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.0, "Frequent Urination": 6.8, "Back Pain": 5.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 2.7, "Sore Throat": 3.7, "Fatigue": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.2, "Fever": 2.6, "Headache": 4.2, "Muscle Pain": 3.2, "Nausea": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.1, "Fatigue": 7.6, "Cough": 6.3, "Muscle Pain": 7.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 6.2, "Frequent Urination": 5.7, "Back Pain": 4.1, "Fever": 1.9, "Nausea": 2.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 3.8, "Fever": 2.4, "Headache": 2.9, "Muscle Pain": 3.9, "Nausea": 2.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 8.7, "Frequent Urination": 7.5, "Back Pain": 4.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 4.5, "Nasal Congestion": 4.4, "Fatigue": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.7, "Fatigue": 8.3, "Cough": 5.1, "Headache": 6.6, "Muscle Pain": 7.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.0, "Fever": 4.4, "Muscle Pain": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.4, "Frequent Urination": 3.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.5, "Cough": 5.7, "Shortness of Breath": 8.9, "Fatigue": 7.8, "Blurred Vision": 9.0, "Muscle Pain": 6.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 4.2, "Nasal Congestion": 3.1, "Sore Throat": 3.2, "Cough": 3.5, "Fatigue": 1.9, "Headache": 2.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.7, "Fatigue": 2.3, "Fever": 1.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.4, "Headache": 3.7, "Muscle Pain": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 3.2, "Frequent Urination": 4.6, "Nausea": 1.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 8.2, "Frequent Urination": 5.9, "Fever": 1.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 4.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.5, "Fatigue": 5.1, "Blurred Vision": 8.0, "Headache": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 3.6, "Frequent Urination": 5.3, "Back Pain": 3.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 5.2, "Fatigue": 5.1, "Cough": 3.5, "Headache": 4.4, "Muscle Pain": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 5.2, "Muscle Pain": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 5.8, "Fever": 4.2, "Headache": 4.5, "Muscle Pain": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.4, "Fatigue": 7.6, "Cough": 4.3, "Headache": 5.4, "Muscle Pain": 6.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Frequent Urination": 6.3, "Nausea": 1.8, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.3, "Nasal Congestion": 5.3, "Sore Throat": 4.5, "Cough": 5.4, "Fatigue": 4.0, "Headache": 4.8, "Fever": 1.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 6.2, "Nasal Congestion": 3.1, "Sore Throat": 3.3, "Headache": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 1.7, "Nasal Congestion": 2.7, "Cough": 3.7, "Fatigue": 1.9, "Headache": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 3.1, "Headache": 3.9, "Muscle Pain": 2.3, "Nausea": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 2.3, "Cough": 2.3, "Shortness of Breath": 2.1, "Fatigue": 6.3, "Blurred Vision": 4.4, "Headache": 3.5, "Sore Throat": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.6, "Frequent Urination": 7.3, "Back Pain": 5.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 7.3, "Headache": 7.8, "Muscle Pain": 6.4, "Sore Throat": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 5.1, "Sore Throat": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 8.3, "Cough": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.1, "Fever": 2.6, "Muscle Pain": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 2.8, "Nasal Congestion": 1.8, "Cough": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Nasal Congestion": 6.2, "Sore Throat": 3.5, "Cough": 4.1, "Fatigue": 4.4, "Headache": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 8.7, "Frequent Urination": 6.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.9, "Cough": 5.9, "Shortness of Breath": 4.3, "Fatigue": 6.1, "Headache": 6.9, "Muscle Pain": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 6.1, "Sore Throat": 3.7, "Fatigue": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 6.5, "Frequent Urination": 7.9, "Back Pain": 3.0, "Fever": 2.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 3.5, "Nasal Congestion": 5.2, "Sore Throat": 4.4, "Cough": 2.8, "Headache": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 5.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Sore Throat": 4.9, "Cough": 4.1, "Fatigue": 3.9, "Headache": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 6.3, "Frequent Urination": 4.4, "Fever": 0.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 6.6, "Frequent Urination": 7.6, "Fever": 2.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 6.6, "Nasal Congestion": 4.9, "Sore Throat": 3.0, "Cough": 5.1, "Fatigue": 3.9, "Headache": 2.2, "Fever": 1.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 6.9, "Frequent Urination": 6.3, "Back Pain": 4.0, "Fever": 1.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 7.9, "Fatigue": 8.4, "Cough": 4.4, "Headache": 6.8, "Muscle Pain": 7.6, "Sore Throat": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.1, "Fatigue": 8.6, "Headache": 6.5, "Muscle Pain": 7.6, "Sore Throat": 5.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 3.0, "Sore Throat": 3.6, "Cough": 4.5, "Fatigue": 4.2, "Headache": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.4, "Headache": 3.5, "Muscle Pain": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.1, "Cough": 3.0, "Headache": 3.6, "Muscle Pain": 5.8, "Sore Throat": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.8, "Frequent Urination": 3.3, "Back Pain": 4.2, "Fever": 1.7, "Nausea": 1.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 4.3, "Nasal Congestion": 3.6, "Sore Throat": 2.9, "Cough": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 7.2, "Headache": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 7.4, "Frequent Urination": 5.9, "Back Pain": 4.9, "Fever": 1.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.8, "Frequent Urination": 3.9, "Fever": 1.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.4, "Fatigue": 6.5, "Cough": 3.4, "Muscle Pain": 5.1, "Sore Throat": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Nasal Congestion": 3.5, "Sore Throat": 2.7, "Cough": 2.1, "Fatigue": 4.4, "Headache": 3.0, "Fever": 1.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.8, "Cough": 6.2, "Shortness of Breath": 4.7, "Fatigue": 6.2, "Headache": 4.7, "Sore Throat": 3.6, "Diarrhea": 6.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 5.6, "Fatigue": 5.1, "Cough": 2.7, "Muscle Pain": 4.6, "Sore Throat": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 1.9, "Nasal Congestion": 2.2, "Sore Throat": 3.5, "Cough": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 7.0, "Sore Throat": 2.5, "Fatigue": 4.1, "Fever": 2.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 6.0, "Nasal Congestion": 3.9, "Sore Throat": 5.5, "Cough": 4.0, "Fatigue": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.1, "Fatigue": 7.4, "Cough": 5.2, "Headache": 5.6, "Muscle Pain": 7.6, "Sore Throat": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 3.5, "Muscle Pain": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.1, "Cough": 7.7, "Blurred Vision": 9.8, "Headache": 3.3, "Sore Throat": 4.9, "Diarrhea": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.5, "Fatigue": 8.7, "Cough": 5.8, "Headache": 6.5, "Muscle Pain": 6.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.6, "Fatigue": 8.2, "Cough": 5.3, "Headache": 5.4, "Muscle Pain": 7.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.4, "Cough": 3.8, "Fatigue": 3.7, "Blurred Vision": 6.5, "Muscle Pain": 3.4, "Sore Throat": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.7, "Frequent Urination": 7.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 3.3, "Nasal Congestion": 6.7, "Cough": 3.7, "Fatigue": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.0, "Cough": 5.5, "Fatigue": 7.1, "Muscle Pain": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 2.8, "Cough": 2.5, "Shortness of Breath": 4.4, "Fatigue": 4.1, "Blurred Vision": 4.5, "Headache": 4.0, "Sore Throat": 2.6, "Diarrhea": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.5, "Headache": 4.2, "Muscle Pain": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.7, "Muscle Pain": 5.2, "Nausea": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.8, "Fatigue": 8.0, "Cough": 6.8, "Headache": 6.7, "Muscle Pain": 6.3, "Sore Throat": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 7.2, "Cough": 7.0, "Muscle Pain": 7.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.8, "Fever": 4.8, "Headache": 6.0, "Muscle Pain": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 6.1, "Cough": 3.3, "Headache": 3.1, "Fever": 2.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.8, "Cough": 4.3, "Headache": 5.6, "Muscle Pain": 7.6, "Sore Throat": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 6.1, "Frequent Urination": 5.3, "Back Pain": 4.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 4.2, "Frequent Urination": 4.0, "Nausea": 1.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 8.9, "Frequent Urination": 6.2, "Back Pain": 3.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.1, "Fatigue": 7.5, "Cough": 6.1, "Headache": 5.2, "Muscle Pain": 6.7, "Sore Throat": 4.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 7.0, "Fatigue": 8.7, "Headache": 6.0, "Sore Throat": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 3.0, "Muscle Pain": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.0, "Fatigue": 7.5, "Headache": 6.9, "Muscle Pain": 7.2, "Sore Throat": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.1, "Headache": 2.4, "Muscle Pain": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 1.9, "Headache": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 5.3, "Nasal Congestion": 5.9, "Fatigue": 4.6, "Headache": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.6, "Nasal Congestion": 5.4, "Cough": 2.7, "Headache": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 8.9, "Cough": 6.1, "Headache": 5.3, "Muscle Pain": 7.0, "Sore Throat": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 7.6, "Cough": 6.7, "Shortness of Breath": 3.6, "Fatigue": 6.3, "Blurred Vision": 9.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.1, "Fever": 1.7, "Headache": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 8.4, "Cough": 4.4, "Headache": 5.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 3.0, "Headache": 4.0, "Muscle Pain": 3.5, "Nausea": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 6.3, "Headache": 4.5, "Muscle Pain": 5.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.0, "Fatigue": 6.9, "Cough": 2.8, "Muscle Pain": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.3, "Cough": 4.2, "Shortness of Breath": 7.1, "Fatigue": 7.8, "Blurred Vision": 9.0, "Headache": 5.8, "Muscle Pain": 6.6, "Sore Throat": 2.4, "Diarrhea": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 4.2, "Frequent Urination": 4.1, "Back Pain": 4.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 5.3, "Cough": 4.5, "Shortness of Breath": 5.2, "Blurred Vision": 9.2, "Headache": 5.0, "Diarrhea": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.6, "Cough": 1.7, "Headache": 2.4, "Fever": 0.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Frequent Urination": 7.1, "Back Pain": 3.8, "Fever": 1.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.2, "Sore Throat": 4.8, "Cough": 5.9, "Headache": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 7.2, "Cough": 7.0, "Shortness of Breath": 4.4, "Sore Throat": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Frequent Urination": 4.1, "Back Pain": 4.4, "Nausea": 2.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Headache": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.6, "Frequent Urination": 6.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 6.3, "Nasal Congestion": 6.8, "Cough": 3.1, "Fatigue": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.2, "Sore Throat": 5.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 7.9, "Fatigue": 7.5, "Cough": 4.1, "Headache": 7.7, "Muscle Pain": 6.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 3.5, "Fatigue": 6.3, "Blurred Vision": 6.0, "Headache": 2.6, "Muscle Pain": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 4.5, "Frequent Urination": 4.2, "Back Pain": 2.1, "Nausea": 0.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 7.0, "Fatigue": 9.0, "Cough": 6.7, "Headache": 5.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 5.6, "Nasal Congestion": 6.0, "Cough": 3.7, "Fatigue": 4.9, "Fever": 1.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 4.1, "Fever": 1.5, "Headache": 2.4, "Muscle Pain": 2.8, "Nausea": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.7, "Cough": 3.1, "Fatigue": 5.8, "Blurred Vision": 8.6, "Headache": 5.8, "Muscle Pain": 4.7, "Sore Throat": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 6.1, "Headache": 3.9, "Muscle Pain": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 6.9, "Back Pain": 3.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.0, "Cough": 5.2, "Shortness of Breath": 5.3, "Fatigue": 3.1, "Blurred Vision": 4.4, "Headache": 3.3, "Sore Throat": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 8.3, "Frequent Urination": 6.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.2, "Frequent Urination": 6.7, "Back Pain": 5.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.5, "Frequent Urination": 3.8, "Fever": 0.6, "Nausea": 1.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 6.2, "Nasal Congestion": 3.5, "Sore Throat": 2.6, "Fatigue": 3.7, "Headache": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 2.6, "Fever": 3.4, "Headache": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 6.5, "Back Pain": 3.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 8.2, "Cough": 3.5, "Fatigue": 5.3, "Headache": 4.4, "Sore Throat": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 2.9, "Frequent Urination": 4.3, "Fever": 0.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 5.1, "Fever": 2.1, "Headache": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.4, "Fever": 2.3, "Headache": 5.9, "Nausea": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 3.1, "Cough": 2.5, "Shortness of Breath": 4.5, "Fatigue": 4.5, "Blurred Vision": 5.6, "Sore Throat": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.7, "Cough": 5.0, "Headache": 7.1, "Muscle Pain": 7.3, "Sore Throat": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.6, "Fever": 4.2, "Muscle Pain": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.1, "Fatigue": 8.5, "Cough": 5.0, "Sore Throat": 4.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.0, "Cough": 7.0, "Shortness of Breath": 6.0, "Fatigue": 5.0, "Headache": 5.9, "Sore Throat": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.0, "Headache": 4.2, "Muscle Pain": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.9, "Frequent Urination": 7.5, "Back Pain": 5.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 8.4, "Fatigue": 7.2, "Blurred Vision": 8.3, "Sore Throat": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.5, "Frequent Urination": 3.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 4.1, "Sore Throat": 2.6, "Cough": 3.8, "Fatigue": 2.2, "Headache": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 3.6, "Fever": 3.4, "Headache": 2.8, "Nausea": 1.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.4, "Frequent Urination": 6.2, "Back Pain": 4.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.9, "Cough": 6.1, "Headache": 5.9, "Muscle Pain": 7.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Headache": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 2.3, "Fever": 1.8, "Headache": 2.6, "Muscle Pain": 3.2, "Nausea": 1.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.3, "Fatigue": 8.1, "Cough": 5.2, "Headache": 6.5, "Muscle Pain": 6.1, "Sore Throat": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.5, "Fatigue": 7.5, "Cough": 5.0, "Headache": 6.8, "Muscle Pain": 6.8, "Sore Throat": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Nasal Congestion": 5.4, "Sore Throat": 3.7, "Cough": 4.1, "Headache": 4.1, "Fever": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 2.6, "Nasal Congestion": 2.5, "Sore Throat": 1.6, "Cough": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 5.8, "Frequent Urination": 3.6, "Back Pain": 3.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 4.7, "Headache": 4.5, "Muscle Pain": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.6, "Fatigue": 7.5, "Cough": 4.6, "Headache": 5.9, "Muscle Pain": 7.0, "Sore Throat": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.5, "Fever": 2.4, "Headache": 5.6, "Muscle Pain": 4.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 3.0, "Sore Throat": 3.4, "Cough": 5.8, "Fatigue": 2.3, "Headache": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 4.5, "Fever": 2.3, "Headache": 4.6, "Muscle Pain": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 8.5, "Frequent Urination": 6.8, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.1, "Nasal Congestion": 4.3, "Sore Throat": 5.7, "Headache": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.0, "Headache": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 4.3, "Sore Throat": 3.8, "Cough": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 4.6, "Frequent Urination": 3.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 7.1, "Fatigue": 7.3, "Cough": 6.9, "Headache": 6.5, "Muscle Pain": 6.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 2.5, "Nasal Congestion": 2.3, "Cough": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.5, "Cough": 7.6, "Shortness of Breath": 4.5, "Fatigue": 6.3, "Blurred Vision": 8.3, "Headache": 4.4, "Sore Throat": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.7, "Blurred Vision": 6.5, "Muscle Pain": 3.7, "Sore Throat": 2.4, "Diarrhea": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 6.6, "Headache": 3.1, "Muscle Pain": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 8.3, "Back Pain": 5.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.2, "Nasal Congestion": 4.4, "Sore Throat": 4.1, "Cough": 4.9, "Fatigue": 2.0, "Headache": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.6, "Fever": 3.8, "Headache": 5.0, "Nausea": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 3.5, "Cough": 2.3, "Fatigue": 5.2, "Blurred Vision": 6.2, "Muscle Pain": 3.1, "Sore Throat": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.4, "Frequent Urination": 6.1, "Fever": 1.4, "Nausea": 1.8, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 8.4, "Cough": 5.7, "Headache": 6.1, "Muscle Pain": 6.8, "Sore Throat": 4.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 6.8, "Nasal Congestion": 3.9, "Sore Throat": 5.5, "Cough": 5.7, "Fatigue": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 7.2, "Cough": 4.4, "Fatigue": 5.1, "Blurred Vision": 9.1, "Headache": 3.4, "Muscle Pain": 6.1, "Diarrhea": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.3, "Back Pain": 5.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.6, "Frequent Urination": 7.6, "Back Pain": 5.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 2.8, "Cough": 2.4, "Fatigue": 3.7, "Blurred Vision": 5.3, "Muscle Pain": 4.1, "Sore Throat": 1.4, "Diarrhea": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 5.7, "Fever": 4.2, "Muscle Pain": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.0, "Headache": 3.0, "Muscle Pain": 5.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.3, "Fatigue": 4.6, "Cough": 3.1, "Muscle Pain": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 5.1, "Nasal Congestion": 4.7, "Sore Throat": 3.5, "Cough": 2.9, "Headache": 2.7, "Fever": 1.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 3.9, "Nasal Congestion": 3.3, "Sore Throat": 2.4, "Cough": 4.5, "Fatigue": 3.1, "Headache": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.4, "Fever": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.4, "Fatigue": 7.2, "Cough": 4.6, "Headache": 6.1, "Muscle Pain": 6.2, "Sore Throat": 5.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.2, "Cough": 7.6, "Shortness of Breath": 5.5, "Fatigue": 7.7, "Diarrhea": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.6, "Cough": 4.9, "Headache": 5.4, "Muscle Pain": 7.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.3, "Fatigue": 8.9, "Cough": 6.8, "Headache": 5.9, "Muscle Pain": 6.4, "Sore Throat": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.9, "Frequent Urination": 4.3, "Fever": 1.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 4.3, "Fever": 3.2, "Headache": 4.8, "Muscle Pain": 3.1, "Nausea": 2.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.3, "Fatigue": 7.3, "Cough": 4.8, "Headache": 7.1, "Muscle Pain": 6.3, "Sore Throat": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.3, "Fatigue": 4.9, "Cough": 3.2, "Headache": 4.5, "Muscle Pain": 5.7, "Sore Throat": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 8.4, "Frequent Urination": 6.2, "Back Pain": 5.7, "Nausea": 1.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.8, "Cough": 5.3, "Shortness of Breath": 4.3, "Fatigue": 4.0, "Blurred Vision": 6.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 4.3, "Cough": 4.9, "Fatigue": 4.7, "Headache": 3.0, "Muscle Pain": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.6, "Cough": 3.7, "Shortness of Breath": 5.3, "Fatigue": 5.2, "Muscle Pain": 5.7, "Sore Throat": 2.1, "Diarrhea": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 4.1, "Frequent Urination": 4.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 8.5, "Frequent Urination": 6.5, "Back Pain": 6.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 2.2, "Nasal Congestion": 2.4, "Sore Throat": 2.0, "Fatigue": 1.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 5.0, "Fever": 4.1, "Muscle Pain": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 5.5, "Nasal Congestion": 5.7, "Cough": 5.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.6, "Fatigue": 7.2, "Cough": 4.8, "Muscle Pain": 6.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 7.8, "Muscle Pain": 7.1, "Sore Throat": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.8, "Headache": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 3.3, "Nasal Congestion": 2.6, "Sore Throat": 1.1, "Cough": 3.3, "Fatigue": 1.4, "Headache": 1.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 4.3, "Frequent Urination": 4.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 2.4, "Cough": 1.6, "Headache": 3.4, "Fever": 0.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 8.5, "Frequent Urination": 6.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.7, "Frequent Urination": 6.1, "Back Pain": 3.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 8.0, "Fatigue": 8.7, "Cough": 4.4, "Headache": 6.5, "Muscle Pain": 6.2, "Sore Throat": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.2, "Nasal Congestion": 5.8, "Sore Throat": 5.8, "Cough": 4.0, "Fatigue": 2.1, "Headache": 3.0, "Fever": 1.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 6.8, "Nasal Congestion": 5.4, "Cough": 2.3, "Headache": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 3.2, "Cough": 4.6, "Fatigue": 4.0, "Blurred Vision": 7.0, "Headache": 4.5, "Muscle Pain": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.7, "Fever": 1.9, "Headache": 2.3, "Muscle Pain": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.1, "Headache": 5.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 7.2, "Fatigue": 7.9, "Cough": 4.4, "Headache": 7.4, "Muscle Pain": 7.9, "Sore Throat": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.5, "Frequent Urination": 7.2, "Back Pain": 5.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.4, "Fatigue": 7.4, "Cough": 6.1, "Headache": 8.0, "Muscle Pain": 7.0, "Sore Throat": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.9, "Cough": 4.8, "Blurred Vision": 9.5, "Headache": 7.0, "Sore Throat": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.9, "Fatigue": 7.8, "Cough": 6.6, "Headache": 5.3, "Muscle Pain": 7.2, "Sore Throat": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 4.0, "Cough": 6.4, "Shortness of Breath": 5.2, "Fatigue": 7.6, "Blurred Vision": 9.7, "Headache": 4.5, "Muscle Pain": 6.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 4.4, "Fatigue": 4.9, "Cough": 4.1, "Headache": 3.5, "Muscle Pain": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.9, "Shortness of Breath": 7.1, "Fatigue": 7.0, "Headache": 5.5, "Muscle Pain": 5.3, "Sore Throat": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 7.0, "Shortness of Breath": 6.0, "Fatigue": 5.9, "Headache": 6.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 5.5, "Nasal Congestion": 6.7, "Sore Throat": 4.2, "Cough": 5.6, "Headache": 2.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 2.5, "Nasal Congestion": 5.1, "Sore Throat": 1.4, "Headache": 2.7, "Fever": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.4, "Cough": 7.3, "Shortness of Breath": 3.8, "Fatigue": 8.4, "Blurred Vision": 8.2, "Headache": 5.4, "Muscle Pain": 5.3, "Diarrhea": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 6.0, "Fatigue": 8.3, "Cough": 6.6, "Headache": 5.3, "Muscle Pain": 7.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 6.6, "Muscle Pain": 3.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 6.9, "Nasal Congestion": 5.1, "Cough": 4.2, "Fatigue": 2.6, "Headache": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 5.9, "Cough": 7.3, "Blurred Vision": 9.7, "Headache": 3.9, "Muscle Pain": 6.9, "Sore Throat": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.6, "Headache": 5.6, "Muscle Pain": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 7.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 5.0, "Fever": 4.3, "Headache": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 8.4, "Cough": 6.1, "Shortness of Breath": 8.8, "Fatigue": 5.5, "Blurred Vision": 8.9, "Headache": 4.2, "Muscle Pain": 6.6, "Sore Throat": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 6.7, "Fatigue": 7.5, "Headache": 6.3, "Muscle Pain": 6.7, "Sore Throat": 5.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 8.9, "Frequent Urination": 5.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Cough": 7.9, "Shortness of Breath": 3.5, "Fatigue": 5.9, "Blurred Vision": 9.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.3, "Cough": 6.5, "Shortness of Breath": 3.2, "Fatigue": 7.0, "Blurred Vision": 8.9, "Muscle Pain": 4.9, "Sore Throat": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 6.2, "Nasal Congestion": 6.4, "Sore Throat": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 5.0, "Headache": 3.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 5.4, "Nasal Congestion": 5.9, "Headache": 3.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.1, "Fatigue": 7.2, "Headache": 7.6, "Muscle Pain": 7.1, "Sore Throat": 5.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 8.6, "Cough": 6.2, "Fatigue": 8.6, "Blurred Vision": 8.7, "Muscle Pain": 6.2, "Diarrhea": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.0, "Frequent Urination": 6.8, "Back Pain": 3.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 6.0, "Fever": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 2.7, "Nasal Congestion": 2.7, "Sore Throat": 3.0, "Cough": 2.3, "Fatigue": 1.9, "Headache": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.8, "Fatigue": 6.2, "Cough": 3.3, "Headache": 3.6, "Muscle Pain": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.7, "Fatigue": 7.0, "Cough": 6.5, "Muscle Pain": 6.3, "Sore Throat": 4.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.5, "Frequent Urination": 4.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 2.3, "Sore Throat": 2.8, "Cough": 1.5, "Fatigue": 2.0, "Fever": 1.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 5.0, "Frequent Urination": 7.5, "Back Pain": 4.3, "Nausea": 1.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 6.8, "Nasal Congestion": 6.1, "Sore Throat": 4.1, "Cough": 4.6, "Fatigue": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 5.9, "Nasal Congestion": 5.4, "Cough": 3.3, "Fatigue": 4.0, "Headache": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.2, "Fever": 3.7, "Headache": 4.5, "Muscle Pain": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.9, "Fatigue": 8.6, "Headache": 7.9, "Muscle Pain": 6.3, "Sore Throat": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.0, "Nasal Congestion": 5.7, "Sore Throat": 5.9, "Cough": 4.1, "Fatigue": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 8.0, "Frequent Urination": 5.9, "Back Pain": 4.4, "Fever": 2.7, "Nausea": 2.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 8.1, "Cough": 6.1, "Fatigue": 6.4, "Blurred Vision": 9.9, "Headache": 3.1, "Muscle Pain": 6.6, "Diarrhea": 5.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 6.2, "Fatigue": 7.5, "Cough": 5.8, "Headache": 5.3, "Muscle Pain": 7.9, "Sore Throat": 4.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.4, "Cough": 8.0, "Fatigue": 8.0, "Blurred Vision": 9.7, "Headache": 4.3, "Muscle Pain": 6.4, "Sore Throat": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.7, "Fatigue": 7.8, "Cough": 5.5, "Headache": 5.7, "Muscle Pain": 6.4, "Sore Throat": 5.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 5.2, "Fatigue": 3.6, "Headache": 4.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 6.4, "Frequent Urination": 7.6, "Nausea": 2.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.7, "Cough": 4.5, "Fatigue": 7.0, "Blurred Vision": 8.9, "Headache": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 8.4, "Fatigue": 8.5, "Cough": 4.8, "Headache": 5.6, "Muscle Pain": 7.2, "Sore Throat": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.9, "Headache": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 8.3, "Frequent Urination": 6.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 6.1, "Fever": 3.5, "Headache": 4.6, "Muscle Pain": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 4.7, "Frequent Urination": 3.2, "Back Pain": 4.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.1, "Cough": 5.7, "Blurred Vision": 5.0, "Headache": 5.2, "Muscle Pain": 3.3, "Sore Throat": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 4.5, "Fatigue": 6.3, "Headache": 3.7, "Muscle Pain": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 3.4, "Nasal Congestion": 3.2, "Sore Throat": 2.9, "Headache": 2.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Nasal Congestion": 3.5, "Sore Throat": 5.6, "Cough": 5.6, "Fatigue": 4.9, "Headache": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 6.1, "Headache": 5.4, "Nausea": 2.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.7, "Fatigue": 4.2, "Cough": 3.6, "Headache": 4.0, "Muscle Pain": 5.7, "Sore Throat": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 7.4, "Frequent Urination": 5.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 2.3, "Muscle Pain": 2.4, "Nausea": 1.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 4.9, "Cough": 6.2, "Fatigue": 7.1, "Headache": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 5.5, "Cough": 7.1, "Fatigue": 6.9, "Blurred Vision": 9.8, "Muscle Pain": 4.0, "Sore Throat": 2.9, "Diarrhea": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.8, "Fever": 2.7, "Headache": 3.2, "Muscle Pain": 5.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 5.4, "Frequent Urination": 3.1, "Back Pain": 4.5, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Frequent Urination": 5.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.2, "Fatigue": 7.3, "Cough": 6.7, "Headache": 6.9, "Muscle Pain": 7.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 3.3, "Cough": 3.4, "Fatigue": 3.8, "Sore Throat": 1.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.2, "Nasal Congestion": 3.2, "Cough": 6.0, "Fatigue": 2.8, "Fever": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 3.9, "Fever": 1.3, "Headache": 4.6, "Muscle Pain": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.9, "Fatigue": 7.3, "Cough": 6.3, "Headache": 8.0, "Muscle Pain": 7.1, "Sore Throat": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Cough": 4.0, "Fatigue": 6.6, "Headache": 3.2, "Muscle Pain": 5.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 4.7, "Fever": 3.0, "Headache": 3.1, "Nausea": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 6.4, "Fatigue": 8.9, "Headache": 8.0, "Sore Throat": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 6.7, "Frequent Urination": 6.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 5.9, "Nasal Congestion": 6.9, "Sore Throat": 3.6, "Cough": 5.4, "Fatigue": 2.6, "Headache": 3.3, "Fever": 1.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.6, "Headache": 5.9, "Muscle Pain": 6.2, "Sore Throat": 3.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 5.8, "Nasal Congestion": 6.4, "Fatigue": 2.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 2.8, "Fever": 2.4, "Headache": 2.4, "Muscle Pain": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 6.3, "Frequent Urination": 6.0, "Back Pain": 5.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 2.9, "Nasal Congestion": 2.1, "Sore Throat": 2.0, "Cough": 1.7, "Fatigue": 3.0, "Headache": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.7, "Fatigue": 8.6, "Cough": 4.0, "Sore Throat": 5.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 5.8, "Frequent Urination": 7.8, "Back Pain": 4.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 5.8, "Frequent Urination": 7.2, "Fever": 1.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 5.1, "Fatigue": 4.3, "Cough": 3.5, "Headache": 4.6, "Sore Throat": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 4.6, "Fever": 4.8, "Headache": 3.6, "Muscle Pain": 3.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fever": 5.0, "Cough": 7.0, "Fatigue": 8.9, "Blurred Vision": 8.1, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.8, "Nasal Congestion": 1.9, "Sore Throat": 1.8, "Cough": 3.0, "Fatigue": 2.8, "Headache": 1.7, "Fever": 1.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.8, "Cough": 6.5, "Shortness of Breath": 8.8, "Fatigue": 5.4, "Blurred Vision": 9.9, "Headache": 3.3, "Muscle Pain": 4.2, "Sore Throat": 3.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 5.7, "Frequent Urination": 7.4, "Back Pain": 3.2, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Runny Nose": 3.4, "Nasal Congestion": 4.1, "Cough": 5.6, "Headache": 3.7, "Fever": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 4.5, "Cough": 4.3, "Headache": 4.5, "Muscle Pain": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 5.1, "Fever": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Cough": 3.2, "Fatigue": 3.9, "Blurred Vision": 6.9, "Headache": 2.9, "Sore Throat": 2.5, "Diarrhea": 2.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 6.4, "Fatigue": 8.8, "Cough": 5.1, "Headache": 6.7, "Muscle Pain": 7.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fatigue": 5.4, "Headache": 5.3, "Muscle Pain": 4.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 4.3, "Frequent Urination": 2.7, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 5.3, "Fever": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 6.3, "Muscle Pain": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 8.8, "Cough": 6.6, "Headache": 5.9, "Muscle Pain": 7.7, "Sore Throat": 3.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Muscle Pain": 3.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 4.6, "Muscle Pain": 5.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Nasal Congestion": 6.2, "Sore Throat": 5.8, "Fatigue": 3.5, "Fever": 1.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 5.0, "Back Pain": 5.0, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fatigue": 5.4, "Headache": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Painful Urination": 7.9, "Frequent Urination": 7.3, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.2, "Shortness of Breath": 5.1, "Fatigue": 5.9, "Blurred Vision": 8.2, "Muscle Pain": 4.3, "Sore Throat": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fatigue": 2.9, "Headache": 3.7, "Nausea": 2.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 7.2, "Cough": 4.6, "Headache": 7.0, "Muscle Pain": 7.7, "Sore Throat": 5.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 5.4, "Cough": 6.9, "Shortness of Breath": 3.3, "Fatigue": 6.9, "Blurred Vision": 8.7, "Headache": 3.6, "Muscle Pain": 5.9, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 5.8, "Nasal Congestion": 6.1, "Headache": 2.4, "Fever": 1.7, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 4.1, "Nasal Congestion": 3.4, "Sore Throat": 3.5, "Cough": 3.0, "Headache": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fatigue": 4.6, "Fever": 4.5, "Headache": 3.0, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Fatigue": 6.6, "Fever": 2.9, "Headache": 3.8, "Muscle Pain": 4.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Syndrome"}
+{"symptoms": {"Runny Nose": 3.5, "Nasal Congestion": 2.5, "Sore Throat": 3.4, "Fatigue": 1.8, "Fever": 1.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.0, "Fatigue": 8.0, "Cough": 5.7, "Headache": 6.3, "Muscle Pain": 7.5, "Sore Throat": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Painful Urination": 6.4, "Frequent Urination": 6.4, "Fever": 2.4, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 6.7, "Fatigue": 7.7, "Cough": 4.7, "Headache": 6.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Fever": 6.3, "Cough": 6.2, "Shortness of Breath": 3.2, "Fatigue": 5.8, "Sore Throat": 2.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Painful Urination": 6.5, "Frequent Urination": 3.5, "Back Pain": 2.1, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Painful Urination": 6.7, "Frequent Urination": 5.6, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}
+{"symptoms": {"Fever": 4.2, "Cough": 3.7, "Fatigue": 5.2, "Headache": 4.8, "Diarrhea": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Fever": 5.0, "Fatigue": 5.0, "Cough": 4.2, "Headache": 3.8, "Muscle Pain": 3.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 6.0, "Nasal Congestion": 6.1, "Sore Throat": 2.4, "Cough": 5.8, "Fatigue": 4.3, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 8.0, "Cough": 5.7, "Fatigue": 7.7, "Blurred Vision": 10.0, "Muscle Pain": 6.1, "Sore Throat": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "COVID-19-like Illness"}
+{"symptoms": {"Runny Nose": 3.1, "Nasal Congestion": 4.8, "Sore Throat": 2.0, "Cough": 1.7, "Fatigue": 1.6, "Headache": 2.6, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 4.0, "Nasal Congestion": 4.8, "Cough": 5.7, "Fatigue": 2.4, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Runny Nose": 5.0, "Nasal Congestion": 3.4, "Sore Throat": 4.8, "Cough": 4.3, "Fatigue": 3.6, "Headache": 4.2, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Fever": 6.3, "Fatigue": 8.9, "Cough": 5.8, "Headache": 6.4, "Muscle Pain": 7.9, "Sore Throat": 4.5, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Influenza-like Illness"}
+{"symptoms": {"Runny Nose": 4.3, "Nasal Congestion": 6.4, "Sore Throat": 4.8, "Cough": 5.8, "Frequent Urination": 0.0, "Painful Urination": 0.0}, "label_name": "Viral Upper Respiratory Infection"}
+{"symptoms": {"Painful Urination": 4.4, "Frequent Urination": 3.5, "Back Pain": 3.9, "Cough": 0.0, "Runny Nose": 0.0, "Nasal Congestion": 0.0}, "label_name": "Urinary Tract Infection"}

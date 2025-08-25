@@ -405,6 +405,10 @@ def get_syndrome_from_symptoms(symptom_ids):
     gi_count = sum(1 for s in symptom_ids if s in gi_symptoms)
     systemic_count = sum(1 for s in symptom_ids if s in systemic_symptoms)
     
+    # Heuristic: fever + any key upper-respiratory symptom is enough to call it respiratory febrile
+    if 0 in symptom_ids and any(s in symptom_ids for s in (3, 6, 7, 8)):
+        return "Respiratory Febrile"
+
     if resp_count >= 2 and systemic_count >= 1:
         return "Respiratory Febrile"
     elif gi_count >= 2:

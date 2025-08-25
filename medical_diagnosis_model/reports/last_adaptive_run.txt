@@ -1,0 +1,243 @@
+Seed prior symptoms (format: Name:Severity,Name:Severity). Example: Fever:8,Cough:6
+Prior (or press Enter to skip): Model loaded from /Users/nickvaccarello/Documents/Cursor Projects/PythonNeuralNet/medical_diagnosis_model/models/enhanced_medical_model.json
+api_log method=POST path=/api/v2/adaptive/start status=200
+
+Session: 69620a46-96a9-4229-a30a-36760e8a8500
+
+Next question:
+  ID:   3
+  Name: Cough  (ICD-10: R05)
+Top diseases (current posterior):
+  Viral Upper Respiratory Infection  P=0.091
+  Influenza-like Illness          P=0.091
+  COVID-19-like Illness           P=0.091
+Top candidates by EIG:
+   3  Cough                         EIG=0.4239
+   7  Runny Nose                    EIG=0.3892
+   8  Nasal Congestion              EIG=0.3555
+  16  Muscle Pain                   EIG=0.3468
+   6  Sore Throat                   EIG=0.3463
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit):   Severity 0-10 (Enter to skip): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   1
+  Name: Fatigue  (ICD-10: R53.83)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+   1  Fatigue                       EIG=0.0143
+  12  Headache                      EIG=0.0107
+  16  Muscle Pain                   EIG=0.0089
+  27  Painful Urination             EIG=0.0071
+  26  Frequent Urination            EIG=0.0054
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   12
+  Name: Headache  (ICD-10: R51)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+  12  Headache                      EIG=0.0107
+  16  Muscle Pain                   EIG=0.0089
+  27  Painful Urination             EIG=0.0071
+  26  Frequent Urination            EIG=0.0054
+  17  Back Pain                     EIG=0.0022
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit):   Severity 0-10 (Enter to skip): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   16
+  Name: Muscle Pain  (ICD-10: M79.1)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+  16  Muscle Pain                   EIG=0.0089
+  27  Painful Urination             EIG=0.0071
+  26  Frequent Urination            EIG=0.0054
+  17  Back Pain                     EIG=0.0022
+   0  Fever                         EIG=0.0009
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   27
+  Name: Painful Urination  (ICD-10: R30.0)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+  27  Painful Urination             EIG=0.0071
+  26  Frequent Urination            EIG=0.0054
+  17  Back Pain                     EIG=0.0022
+   0  Fever                         EIG=0.0009
+   6  Sore Throat                   EIG=0.0006
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   26
+  Name: Frequent Urination  (ICD-10: R35.0)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+  26  Frequent Urination            EIG=0.0054
+  17  Back Pain                     EIG=0.0022
+   0  Fever                         EIG=0.0009
+   6  Sore Throat                   EIG=0.0006
+   7  Runny Nose                    EIG=0.0004
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   17
+  Name: Back Pain  (ICD-10: M54.9)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+  17  Back Pain                     EIG=0.0022
+   0  Fever                         EIG=0.0009
+   6  Sore Throat                   EIG=0.0006
+   7  Runny Nose                    EIG=0.0004
+   8  Nasal Congestion              EIG=0.0004
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   0
+  Name: Fever  (ICD-10: R50.9)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+   0  Fever                         EIG=0.0009
+   6  Sore Throat                   EIG=0.0006
+   7  Runny Nose                    EIG=0.0004
+   8  Nasal Congestion              EIG=0.0004
+  28  Blurred Vision                EIG=0.0003
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit):   Severity 0-10 (Enter to skip): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   6
+  Name: Sore Throat  (ICD-10: J02.9)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.998
+  Viral Syndrome                  P=0.002
+  Viral Upper Respiratory Infection  P=0.000
+Top candidates by EIG:
+   6  Sore Throat                   EIG=0.0006
+   7  Runny Nose                    EIG=0.0004
+   8  Nasal Congestion              EIG=0.0004
+  28  Blurred Vision                EIG=0.0003
+   4  Shortness of Breath           EIG=0.0003
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit):   Severity 0-10 (Enter to skip): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   7
+  Name: Runny Nose  (ICD-10: J34.89)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.985
+  Viral Upper Respiratory Infection  P=0.004
+  Influenza-like Illness          P=0.002
+Top candidates by EIG:
+   7  Runny Nose                    EIG=0.0195
+   8  Nasal Congestion              EIG=0.0181
+   4  Shortness of Breath           EIG=0.0150
+  23  Swelling                      EIG=0.0118
+  18  Chest Pain                    EIG=0.0094
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit):   Severity 0-10 (Enter to skip): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   8
+  Name: Nasal Congestion  (ICD-10: J34.89)
+Top diseases (current posterior):
+  Urinary Tract Infection         P=0.985
+  Viral Upper Respiratory Infection  P=0.004
+  Influenza-like Illness          P=0.002
+Top candidates by EIG:
+   8  Nasal Congestion              EIG=0.0181
+   4  Shortness of Breath           EIG=0.0150
+  23  Swelling                      EIG=0.0118
+  18  Chest Pain                    EIG=0.0094
+  28  Blurred Vision                EIG=0.0087
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit):   Severity 0-10 (Enter to skip): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   23
+  Name: Swelling  (ICD-10: R60.9)
+Top diseases (current posterior):
+  Viral Upper Respiratory Infection  P=0.212
+  Urinary Tract Infection         P=0.142
+  Influenza-like Illness          P=0.128
+Top candidates by EIG:
+  23  Swelling                      EIG=0.2669
+   4  Shortness of Breath           EIG=0.2600
+  18  Chest Pain                    EIG=0.2041
+  28  Blurred Vision                EIG=0.1868
+   5  Wheezing                      EIG=0.1494
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   4
+  Name: Shortness of Breath  (ICD-10: R06.02)
+Top diseases (current posterior):
+  Viral Upper Respiratory Infection  P=0.212
+  Urinary Tract Infection         P=0.142
+  Influenza-like Illness          P=0.128
+Top candidates by EIG:
+   4  Shortness of Breath           EIG=0.2600
+  18  Chest Pain                    EIG=0.2041
+  28  Blurred Vision                EIG=0.1868
+   5  Wheezing                      EIG=0.1494
+   9  Nausea                        EIG=0.0897
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   18
+  Name: Chest Pain  (ICD-10: R07.9)
+Top diseases (current posterior):
+  Viral Upper Respiratory Infection  P=0.212
+  Urinary Tract Infection         P=0.142
+  Influenza-like Illness          P=0.128
+Top candidates by EIG:
+  18  Chest Pain                    EIG=0.2041
+  28  Blurred Vision                EIG=0.1868
+   5  Wheezing                      EIG=0.1494
+   9  Nausea                        EIG=0.0897
+  11  Diarrhea                      EIG=0.0876
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit):   Severity 0-10 (Enter to skip): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Next question:
+  ID:   28
+  Name: Blurred Vision  (ICD-10: H53.8)
+Top diseases (current posterior):
+  Viral Upper Respiratory Infection  P=0.212
+  Urinary Tract Infection         P=0.142
+  Influenza-like Illness          P=0.128
+Top candidates by EIG:
+  28  Blurred Vision                EIG=0.1868
+   5  Wheezing                      EIG=0.1494
+   9  Nausea                        EIG=0.0897
+  11  Diarrhea                      EIG=0.0876
+  22  Itching                       EIG=0.0057
+Answer [y]es/[n]o/[u]nknown (Enter to finish, q to quit): api_log method=POST path=/api/v2/adaptive/answer status=200
+
+Reached stop condition.
+api_log method=POST path=/api/v2/adaptive/finish status=200
+
+Primary diagnosis:
+  Viral Upper Respiratory Infection  (ICD-10: J06.9)
+  Confidence: 0.212
+
+Key reasoning excerpts:
+  + Cough: Common in this condition
+  + Runny Nose: Common in this condition
+  + Nasal Congestion: Common in this condition
+  - Chest Pain: Not typical for this diagnosis

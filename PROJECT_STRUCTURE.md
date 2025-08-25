@@ -112,6 +112,7 @@ medical_diagnosis_model/
 ## Task Map (completed → pending)
 
 - Completed
+
   - Data scaffolding: `data/case.schema.json`, `data/dictionaries/*`, `data/samples/*`, `data/validate_cases.py`
   - Backend phase 1: `/diagnose`, `/export` endpoints; CORS; API key auth; request logging; rate limiting
   - Security scaffold: OIDC/JWT dependency (`backend/security/jwt_dep.py`) behind `MDM_AUTH_MODE=oidc`

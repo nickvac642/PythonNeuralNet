@@ -597,9 +597,9 @@ class ClinicalReasoningNetwork:
             logits = [self._ln(max(p, eps)) for p in adjusted]
             for did, disease in DISEASES_V2.items():
                 if disease['name'] in allowed:
-                    logits[did] += 2.5  # boost allowed
+                    logits[did] += 1.0  # smaller boost for allowed set
                 else:
-                    logits[did] -= 2.5  # penalize disallowed
+                    logits[did] -= 1.0  # smaller penalty for disallowed
             
             # Disease-specific discriminative boosts based on key features
             # Helper to find disease index by name
@@ -636,6 +636,13 @@ class ClinicalReasoningNetwork:
                 # Negative evidence: GU keys absent with strong URI pattern present
                 if uti_idx is not None and (rhinorrhea > 0.3 or congestion > 0.3) and (26 not in symptom_ids) and (27 not in symptom_ids):
                     logits[uti_idx] -= 6.0
+                # Guard against COVID-like overshadowing basic URI when anosmia is absent and fever not high
+                if covid_idx is not None and anosmia < 0.6 and fever < 0.6 and cough >= 0.3 and (rhinorrhea > 0.3 or congestion > 0.3):
+                    logits[uri_idx] += 1.0
+                # Strong downweight of COVID-like for strep/URI pattern: sore throat high, cough absent, anosmia absent
+                if covid_idx is not None and anosmia < 0.6 and cough < 0.2 and sore_throat >= 0.6:
+                    logits[covid_idx] -= 3.0
+                    logits[uri_idx] += 0.5
             
             # ILI: high fever + myalgia (+/- severe fatigue)
             if ili_idx is not None:
@@ -643,6 +650,12 @@ class ClinicalReasoningNetwork:
                     logits[ili_idx] += 2.5
                 if fatigue >= 0.7:
                     logits[ili_idx] += 0.5
+                # Penalize ILI when myalgia is absent, cough absent, and sore throat dominant
+                if myalgia < 0.3 and cough < 0.2 and sore_throat >= 0.6:
+                    logits[ili_idx] -= 3.5
+                    # Boost URI in this strep/viral-pharyngitis-like pattern
+                    if uri_idx is not None:
+                        logits[uri_idx] += 1.5
             
             # COVID-like: anosmia highly specific; GI + cough supportive; dyspnea moderate
             if covid_idx is not None:
@@ -656,7 +669,11 @@ class ClinicalReasoningNetwork:
             # Pneumonia: dyspnea + chest pain + strong cough
             if pna_idx is not None:
                 if dyspnea >= 0.5 and chest_pain >= 0.4 and cough >= 0.5:
-                    logits[pna_idx] += 2.0
+                    logits[pna_idx] += 2.5
+                # Strongly favor pneumonia over COVID-like when classic triad present without anosmia
+                if covid_idx is not None and anosmia < 0.6 and dyspnea >= 0.6 and chest_pain >= 0.4 and fever >= 0.6 and cough >= 0.6:
+                    logits[pna_idx] += 5.0
+                    logits[covid_idx] -= 8.0
             # Stronger UTI penalty if urinary keys absent; zero out if syndrome is respiratory
             if uti_idx is not None and (26 not in symptom_ids) and (27 not in symptom_ids):
                 if syndrome_ctx and ("Respiratory" in syndrome_ctx or syndrome_ctx == "Undifferentiated"):
@@ -669,6 +686,25 @@ class ClinicalReasoningNetwork:
             s = sum(exps)
             adjusted = [e / s for e in exps]
         
+        # Final deterministic guardrails for classic patterns (post-gating)
+        try:
+            # Identify indices again if needed
+            def _idx2(name: str):
+                for _did, _dis in DISEASES_V2.items():
+                    if _dis['name'] == name:
+                        return _did
+                return None
+            pna_idx2 = _idx2("Pneumonia Syndrome")
+            covid_idx2 = _idx2("COVID-19-like Illness")
+            # Strong pneumonia triad: high cough + dyspnea + chest pain, no anosmia
+            if pna_idx2 is not None and covid_idx2 is not None:
+                if dyspnea >= 0.6 and chest_pain >= 0.4 and cough >= 0.6 and anosmia < 0.3:
+                    # Ensure pneumonia outranks COVID for this presentation
+                    adjusted[pna_idx2] = max(adjusted[pna_idx2], adjusted[covid_idx2] + 0.05)
+                    adjusted[covid_idx2] *= 0.1
+        except Exception:
+            pass
+
         # Normalize probabilities
         total = sum(adjusted)
         if total > 0:
