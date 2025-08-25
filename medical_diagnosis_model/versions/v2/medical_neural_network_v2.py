@@ -307,17 +307,17 @@ class ClinicalReasoningNetwork:
             neuron['delta'] = error * d
             hidden_deltas.append(neuron['delta'])
 
-        # Update weights for output layer
+        # Update weights for output layer (gradient descent)
         for i, neuron in enumerate(output_layer):
             for j in range(len(hidden_outputs)):
-                neuron['weights'][j] += self.learning_rate * neuron['delta'] * hidden_outputs[j]
-            neuron['weights'][-1] += self.learning_rate * neuron['delta']
+                neuron['weights'][j] -= self.learning_rate * neuron['delta'] * hidden_outputs[j]
+            neuron['weights'][-1] -= self.learning_rate * neuron['delta']
 
-        # Update weights for hidden layer
+        # Update weights for hidden layer (gradient descent)
         for j, neuron in enumerate(hidden_layer):
             for k in range(len(inputs)):
-                neuron['weights'][k] += self.learning_rate * neuron['delta'] * inputs[k]
-            neuron['weights'][-1] += self.learning_rate * neuron['delta']
+                neuron['weights'][k] -= self.learning_rate * neuron['delta'] * inputs[k]
+            neuron['weights'][-1] -= self.learning_rate * neuron['delta']
 
     def _train_softmax_cross_entropy(self, network, train_set, val_set, verbose=True):
         best_val_nll = float('inf')

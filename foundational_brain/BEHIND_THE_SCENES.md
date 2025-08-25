@@ -186,23 +186,29 @@ This document lives in `foundational_brain/BEHIND_THE_SCENES.md` and explains th
 ## Appendix A (v0.2 pipeline specifics)
 
 ### A1. JSONL → vector mapping
+
 - Each record has a free‑text symptom map (Name → Severity 0–10) and a `label_name`.
 - We map names to fixed symptom IDs; build x = [presence; severity], where presence_i = 1 if severity_i > 0 else 0 and severity_i ∈ [0,1].
 - Label is mapped to a class index and then one‑hot y.
 
 ### A2. Class balance and explicit negatives
+
 - Balanced per‑class counts (or class weights) suppress prior skew.
 - Explicit negatives encode “absence of key symptoms” (e.g., dysuria=0, frequency=0 in respiratory cases), teaching strong negative evidence.
 
 ### A3. Training objective (softmax + cross‑entropy)
+
 - Same equations as main text; we optimize NLL with SGD.
 - Validation split for early stopping; select the best epoch by lowest val loss.
+  Implementation note: v2 applies gradient descent (subtracting gradients) for both layers; the foundational demo used MSE with a toy update.
 
 ### A4. Probability calibration (temperature scaling)
-- Pick T* on the validation set by minimizing NLL(softmax(z/T)).
-- At inference, ŷ = softmax(z/T*). This improves reliability (confidence ≈ accuracy).
+
+- Pick T\* on the validation set by minimizing NLL(softmax(z/T)).
+- At inference, ŷ = softmax(z/T\*). This improves reliability (confidence ≈ accuracy).
 
 ### A5. Expected Information Gain (EIG) in adaptive questioning
+
 - Current posterior P(d) (after clinical rules).
 - For a candidate symptom s, approximate P(yes|d) from disease symptom frequencies.
 - P(yes) = Σ_d P(d) P(yes|d); P(no) = 1 − P(yes).
@@ -211,14 +217,17 @@ This document lives in `foundational_brain/BEHIND_THE_SCENES.md` and explains th
 - EIG(s) = H(P) − [P(yes) H(P(d|yes)) + P(no) H(P(d|no))]. We ask the s with highest EIG.
 
 ### A6. Evidence‑aware stop and triage
+
 - We stop only if (a) top‑1 probability ≥ threshold and (b) minimal supporting evidence exists (e.g., at least one GU key for UTI).
 - First question is selected from a small triage set (respiratory vs GU vs GI discriminators) to reduce early ambiguity.
 
 ### A7. Quick metrics
+
 - Confusion matrix and ECE bins provide a fast snapshot of class separation and calibration.
 - ECE = Σ_bins (n_bin/N) |mean_conf − mean_acc|.
 
 ### A8. Where to look
+
 - Data gen: `medical_diagnosis_model/data/generate_v02.py`
 - Train from JSONL: `medical_diagnosis_model/versions/v2/medical_neural_network_v2.py`
 - Pipeline + metrics: `medical_diagnosis_model/tools/train_pipeline.py`
