@@ -115,6 +115,14 @@ Acceptance:
     - Config toggles in `configs/training.yaml` enable Adam/L2/dropout; seed fixed.
     - Training summary logs include optimizer, regularization, and early stopping status.
     - Class weighting or balanced sampling applied if class counts are imbalanced; documented in DATA_CARD.
+
+- Transformer baseline
+  - Implement a tiny Transformer classifier as a comparative baseline to the current MLP.
+  - Acceptance criteria:
+    - `foundational_brain/nano_transformer.py` with tokenization (symptom IDs), embeddings, 2–4 attention blocks, and classifier head; trained with cross‑entropy.
+    - CLI to train/evaluate on v0.2 data and save metrics: `python -m foundational_brain.nano_transformer --jsonl medical_diagnosis_model/data/v02/cases_v02.jsonl`.
+    - Report comparing MLP vs Transformer on accuracy, confusion, and ECE written to `medical_diagnosis_model/reports/transformer_baseline.json`.
+    - README snippet explaining differences (sequence modeling, attention) and when Transformer helps.
 - Metrics & calibration
   - AUROC, AUPRC, F1, Top‑k, confusion per class.
   - Reliability diagrams + ECE; re‑tune temperature on held‑out set; subgroup calibration (age/sex/season). Add drift monitors for class priors and feature distributions.
@@ -164,9 +172,11 @@ Acceptance:
 ## Ops & tooling (parallel)
 
 - Experiment tracking & configs
-  - YAML configs, fixed seeds, run logs; simple experiment registry.
+  - YAML configs, fixed seeds, run logs; MLflow for runs/artifacts; Hydra for hierarchical configs.
   - Acceptance criteria:
-    - Each run saves `configs/*.yaml`, seed, code commit, and metrics in `runs/{timestamp}/`.
+    - MLflow tracking enabled locally: params/metrics/artifacts (model, reports) recorded per run under `mlruns/`.
+    - Hydra‑based configs under `medical_diagnosis_model/configs/` with overrides for optimizer, regularization, and model type (mlp|transformer).
+    - Each run logs code commit hash, dataset version, seed; outputs in `runs/{timestamp}/` include a summary JSON and links to MLflow artifacts.
     - A summary index CSV lists runs with key metrics for comparison.
 - Batch CLI
   - Score CSV/JSONL → outputs with predictions, differentials, confidence, flags.
@@ -557,5 +567,7 @@ medical_diagnosis_model/
 9. Build batch CLI to score CSV and emit results JSON/CSV.
 
 10. Implement adaptive questioning selector stub (`backend/selector/eig_selector.py`) with unit tests on toy distributions; wire a no‑UI CLI demo.
+11. Add nano‑Transformer baseline (`foundational_brain/nano_transformer.py`) + CLI; compare vs MLP and write `reports/transformer_baseline.json`.
+12. Wire MLflow tracking and Hydra configs for both MLP and Transformer runs; log params/metrics/artifacts and enable easy overrides.
 
 > Tip: keep a changelog and version datasets/runs (seed, config, code commit) for reproducibility.
