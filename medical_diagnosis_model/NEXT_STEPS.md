@@ -109,7 +109,42 @@ Acceptance:
   - Acceptance criteria:
     - `backend/data/splitter.py` implements patient/time‑based splits; no leakage tests pass.
     - CLI: `python -m backend.tools.split --input data/clean/ --out data/splits/` writes CSV lists and a class distribution report.
+
+  - Implementation plan (v2 JSONL):
+    - Data fields:
+      - Ensure JSONL rows include `patient_id` (string) and `onset_day` (int) fields. If not present, fallback to instance‑level stratified split.
+      - Source: extend `medical_diagnosis_model/data/generate_v02.py` to optionally emit these fields (deterministic with seed).
+    - Splitter module:
+      - Add `medical_diagnosis_model/backend/data/splitter.py` with functions:
+        - `load_jsonl(path) -> list[dict]`
+        - `stratified_split(rows, label_key, ratios, seed)`
+        - `patient_time_split(rows, patient_key, time_key, label_key, ratios, seed)` (group by patient; sort by time; hold out last k% patients/time windows)
+        - `compute_class_weights(rows, label_key) -> dict[label, weight]` (inverse frequency)
+        - `report_distribution(rows, label_key) -> dict[label, count]`
+      - Write outputs to `medical_diagnosis_model/data/splits/v02/{train,val,test}.jsonl` and `class_weights.json` + `distribution.json` for each split.
+    - CLI:
+      - Add `medical_diagnosis_model/backend/tools/split.py` with args:
+        - `--input <jsonl>` (default: `data/v02/cases_v02.jsonl`)
+        - `--out <dir>` (default: `data/splits/v02`)
+        - `--patient-key patient_id --time-key onset_day --label-key label_name`
+        - `--ratios 0.7 0.15 0.15` and `--seed 42`
+        - `--strategy patient_time|stratified`
+      - Emits JSONL splits + `summary.json` containing counts and class weights per split.
+    - Tests:
+      - `medical_diagnosis_model/tests/test_splitter.py`:
+        - Verifies no patient overlap across splits in patient_time strategy.
+        - Verifies class distribution similarity (stratified) within tolerance.
+        - Verifies weights sum to number of classes and are inverse proportional to counts.
+      - Add property: fixed `--seed` → deterministic split membership hashes.
+    - Integration points:
+      - `tools/train_pipeline.py` accepts `--splits <dir>` to train from `{train,val}` instead of a single JSONL.
+      - `versions/v2/medical_neural_network_v2.py.train_from_jsonl` gains optional `class_weights` to weight loss.
+    - Docs:
+      - Update README/NEXT_STEPS with commands:
+        - `PYTHONPATH=. python3 -m medical_diagnosis_model.backend.tools.split --strategy stratified`
+        - `PYTHONPATH=. python3 medical_diagnosis_model/tools/train_pipeline.py --jsonl data/splits/v02/train.jsonl --epochs 5000`
 - Training
+
   - Switch to Adam; add L2 weight decay; optional dropout in hidden layer; expose via config.
   - Acceptance criteria:
     - Config toggles in `configs/training.yaml` enable Adam/L2/dropout; seed fixed.
