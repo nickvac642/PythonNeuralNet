@@ -105,8 +105,10 @@ Acceptance:
 ## Foundation upgrades (week 2–3)
 
 - Splits & imbalance
+
   - Patient‑level and time‑based train/val/test split (no leakage); stratify; add class weights or weighted sampling.
   - Acceptance criteria:
+
     - `backend/data/splitter.py` implements patient/time‑based splits; no leakage tests pass.
     - CLI: `python -m backend.tools.split --input data/clean/ --out data/splits/` writes CSV lists and a class distribution report.
 
@@ -143,6 +145,7 @@ Acceptance:
       - Update README/NEXT_STEPS with commands:
         - `PYTHONPATH=. python3 -m medical_diagnosis_model.backend.tools.split --strategy stratified`
         - `PYTHONPATH=. python3 medical_diagnosis_model/tools/train_pipeline.py --jsonl data/splits/v02/train.jsonl --epochs 5000`
+
 - Training
 
   - Switch to Adam; add L2 weight decay; optional dropout in hidden layer; expose via config.
