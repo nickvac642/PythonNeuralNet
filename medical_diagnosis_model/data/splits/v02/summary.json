@@ -1,0 +1,37 @@
+{
+  "counts": {
+    "train": 525,
+    "val": 112,
+    "test": 113
+  },
+  "distribution": {
+    "train": {
+      "Influenza-like Illness": 104,
+      "COVID-19-like Illness": 103,
+      "Urinary Tract Infection": 113,
+      "Viral Upper Respiratory Infection": 95,
+      "Viral Syndrome": 110
+    },
+    "val": {
+      "Viral Upper Respiratory Infection": 28,
+      "COVID-19-like Illness": 22,
+      "Influenza-like Illness": 25,
+      "Viral Syndrome": 17,
+      "Urinary Tract Infection": 20
+    },
+    "test": {
+      "Urinary Tract Infection": 17,
+      "Influenza-like Illness": 21,
+      "COVID-19-like Illness": 25,
+      "Viral Syndrome": 23,
+      "Viral Upper Respiratory Infection": 27
+    }
+  },
+  "class_weights": {
+    "Influenza-like Illness": 1.0096153846153846,
+    "COVID-19-like Illness": 1.0194174757281553,
+    "Urinary Tract Infection": 0.9292035398230089,
+    "Viral Upper Respiratory Infection": 1.105263157894737,
+    "Viral Syndrome": 0.9545454545454546
+  }
+}

@@ -109,8 +109,8 @@ Acceptance:
   - Patient‑level and time‑based train/val/test split (no leakage); stratify; add class weights or weighted sampling.
   - Acceptance criteria:
 
-    - `backend/data/splitter.py` implements patient/time‑based splits; no leakage tests pass.
-    - CLI: `python -m backend.tools.split --input data/clean/ --out data/splits/` writes CSV lists and a class distribution report.
+    - [x] `backend/data/splitter.py` implements patient/time‑based and stratified splits; no‑leakage tests pass.
+    - [x] CLI: `python -m medical_diagnosis_model.backend.tools.split --input medical_diagnosis_model/data/v02/cases_v02.jsonl --out medical_diagnosis_model/data/splits/v02` writes JSONL `{train,val,test}.jsonl` and `summary.json` (per‑split class distributions and class weights).
 
   - Implementation plan (v2 JSONL):
     - Data fields:
@@ -143,8 +143,8 @@ Acceptance:
       - `versions/v2/medical_neural_network_v2.py.train_from_jsonl` gains optional `class_weights` to weight loss.
     - Docs:
       - Update README/NEXT_STEPS with commands:
-        - `PYTHONPATH=. python3 -m medical_diagnosis_model.backend.tools.split --strategy stratified`
-        - `PYTHONPATH=. python3 medical_diagnosis_model/tools/train_pipeline.py --jsonl data/splits/v02/train.jsonl --epochs 5000`
+        - `PYTHONPATH=. python3 -m medical_diagnosis_model.backend.tools.split --input medical_diagnosis_model/data/v02/cases_v02.jsonl --out medical_diagnosis_model/data/splits/v02 --strategy patient_time`
+        - `PYTHONPATH=. python3 medical_diagnosis_model/tools/train_pipeline.py --splits medical_diagnosis_model/data/splits/v02 --epochs 2000`
 
 - Training
 

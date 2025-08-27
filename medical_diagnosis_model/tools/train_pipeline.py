@@ -170,24 +170,43 @@ def main() -> int:
     ap.add_argument("--jsonl", default=None, help="Use existing JSONL instead of generating")
     ap.add_argument("--use-existing-model", default=None, help="Skip training and evaluate this model path")
     ap.add_argument("--report", default="medical_diagnosis_model/reports/metrics_v02.json")
+    ap.add_argument("--splits", default=None, help="Directory with {train,val}.jsonl to train/eval")
     args = ap.parse_args()
 
-    # Dataset
-    if args.jsonl:
-        jsonl = Path(args.jsonl)
-    else:
-        jsonl = generate_dataset(args.per_disease)
-        print(f"Generated dataset: {jsonl}")
-    # Train or reuse model
-    if args.use_existing_model:
-        model_path = Path(args.use_existing_model)
-        print(f"Using existing model: {model_path}")
-    else:
-        model_path = train_model(jsonl, args.epochs)
+    # Dataset or splits
+    if args.splits:
+        split_dir = Path(args.splits)
+        train_jsonl = split_dir / "train.jsonl"
+        val_jsonl = split_dir / "val.jsonl"
+        if not train_jsonl.exists() or not val_jsonl.exists():
+            raise SystemExit(f"Missing split files in {split_dir} (expected train.jsonl and val.jsonl)")
+        # Train on train split
+        from versions.v2.medical_neural_network_v2 import ClinicalReasoningNetwork
+        m = ClinicalReasoningNetwork(hidden_neurons=25, learning_rate=0.3, epochs=args.epochs)
+        m.train_from_jsonl(str(train_jsonl), verbose=False)
+        model_path = Path(__file__).resolve().parents[1] / "models" / "enhanced_medical_model_v02.json"
+        m.save_model(str(model_path))
         print(f"Saved model: {model_path}")
-    # Evaluate and write report
-    report_path = Path(args.report)
-    evaluate_model(jsonl, model_path, report_path)
+        # Evaluate on val split
+        report_path = Path(args.report)
+        evaluate_model(val_jsonl, model_path, report_path)
+    else:
+        # Single JSONL path route
+        if args.jsonl:
+            jsonl = Path(args.jsonl)
+        else:
+            jsonl = generate_dataset(args.per_disease)
+            print(f"Generated dataset: {jsonl}")
+        # Train or reuse model
+        if args.use_existing_model:
+            model_path = Path(args.use_existing_model)
+            print(f"Using existing model: {model_path}")
+        else:
+            model_path = train_model(jsonl, args.epochs)
+            print(f"Saved model: {model_path}")
+        # Evaluate and write report on same JSONL
+        report_path = Path(args.report)
+        evaluate_model(jsonl, model_path, report_path)
     print(f"Wrote metrics to {report_path}")
     print("Set MDM_MODEL_PATH to use this model in the API if not picked by default.")
     return 0

@@ -4,6 +4,8 @@ Generate v0.2 balanced JSONL training data with explicit negative evidence.
 
 Format per line:
   {
+    "patient_id": "P00_00001",
+    "onset_day": 7,
     "symptoms": {"Cough": 6, "Runny Nose": 5, ...},
     "label_name": "Viral Upper Respiratory Infection"
   }
@@ -78,9 +80,17 @@ def generate_balanced(per_disease: int = 200, seed: int = 42) -> List[Dict]:
     target_ids = [did for did, d in DISEASES_V2.items() if d["name"] in target_names]
     data: List[Dict] = []
     for did in target_ids:
-        for _ in range(per_disease):
+        for j in range(per_disease):
             s, label = _sample_case(did, DISEASES_V2, SYMPTOMS, explicit_neg=True)
-            data.append({"symptoms": s, "label_name": label})
+            # Deterministic synthetic identifiers and onset timing
+            patient_id = f"P{did:02d}_{j:05d}"
+            onset_day = random.randint(0, 14)  # days since onset (0-14)
+            data.append({
+                "patient_id": patient_id,
+                "onset_day": onset_day,
+                "symptoms": s,
+                "label_name": label
+            })
     random.shuffle(data)
     return data
 
