@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from fastapi.testclient import TestClient
 
@@ -19,7 +20,11 @@ def test_phase1_expected_primaries():
         name = case["name"]
         symptoms = case["symptoms"]
         expected = case.get("expected_primary")
-        resp = client.post("/api/v2/diagnose", json={"data": symptoms})
+        headers = {}
+        api_key = os.environ.get("MDM_API_KEY")
+        if api_key:
+            headers["X-API-Key"] = api_key
+        resp = client.post("/api/v2/diagnose", json={"data": symptoms}, headers=headers)
         assert resp.status_code == 200
         data = resp.json()
         primary = (data.get("primary_diagnosis") or {}).get("name")

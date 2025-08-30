@@ -29,8 +29,8 @@ Context: macOS 14, Python 3.11 venv ./venv, repo root PythonNeuralNet
 Constraints: non-interactive commands; add unit tests; idempotent CLI
 Acceptance:
 - backend/data/splitter.py with patient/time split; no-leakage tests
-- CLI: python -m backend.tools.split --input data/clean/ --out data/splits/
-- Outputs include class distribution report (per split)
+- CLI: PYTHONPATH=. python3 -m medical_diagnosis_model.backend.tools.split --input medical_diagnosis_model/data/v02/cases_v02.jsonl --out medical_diagnosis_model/data/splits/v02 --strategy patient_time
+- Outputs: {train,val,test}.jsonl + summary.json (per-split distributions, class weights)
 ```
 
 ```text
@@ -123,7 +123,7 @@ Acceptance:
         - `patient_time_split(rows, patient_key, time_key, label_key, ratios, seed)` (group by patient; sort by time; hold out last k% patients/time windows)
         - `compute_class_weights(rows, label_key) -> dict[label, weight]` (inverse frequency)
         - `report_distribution(rows, label_key) -> dict[label, count]`
-      - Write outputs to `medical_diagnosis_model/data/splits/v02/{train,val,test}.jsonl` and `class_weights.json` + `distribution.json` for each split.
+      - Write outputs to `medical_diagnosis_model/data/splits/v02/{train,val,test}.jsonl` and a single `summary.json` (counts, per-split distributions, class weights).
     - CLI:
       - Add `medical_diagnosis_model/backend/tools/split.py` with args:
         - `--input <jsonl>` (default: `data/v02/cases_v02.jsonl`)
@@ -598,7 +598,7 @@ medical_diagnosis_model/
 2. Regenerate training data v0.2 (balanced counts or class weights; explicit negative GU for respiratory and vice‑versa; URI patterns; mild/early/atypical). Retrain + recalibrate; update DATA_CARD.
 3. Write `docs/label_policy.md`; wire gold labels (confirmed vs presumptive) into dataset.
 4. Build PHI‑safe ingestion CLI: de‑identify, normalize units, audit logs → `data/clean/`.
-5. Implement patient‑ and time‑based splits with stratification; add class weighting.
+5. [x] Implement patient‑ and time‑based splits with stratification; add class weighting.
 6. Add training toggles (Adam, L2, dropout) and fixed seeds via `configs/training.yaml`.
 7. Add metrics module (AUROC/AUPRC/F1/Confusion) and reliability diagram + ECE.
 8. Expand rules: Centor + CURB‑65; add “need more info” if entropy/confidence threshold.
